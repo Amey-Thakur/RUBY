@@ -2,7 +2,7 @@
 
 ---
 
-## 30 Days Julia Challenge
+## 30 Days Ruby on Rails Challenge
 
  - [ ] Day 1
  - [ ] Day 2
