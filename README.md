@@ -34,3 +34,9 @@
  - [ ] Day 28
  - [ ] Day 29
  - [ ] Day 30
+
+
+<p align="center"> <b> 👉🏻 Created to Learn Ruby on Rails 👈🏻 <b> </p>
+ 
+<p align="center"><a href='https://github.com/Amey-Thakur/RUBY-ON-RAILS', style='color: greenyellow;'> ✌🏻 Back To Repository ✌🏻</p>
+ 
