@@ -35,6 +35,7 @@
  - [ ] Day 29
  - [ ] Day 30
 
+---
 
 <p align="center"> <b> 👉🏻 Created to Learn Ruby on Rails 👈🏻 <b> </p>
  
