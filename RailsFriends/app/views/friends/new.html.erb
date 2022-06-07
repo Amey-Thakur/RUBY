@@ -1,0 +1,13 @@
+<div class="card">
+  <div class="card-header">
+    <h2>Add New friend</h2>
+  </div>
+  <div class="card-body">
+    <%= render "form", friend: @friend %>
+    <br>
+  </div>
+</div>
+<br>
+<div>
+  <%= link_to "Back", friends_path, class: 'btn btn-secondary' %>
+</div>
