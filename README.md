@@ -1,5 +1,7 @@
 # RUBY-ON-RAILS
 
+- [IDE](https://www.jetbrains.com/ruby/) 
+- [Ruby](https://www.ruby-lang.org/en/)
 ---
 
 ## 30 Days Ruby on Rails Challenge
@@ -14,7 +16,7 @@
  - [x] Day 8
  - [x] Day 9
  - [x] Day 10
- - [ ] Day 11
+ - [x] Day 11
  - [ ] Day 12
  - [ ] Day 13
  - [ ] Day 14
