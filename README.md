@@ -7,17 +7,17 @@
 
 ## 30 Days Ruby on Rails Challenge
 
- - [x] Day 1
- - [x] Day 2
- - [x] Day 3
- - [x] Day 4
- - [x] Day 5
- - [x] Day 6
- - [x] Day 7
- - [x] Day 8
- - [x] Day 9
- - [x] Day 10
- - [x] Day 11
+ - [x] Day 1: Installation and first web page
+ - [x] Day 2: Website
+ - [x] Day 3: CRUD Database
+ - [x] Day 4: Bootstrap
+ - [x] Day 5: Devise & Style Devise
+ - [x] Day 6: User Association & Rails Association
+ - [x] Day 7: List Style & Rails Controller
+ - [x] Day 8: Heroku Deployment
+ - [x] Day 9: Installation of IDE, Variables and User Input
+ - [x] Day 10: Methods and Conditional if-else
+ - [x] Day 11: Classes and Objects
  - [ ] Day 12
  - [ ] Day 13
  - [ ] Day 14
