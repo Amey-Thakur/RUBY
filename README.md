@@ -1,8 +1,11 @@
 # RUBY-ON-RAILS
 
 ### [RubyMine](https://www.jetbrains.com/ruby) - _IDE_
+
 ### [Ruby](https://www.ruby-lang.org/en) - _A PROGRAMMER'S BEST FRIEND_
-### [Ruby on Rails](https://rubyonrails.org/)
+
+### [Ruby on Rails](https://rubyonrails.org)
+
 ---
 
 ## 30 Days Ruby on Rails Challenge
