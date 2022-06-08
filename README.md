@@ -1,4 +1,4 @@
-# RUBY-ON-RAILS
+# RUBY
 
 ### [RubyMine](https://www.jetbrains.com/ruby) - _IDE_
 
@@ -8,9 +8,9 @@
 
 ---
 
-## 30 Days Ruby on Rails Challenge
+## 30 Days Ruby Challenge
 
- - [x] Day 1: Installation and first web page
+ - [x] Day 1: Installation and First Web Page
  - [x] Day 2: Website
  - [x] Day 3: CRUD Database
  - [x] Day 4: Bootstrap
@@ -21,8 +21,8 @@
  - [x] Day 9: Installation of IDE, Variables and User Input
  - [x] Day 10: Methods and Conditional if-else
  - [x] Day 11: Classes and Objects
- - [ ] Day 12
- - [ ] Day 13
+ - [x] Day 12: Getter, Setter and to_s Method
+ - [x] Day 13: Class Variable and Self Method
  - [ ] Day 14
  - [ ] Day 15
  - [ ] Day 16
