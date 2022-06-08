@@ -22,7 +22,7 @@
  - [x] Day 10: Methods and Conditional if-else
  - [x] Day 11: Classes and Objects
  - [x] Day 12: Getter, Setter and to_s Method
- - [ ] Day 13
+ - [x] Day 13: Class Variable and Self Method
  - [ ] Day 14
  - [ ] Day 15
  - [ ] Day 16
