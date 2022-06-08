@@ -21,7 +21,7 @@
  - [x] Day 9: Installation of IDE, Variables and User Input
  - [x] Day 10: Methods and Conditional if-else
  - [x] Day 11: Classes and Objects
- - [ ] Day 12
+ - [ ] Day 12: Getter, Setter and to_s Methods
  - [ ] Day 13
  - [ ] Day 14
  - [ ] Day 15
