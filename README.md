@@ -10,7 +10,7 @@
 
 ## 30 Days Ruby Challenge
 
- - [x] Day 1: Installation and First Web Page
+ - [x] [Day 1]() - Installation and First Web Page
  - [x] Day 2: Website
  - [x] Day 3: CRUD Database
  - [x] Day 4: Bootstrap
