@@ -10,22 +10,22 @@
 
 ## 30 Days Ruby Challenge
 
- - [x] [Day 1]() - Installation and First Web Page
- - [x] Day 2: Website
- - [x] Day 3: CRUD Database
- - [x] Day 4: Bootstrap
- - [x] Day 5: Devise & Style Devise
- - [x] Day 6: User Association & Rails Association
- - [x] Day 7: List Style & Rails Controller
- - [x] Day 8: Heroku Deployment
- - [x] Day 9: Installation of IDE, Variables and User Input
- - [x] Day 10: Methods and Conditional if-else
- - [x] Day 11: Classes and Objects
- - [x] Day 12: Getter, Setter and to_s Method
- - [x] Day 13: Class Variable and Self Method
- - [ ] Day 14
- - [ ] Day 15
- - [ ] Day 16
+ - [x] [Day 1](https://github.com/Amey-Thakur/RUBY/tree/main/Day%201%20-%20Day%208) - Installation and First Web Page
+ - [x] [Day 2](https://github.com/Amey-Thakur/RUBY/tree/main/Day%201%20-%20Day%208) - Website
+ - [x] [Day 3](https://github.com/Amey-Thakur/RUBY/tree/main/Day%201%20-%20Day%208) - CRUD Database
+ - [x] [Day 4](https://github.com/Amey-Thakur/RUBY/tree/main/Day%201%20-%20Day%208) - Bootstrap
+ - [x] [Day 5](https://github.com/Amey-Thakur/RUBY/tree/main/Day%201%20-%20Day%208) - Devise & Style Devise
+ - [x] [Day 6](https://github.com/Amey-Thakur/RUBY/tree/main/Day%201%20-%20Day%208) - User Association & Rails Association
+ - [x] [Day 7](https://github.com/Amey-Thakur/RUBY/tree/main/Day%201%20-%20Day%208) - List Style & Rails Controller
+ - [x] [Day 8](https://github.com/Amey-Thakur/RUBY/tree/main/Day%201%20-%20Day%208) - Heroku Deployment
+ - [x] [Day 9](https://github.com/Amey-Thakur/RUBY/tree/main/Day%209) - Installation of IDE, Variables and User Input
+ - [x] [Day 10](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2010) - Methods and Conditional if-else
+ - [x] [Day 11](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2011) - Classes and Objects
+ - [x] [Day 12](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2012) - Getter, Setter and to_s Method
+ - [x] [Day 13](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2013) - Class Variable and Self Method
+ - [x] [Day 14](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2014) - Loops
+ - [x] [Day 15](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2015) - Break, Next and Redo Statement
+ - [x] [Day 16](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2016) - Block and Yield with/without parameters
  - [ ] Day 17
  - [ ] Day 18
  - [ ] Day 19
@@ -43,7 +43,7 @@
 
 ---
 
-<p align="center"> <b> 👉🏻 Created to Learn Ruby on Rails 👈🏻 <b> </p>
+<p align="center"> <b> 👉🏻 Created to Learn Ruby 👈🏻 <b> </p>
  
-<p align="center"><a href='https://github.com/Amey-Thakur/RUBY-ON-RAILS', style='color: greenyellow;'> ✌🏻 Back To Repository ✌🏻</p>
+<p align="center"><a href='https://github.com/Amey-Thakur/RUBY', style='color: greenyellow;'> ✌🏻 Back To Repository ✌🏻</p>
  
