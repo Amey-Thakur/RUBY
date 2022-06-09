@@ -69,6 +69,7 @@
 
 ![image](https://user-images.githubusercontent.com/54937357/171355107-f11d1990-00bf-4de4-8c6d-5e1a8f430904.png)
 
+---
 
 <p align="center"> <b> 👉🏻 Created to Learn Ruby on Rails 👈🏻 <b> </p>
  
