@@ -26,8 +26,8 @@
  - [x] [Day 14](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2014) - Loops
  - [x] [Day 15](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2015) - Break, Next and Redo Statement
  - [x] [Day 16](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2016) - Block and Yield with/without parameters
- - [ ] Day 17
- - [ ] Day 18
+ - [x] [Day 17](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2017) - Module Concept with Class
+ - [x] [Day 18](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2018) - require, require_relative, include statement
  - [ ] Day 19
  - [ ] Day 20
  - [ ] Day 21
