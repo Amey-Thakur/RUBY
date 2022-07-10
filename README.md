@@ -2,6 +2,8 @@
 
 ### [RubyMine](https://www.jetbrains.com/ruby) - _IDE_
 
+### [JDoodle](https://www.jdoodle.com/execute-ruby-online/) - _Online Ruby IDE_
+
 ### [Ruby](https://www.ruby-lang.org/en) - _A PROGRAMMER'S BEST FRIEND_
 
 ### [Ruby on Rails](https://rubyonrails.org)
@@ -28,7 +30,7 @@
  - [x] [Day 16](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2016) - Block and Yield with/without parameters
  - [x] [Day 17](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2017) - Module Concept with Class
  - [x] [Day 18](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2018) - require, require_relative, include statement
- - [ ] Day 19
+ - [x] [Day 19](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2019) - Array Basics and Fundamentals
  - [ ] Day 20
  - [ ] Day 21
  - [ ] Day 22
