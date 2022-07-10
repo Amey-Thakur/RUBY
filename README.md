@@ -32,7 +32,7 @@
  - [x] [Day 18](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2018) - require, require_relative, include statement
  - [x] [Day 19](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2019) - Array Basics and Fundamentals
  - [x] [Day 20](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2020) - 2D Arrays
- - [ ] Day 21
+ - [x] [Day 21](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2021) - Hash
  - [ ] Day 22
  - [ ] Day 23
  - [ ] Day 24
