@@ -33,7 +33,7 @@
  - [x] [Day 19](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2019) - Array Basics and Fundamentals
  - [x] [Day 20](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2020) - 2D Arrays
  - [x] [Day 21](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2021) - Hash
- - [ ] Day 22
+ - [x] [Day 22](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2022) - Random Numbers and Menu
  - [ ] Day 23
  - [ ] Day 24
  - [ ] Day 25
