@@ -34,7 +34,7 @@
  - [x] [Day 20](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2020) - 2D Arrays
  - [x] [Day 21](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2021) - Hash
  - [x] [Day 22](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2022) - Random Numbers and Menu Class
- - [ ] Day 23
+ - [x] [Day 23](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2023) - Inheritance
  - [ ] Day 24
  - [ ] Day 25
  - [ ] Day 26
