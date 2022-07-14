@@ -35,7 +35,7 @@
  - [x] [Day 21](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2021) - Hash
  - [x] [Day 22](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2022) - Random Numbers and Menu Class
  - [x] [Day 23](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2023) - Inheritance
- - [ ] Day 24
+ - [x] [Day 24](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2024) - Operator Overloading
  - [ ] Day 25
  - [ ] Day 26
  - [ ] Day 27
