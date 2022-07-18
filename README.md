@@ -37,7 +37,7 @@
  - [x] [Day 23](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2023) - Inheritance
  - [x] [Day 24](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2024) - Operator Overloading
  - [x] [Day 25](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2025) - Freezing Objects and Linguistics Package
- - [x] [Day 26]() - Proc and Lambda
+ - [x] [Day 26](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2026) - Proc and Lambda
  - [ ] Day 27
  - [ ] Day 28
  - [ ] Day 29
