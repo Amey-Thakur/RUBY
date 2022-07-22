@@ -39,7 +39,7 @@
  - [x] [Day 25](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2025) - Freezing Objects and Linguistics Package
  - [x] [Day 26](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2026) - Proc and Lambda
  - [x] [Day 27](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2027) - Arity method and Difference between Proc & Lambda
- - [ ] Day 28
+ - [x] [Day 28](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2028) - Date and Time
  - [ ] Day 29
  - [ ] Day 30
 
