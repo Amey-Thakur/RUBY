@@ -40,8 +40,8 @@
  - [x] [Day 26](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2026) - Proc and Lambda
  - [x] [Day 27](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2027) - Arity method and Difference between Proc & Lambda
  - [x] [Day 28](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2028) - Date and Time
- - [ ] Day 29
- - [ ] Day 30
+ - [x] [Day 29](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2029%20-%20Day%2030) - Hangman Game in Ruby (Part I)
+ - [x] [Day 30](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2029%20-%20Day%2030) - Hangman Game in Ruby (Part II)
 
 ---
 
