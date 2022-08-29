@@ -43,6 +43,15 @@
  - [x] **[Day 29](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2029%20-%20Day%2030)** - Hangman Game in Ruby (Part I)
  - [x] **[Day 30](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2029%20-%20Day%2030)** - Hangman Game in Ruby (Part II)
 
+
+## Projects in Ruby
+
+- [x] **[RailsFriends](https://github.com/Amey-Thakur/RAILSFRIENDS)** - It is a simple Friends List App using Ruby on Rails with SQLite3 database.
+
+- [x] **[TicTacToe](https://github.com/Amey-Thakur/TIC-TAC-TOE-IN-RUBY)** - It is a simple TicTacToe Game in Ruby.
+
+- [x] **[Hangman](https://github.com/Amey-Thakur/HANGMAN-IN-RUBY)** - It is a simple Hangman Game in Ruby.
+
 ---
 
 <p align="center"> <b> 👉🏻 Created to Learn Ruby 👈🏻 <b> </p>
