@@ -33,7 +33,7 @@
  - [x] **[Day 18](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2018)** - Proc and Lambda
  - [x] **[Day 19](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2019)** - Arity method and Difference between Proc & Lambda
  - [x] **[Day 20](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2020)** - Date and Time
- - [x] **[Day 21]()** - TicTacToe Game in Ruby 
+ - [x] **[Day 21](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2021/TicTacToe)** - TicTacToe Game in Ruby 
  - [x] **[Day 22](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2022)** - Hangman Game in Ruby
  - [x] **[Day 23](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2023%20-%20Day%2030)** - Installation and First Web Page
  - [x] **[Day 24](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2023%20-%20Day%2030)** - Website
