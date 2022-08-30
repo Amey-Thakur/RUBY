@@ -1,5 +1,0 @@
-AllCops:
-  NewCops: enable
-  Exclude:
-    - 'spec/*'
-    
