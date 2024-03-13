@@ -12,6 +12,7 @@
 
 ## 30 Days Ruby Challenge
 
+>Challenge successfully completed with [Mega Satish](https://github.com/msatmod)
 
  - [x] **[Day 1](https://github.com/Amey-Thakur/RUBY/tree/main/Day%201)** - Installation of IDE, Variables and User Input
  - [x] **[Day 2](https://github.com/Amey-Thakur/RUBY/tree/main/Day%202)** - Methods and Conditional if-else
@@ -57,4 +58,6 @@
 
 <p align="center"> <b> 👉🏻 Created to Learn Ruby 👈🏻 <b> </p>
  
-<p align="center"><a href='https://github.com/Amey-Thakur/RUBY', style='color: greenyellow;'> ✌🏻 Back To Repository ✌🏻</p>
+<p align="center"> <b> 👷 Project Authors: Amey Thakur and Mega Satish <b> </p>
+ 
+<p align="center"><a href='https://github.com/Amey-Thakur/ENGINEERING', style='color: greenyellow;'> ✌🏻 Back To Engineering ✌🏻</p>
