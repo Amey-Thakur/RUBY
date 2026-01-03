@@ -1,0 +1,37 @@
+# Bundler
+/.bundle/
+/vendor/bundle/
+/lib/bundler/man/
+
+# Rails
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+/db/*.sqlite3
+/db/*.sqlite3-journal
+/public/system
+/public/assets
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+
+# Key configuration
+/config/master.key
+/config/credentials.yml.enc
+
+# IDEs and Editors
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Documentation
+/doc/
+/coverage/
+
+# OS Files
+Thumbs.db
+Desktop.ini
