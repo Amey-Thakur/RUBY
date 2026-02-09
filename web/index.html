@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruby Programming Challenge | Amey & Mega</title>
+    <link rel="icon" type="image/png" href="assets/Ruby Logo.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Prism.js for Syntax Highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+
+    <!-- PWA Metadata -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#CC0000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="assets/Ruby Logo.png">
+</head>
+
+<body>
+    <!-- Premium Splash Loader -->
+    <div id="skeleton-loader">
+        <div class="loader-content">
+            <div class="loader-ruby-wrapper">
+                <div class="loader-ruby-icon" id="splash-ruby-icon">
+                    <img src="assets/Ruby Logo.png" width="48" height="48" alt="Ruby Logo">
+                </div>
+                <div class="loader-progress-container">
+                    <div id="splash-progress-bar"></div>
+                </div>
+            </div>
+            <p class="loader-text pulse-text">Starting Ruby Challenge...</p>
+        </div>
+        <footer class="splash-footer">
+            <p>Created by <a href="https://github.com/Amey-Thakur" class="author-link" target="_blank">Amey Thakur</a> &
+                <a href="https://github.com/msatmod" class="author-link" target="_blank">Mega Satish</a> • &copy; 2022
+            </p>
+        </footer>
+    </div>
+
+    <div id="app">
+        <header class="hero">
+            <div class="glass-panel">
+                <div class="top-controls">
+                    <button id="theme-toggle" class="control-btn" aria-label="Toggle Theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button id="share-btn" class="control-btn" aria-label="Share Challenge">
+                        <i class="fas fa-share-alt"></i>
+                    </button>
+                </div>
+                <h1 class="premium-title">Ruby Programming <span class="gradient-text">Challenge</span></h1>
+                <p class="subtitle">A disciplined 30-day collaborative challenge undertaken to master Ruby programming and Ruby on Rails development, featuring a structured curriculum from basic syntax to full-stack web engineering.</p>
+
+                <div class="hero-identity-grid">
+                    <!-- Amey Thakur Profile Unit -->
+                    <div class="profile-unit">
+                        <a href="https://github.com/Amey-Thakur" target="_blank" class="author-pill">
+                            <img src="https://github.com/Amey-Thakur.png" alt="Amey">
+                            <span>Amey Thakur</span>
+                        </a>
+                        <a href="https://github.com/Amey-Thakur/RUBY" class="repo-btn ripple" target="_blank">
+                            <i class="fas fa-code-branch repo-icon"></i>
+                            <span>Ruby Repo</span>
+                        </a>
+                    </div>
+
+                    <!-- Mega Satish Profile Unit -->
+                    <div class="profile-unit">
+                        <a href="https://github.com/msatmod" target="_blank" class="author-pill">
+                            <img src="assets/Mega.png" alt="Mega">
+                            <span>Mega Satish</span>
+                        </a>
+                        <a href="https://github.com/msatmod/Ruby" class="repo-btn ripple" target="_blank">
+                            <i class="fas fa-code-branch repo-icon"></i>
+                            <span>Mega's Repo</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-stats-divider"></div>
+
+                <div id="progress" class="hero-stats-merge">
+                    <div class="stats-top-row">
+                        <div class="stat-unit">
+                            <div class="stat-header">
+                                <i class="fas fa-check-square stat-check-icon"></i>
+                                <span class="stat-label">CURRICULUM MODULES</span>
+                            </div>
+                            <div class="stat-value-container">
+                                <span id="milestone-count" class="stat-value">30</span>
+                                <span class="stat-total">/ 30</span>
+                            </div>
+                        </div>
+                        <div class="stat-unit align-right">
+                            <div class="stat-header justify-end">
+                                <span class="stat-label">PROJECTS BUILT</span>
+                                <i class="fas fa-rocket stat-cert-icon"></i>
+                            </div>
+                            <div class="stat-value-container">
+                                <span class="stat-value">3</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stats-animation-track">
+                        <div class="stats-ruby-icon" id="stats-ruby-icon">
+                            <img src="assets/Ruby Logo.png" width="24" height="24" alt="Ruby Logo">
+                        </div>
+                        <div class="stats-subtle-line"></div>
+                    </div>
+
+                    <div class="stat-center-unit">
+                        <div id="mastery-count" class="stat-footer-value accent-ruby">100%</div>
+                        <div class="stat-footer-label">CHALLENGE MASTERY</div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="container">
+            <section id="projects" class="project-section">
+                <h2 class="section-title">Core Technical Projects</h2>
+                <div class="project-grid">
+                    <div class="project-card glass-panel" data-link="https://github.com/Amey-Thakur/RAILSFRIENDS">
+                        <div class="project-icon-wrapper">
+                            <img src="assets/Ruby on Rails Logo.png" alt="Rails Logo">
+                        </div>
+                        <h3>RailsFriends</h3>
+                        <p>Full-stack web application with SQLite3 persistence.</p>
+                        <a href="https://github.com/Amey-Thakur/RAILSFRIENDS" target="_blank" class="view-btn">View Code</a>
+                    </div>
+                    <div class="project-card glass-panel" data-link="https://github.com/Amey-Thakur/TIC-TAC-TOE-IN-RUBY">
+                        <div class="project-icon-wrapper">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                        <h3>TicTacToe</h3>
+                        <p>Algorithmic implementation in pure Ruby.</p>
+                        <a href="https://github.com/Amey-Thakur/TIC-TAC-TOE-IN-RUBY" target="_blank" class="view-btn">View Code</a>
+                    </div>
+                    <div class="project-card glass-panel" data-link="https://github.com/Amey-Thakur/HANGMAN-IN-RUBY">
+                        <div class="project-icon-wrapper">
+                            <i class="fas fa-font"></i>
+                        </div>
+                        <h3>Hangman</h3>
+                        <p>Logic-driven lexical processing engine.</p>
+                        <a href="https://github.com/Amey-Thakur/HANGMAN-IN-RUBY" target="_blank" class="view-btn">View Code</a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="curriculum" class="curriculum-section">
+                <h2 class="section-title">Curriculum Explorer</h2>
+                <div class="filter-bar">
+                    <button class="filter-btn active" data-filter="all">All Modules</button>
+                    <button class="filter-btn" data-filter="basics">Basics</button>
+                    <button class="filter-btn" data-filter="logic">Logic</button>
+                    <button class="filter-btn" data-filter="modular">Modular</button>
+                    <button class="filter-btn" data-filter="advanced">Advanced</button>
+                    <button class="filter-btn" data-filter="rails">Rails</button>
+                </div>
+                <div class="day-grid" id="day-grid">
+                    <!-- Days will be injected here -->
+                </div>
+            </section>
+        </main>
+
+        <footer class="main-footer">
+            <p>Created by <a href="https://github.com/Amey-Thakur" class="author-link" target="_blank">Amey Thakur</a> &
+                <a href="https://github.com/msatmod" class="author-link" target="_blank">Mega Satish</a> • &copy; 2022
+            </p>
+            <div class="footer-branding">
+                <img src="assets/Ruby Logo.png" width="20" height="20" alt="Ruby"> Ruby Programming Challenge
+            </div>
+        </footer>
+
+        <button id="back-to-top" title="Back to Top">
+            <i class="fas fa-chevron-up"></i>
+        </button>
+    </div>
+
+    <!-- Code Viewer Modal -->
+    <div id="code-modal" class="modal">
+        <div class="modal-content glass-panel">
+            <div class="modal-header">
+                <h3 id="modal-title">Code Viewer</h3>
+                <div class="modal-controls">
+                    <button id="external-link-btn" class="modal-btn" title="Open in GitHub">
+                        <i class="fab fa-github"></i>
+                    </button>
+                    <button class="close-modal">&times;</button>
+                </div>
+            </div>
+            <div class="modal-body">
+                <pre class="line-numbers"><code id="code-display" class="language-ruby"># Loading source code...</code></pre>
+            </div>
+            <div class="modal-footer">
+                <p id="modal-topic" class="modal-topic">Topic Name</p>
+                <div class="execution-hint">
+                    <code>ruby <span id="execution-script">script_name</span>.rb</code>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-ruby.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
