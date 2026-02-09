@@ -15,16 +15,16 @@
 }
 
 [data-theme="light"] {
-    --bg-color: #f8f9fa;
-    --panel-bg: rgba(255, 255, 255, 0.8);
-    --border-color: rgba(0, 0, 0, 0.1);
-    --text-primary: #1a1a1a;
-    --text-secondary: #555555;
+    --bg-color: #ffffff;
+    --panel-bg: rgba(255, 255, 255, 0.9);
+    --border-color: rgba(0, 0, 0, 0.08);
+    --text-primary: #121212;
+    --text-secondary: #4a4a4a;
     --accent-ruby: #cc0000;
     --accent-crimson: #880000;
     --gradient: linear-gradient(135deg, #cc0000, #880000);
-    --shadow-premium: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
-    --glass-bg: rgba(255, 255, 255, 0.4);
+    --shadow-premium: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+    --glass-bg: rgba(255, 255, 255, 0.7);
 }
 
 * {
