@@ -1,7 +1,7 @@
 <div align="center">
 
   <a name="readme-top"></a>
-  # <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/ruby/ruby.png" height="55" valign="middle"> <br> Ruby Programming Challenge
+  # <img src="docs/Ruby%20Logo.png" height="55" valign="middle"> <br> Ruby Programming Challenge
 
   [![License: MIT](https://img.shields.io/badge/License-MIT-lightgrey)](LICENSE)
   ![Status](https://img.shields.io/badge/Status-Completed-success)
