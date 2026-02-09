@@ -516,7 +516,7 @@ body {
 }
 
 .loader-ruby-icon {
-    animation: breathing 3s ease-in-out infinite;
+    animation: breathing 1.5s ease-in-out infinite;
 }
 
 .splash-footer {
