@@ -80,6 +80,27 @@ get '/source/*' do
   end
 end
 
+require 'redcarpet'
+
+# Route to render README.rb output as formatted Markdown
+get '/manifesto' do
+  markdown_content = `ruby README.rb`
+  
+  # Configure Redcarpet to handle GitHub-style Markdown
+  renderer = Redcarpet::Render::HTML.new(hard_wrap: true, filter_html: false)
+  markdown = Redcarpet::Markdown.new(renderer, 
+    autolink: true, 
+    tables: true, 
+    fenced_code_blocks: true, 
+    strikethrough: true,
+    superscript: true,
+    no_intra_emphasis: true
+  )
+  
+  @manifesto_content = markdown.render(markdown_content)
+  erb :manifesto
+end
+
 # Global 404 Handler
 not_found do
   status 404
