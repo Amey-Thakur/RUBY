@@ -275,8 +275,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!response.ok) throw new Error(`HTTP ${response.status}`);
             const code = (await response.text()).trim();
 
-            archiveCodeDisplay.textContent = code;
-            if (window.Prism) Prism.highlightElement(archiveCodeDisplay);
+            const codeElement = archiveCodeDisplay.querySelector('code');
+            if (codeElement) {
+                codeElement.textContent = code;
+                if (window.Prism) Prism.highlightElement(codeElement);
+            }
 
             // Update Dynamic Actions
 

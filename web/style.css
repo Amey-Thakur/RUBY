@@ -879,18 +879,25 @@ body {
 
 #archive-code-display {
     padding: 2rem !important;
-    /* Increased padding for spacious feel */
     margin: 0;
     font-size: 0.95rem;
     line-height: 1.7;
     height: 100%;
     overflow-y: auto;
-    /* USER REQUEST: Make code selectable */
     user-select: text !important;
     -webkit-user-select: text !important;
     cursor: text;
     white-space: pre !important;
-    /* Force strict pre preservation */
+    background: transparent !important;
+    /* Prism tomorrow theme is already on pre */
+}
+
+#archive-code-display code {
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+    display: block;
+    /* Ensure it behaves as a clean block */
 }
 
 .execution-hint {
