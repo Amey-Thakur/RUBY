@@ -661,27 +661,31 @@ body {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.85);
-    z-index: 2000;
+    z-index: 3000;
+    /* Increased z-index */
     backdrop-filter: blur(10px);
-    overflow: hidden;
-    padding-top: 5vh;
-    /* Center vertically */
+    align-items: center;
+    justify-content: center;
 }
 
 /* Archive Explorer Specifics */
 .archive-explorer {
     margin: 0 auto;
-    /* Center horizontally */
+    background: #1a1a1a;
+    /* Hardcoded fallback background */
     background: var(--panel-bg);
     border: 1px solid var(--border-color);
     border-radius: 20px;
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
-    max-width: 1200px !important;
-    height: 85vh !important;
+    box-shadow: 0 50px 100px rgba(0, 0, 0, 0.9);
+    width: 90%;
+    max-width: 1200px;
+    height: 85vh;
     display: flex;
     flex-direction: column;
-    padding: 0 !important;
     overflow: hidden;
+    /* Removed all animations for stability */
+    transform: translateZ(0);
+    /* GPU reset */
 }
 
 .archive-header {
@@ -690,6 +694,7 @@ body {
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid var(--border-color);
+    flex-shrink: 0;
 }
 
 .archive-info h3 {
@@ -702,6 +707,203 @@ body {
     font-family: var(--font-mono);
     font-size: 0.8rem;
     color: var(--text-secondary);
+}
+
+.archive-controls {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.icon-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.icon-btn:hover {
+    background: var(--accent-ruby);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.close-archive {
+    font-size: 2.5rem;
+    margin-left: 1rem;
+    cursor: pointer;
+    color: var(--text-secondary);
+    transition: color 0.3s ease;
+}
+
+.close-archive:hover {
+    color: var(--accent-ruby);
+}
+
+.archive-body {
+    flex-grow: 1;
+    display: flex;
+    overflow: hidden;
+}
+
+.archive-sidebar {
+    width: 250px;
+    border-right: 1px solid var(--border-color);
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+    overflow-y: auto;
+}
+
+.sidebar-label {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.file-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0;
+}
+
+.file-item {
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.file-item i {
+    font-size: 1rem;
+}
+
+.file-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-primary);
+}
+
+.file-item.active {
+    background: rgba(204, 0, 0, 0.1);
+    color: var(--accent-ruby);
+    font-weight: 700;
+    border-left: 3px solid var(--accent-ruby);
+}
+
+.archive-viewer {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background: #0d0d0d;
+    overflow: hidden;
+    min-width: 0;
+    /* Important for flex child text-overflow */
+}
+
+.viewer-header {
+    padding: 0.75rem 1.5rem;
+}
+
+/* Mobile Responsiveness for Archive Explorer */
+@media (max-width: 768px) {
+    #archive-modal {
+        padding: 1rem;
+        /* Padding to prevent edge touching */
+        align-items: center;
+        /* Enforce centering on mobile too */
+    }
+
+    .archive-explorer {
+        width: 100%;
+        height: 90vh;
+        /* Slightly smaller than full screen */
+        border-radius: 20px;
+        /* Keep rounded corners */
+        max-width: none;
+    }
+
+    .archive-header {
+        padding: 1rem;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .archive-info {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+
+    .archive-info h3 {
+        font-size: 1.2rem;
+    }
+
+    .archive-controls {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .close-archive {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        margin: 0;
+        font-size: 2rem;
+    }
+
+    .archive-body {
+        flex-direction: column;
+    }
+
+    .archive-sidebar {
+        width: 100%;
+        height: auto;
+        max-height: 120px;
+        /* Reduced height for sidebar on mobile */
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .file-list {
+        flex-direction: row;
+        overflow-x: auto;
+        padding-bottom: 5px;
+    }
+
+    .file-item {
+        white-space: nowrap;
+        flex-shrink: 0;
+        border-left: none;
+        border-bottom: 3px solid transparent;
+    }
+
+    .file-item.active {
+        border-left: none;
+        border-bottom: 3px solid var(--accent-ruby);
+    }
+
+    .archive-viewer {
+        height: 100%;
+    }
 }
 
 .archive-controls {

@@ -140,32 +140,51 @@ document.addEventListener('DOMContentLoaded', () => {
     let activeDayFolder = "";
 
     window.openArchiveExplorer = async function (day) {
-        const card = document.querySelector(`.day-card[onclick*="openArchiveExplorer(${day})"]`);
-        if (!card) return;
+        try {
+            const card = document.querySelector(`.day-card[onclick*="openArchiveExplorer(${day})"]`);
+            if (!card) {
+                return;
+            }
 
-        activeDayFiles = JSON.parse(card.dataset.files);
-        activeDayFolder = card.dataset.folder;
-        const topic = card.querySelector('.day-title').innerText;
+            if (!card.dataset.files || !card.dataset.folder) {
+                console.error('Missing data attributes on card.');
+                return;
+            }
 
-        archiveTitle.innerText = `Day ${day}: ${topic}`;
-        archivePath.innerText = activeDayFolder;
+            activeDayFiles = JSON.parse(card.dataset.files);
+            activeDayFolder = card.dataset.folder;
+            const topic = card.querySelector('.day-title').innerText;
 
-        // Populate Sidebar
-        fileList.innerHTML = '';
-        activeDayFiles.forEach((file, index) => {
-            const li = document.createElement('li');
-            li.className = `file-item ${index === 0 ? 'active' : ''}`;
-            const icon = file.endsWith('.rb') ? 'fab fa-ruby' : 'fas fa-file-alt';
-            li.innerHTML = `<i class="${icon}"></i> <span>${file}</span>`;
-            li.onclick = () => loadArchiveFile(file, li);
-            fileList.appendChild(li);
-        });
+            archiveTitle.innerText = `Day ${day}: ${topic}`;
+            archivePath.innerText = activeDayFolder;
 
-        archiveModal.style.display = 'block';
+            // Populate Sidebar
+            fileList.innerHTML = '';
+            activeDayFiles.forEach((file, index) => {
+                const li = document.createElement('li');
+                li.className = `file-item ${index === 0 ? 'active' : ''}`;
+                const icon = file.endsWith('.rb') ? 'fab fa-ruby' : 'fas fa-file-alt';
+                li.innerHTML = `<i class="${icon}"></i> <span>${file}</span>`;
+                li.onclick = () => loadArchiveFile(file, li);
+                fileList.appendChild(li);
+            });
 
-        // Load first file by default
-        if (activeDayFiles.length > 0) {
-            loadArchiveFile(activeDayFiles[0]);
+            archiveModal.style.display = 'flex';
+            // Slight delay to allow display:flex to register            // Show Modal directly
+            archiveModal.style.display = 'flex';
+
+            // Force verify visibility just in case
+            if (getComputedStyle(archiveModal).display === 'none') {
+                archiveModal.setAttribute('style', 'display: flex !important;');
+            }
+
+            // Load first file by default
+            if (activeDayFiles.length > 0) {
+                loadArchiveFile(activeDayFiles[0]);
+            }
+        } catch (e) {
+            console.error('Error opening archive:', e);
+            alert('Failed to open archive. Please try again.');
         }
     };
 
@@ -179,46 +198,91 @@ document.addEventListener('DOMContentLoaded', () => {
         archiveCodeDisplay.textContent = "# Loading source code...";
 
         // Execution Hint
-        archiveExecutionScript.innerText = filename.replace('.rb', '');
+        if (archiveExecutionScript) {
+            archiveExecutionScript.innerText = filename.replace('.rb', '');
+        }
+
+        const fullPath = `${activeDayFolder}/${filename}`;
+        // Encode each segment of the path to handle spaces (e.g., "Source Code")
+        const encodedPath = fullPath.split('/').map(encodeURIComponent).join('/');
+        const fetchUrl = `../${encodedPath}`;
+
+        // GitHub URL (spaces encoded)
+        const githubUrl = `https://github.com/Amey-Thakur/RUBY/blob/main/${encodedPath}`;
 
         try {
-            const response = await fetch(`../${activeDayFolder}/${filename}`);
-            if (!response.ok) throw new Error('File not found');
+            const response = await fetch(fetchUrl);
+            if (!response.ok) throw new Error(`HTTP ${response.status}`);
             const code = await response.text();
 
             archiveCodeDisplay.textContent = code;
-            Prism.highlightElement(archiveCodeDisplay);
+            if (window.Prism) Prism.highlightElement(archiveCodeDisplay);
 
-            // Update Actions
-            const fullPath = `${activeDayFolder}/${filename}`;
-            githubBtn.onclick = () => window.open(`https://github.com/Amey-Thakur/RUBY/blob/main/${fullPath}`, '_blank');
+            // Update Dynamic Actions
 
+            // 1. GitHub Button
+            githubBtn.onclick = () => window.open(githubUrl, '_blank');
+
+            // 2. Download Button
             downloadBtn.onclick = () => {
                 const blob = new Blob([code], { type: 'text/plain' });
                 const url = window.URL.createObjectURL(blob);
                 const a = document.createElement('a');
                 a.href = url;
                 a.download = filename;
+                document.body.appendChild(a);
                 a.click();
+                document.body.removeChild(a);
+                window.URL.revokeObjectURL(url);
             };
 
+            // 3. Share Button - Shares the specific GitHub Link
             shareBtn.onclick = () => {
-                const shareText = `Check out Day ${activeDayFolder.split('Day ')[1]} of the Ruby Challenge: ${filename}\n\n${window.location.href}`;
-                navigator.clipboard.writeText(shareText).then(() => {
-                    alert('Share link copied to clipboard!');
-                });
+                const dayLabel = activeDayFolder.split('Day ')[1] || 'Code';
+                const shareTitle = 'Ruby Challenge Solution';
+                const shareText = `Check out Day ${dayLabel} of the Ruby Challenge: ${filename}`;
+
+                // Construct the payload
+                const shareData = {
+                    title: shareTitle,
+                    text: shareText,
+                    url: githubUrl
+                };
+
+                // Prioritize Native Sharing (Works best on mobile/HTTPS)
+                if (navigator.share && navigator.canShare && navigator.canShare(shareData)) {
+                    navigator.share(shareData).catch((error) => {
+                        console.error('Share failed:', error);
+                        // If user cancels or it fails, no fallback needed usually, or log it.
+                    });
+                } else {
+                    // Fallback for Desktop/Non-HTTPS contexts
+                    const fallbackText = `${shareText}\n\n${githubUrl}`;
+                    navigator.clipboard.writeText(fallbackText).then(() => {
+                        alert('Native sharing unavailable (requires HTTPS/Mobile). Link copied to clipboard!');
+                    }).catch(err => {
+                        console.error('Clipboard failed:', err);
+                        prompt('Copy this link:', githubUrl); // Last resort
+                    });
+                }
             };
 
         } catch (err) {
-            archiveCodeDisplay.textContent = `# Error: Could not load the script.\n# Path: ${activeDayFolder}/${filename}`;
+            console.error("Fetch Error:", err);
+            archiveCodeDisplay.textContent = `# Error: Could not load the script.\n# Path: ${fetchUrl}\n# Details: ${err.message}\n\n# Tip: If viewing locally via file://, browser security blocks 'fetch'.\n# Please use a local server (e.g., Live Server) or view on GitHub.`;
+
+            // Still enable GitHub button even if fetch fails
+            githubBtn.onclick = () => window.open(githubUrl, '_blank');
+
+            // Share fallback
+            shareBtn.onclick = () => {
+                navigator.clipboard.writeText(githubUrl).then(() => alert('GitHub link copied!'));
+            };
         }
     }
 
-    // Modal Close
-    const closeArchiveBtn = document.querySelector('.close-archive');
-    if (closeArchiveBtn) {
-        closeArchiveBtn.onclick = () => archiveModal.style.display = 'none';
-    }
+    // Modal Close Button
+    // (This block was redundant and removed to fix duplicate declaration error)
 
     // 6. Institutional Security Features
     document.addEventListener('contextmenu', e => e.preventDefault());
@@ -306,7 +370,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 url: 'https://github.com/Amey-Thakur/RUBY'
             };
 
-            if (navigator.share) {
+            // Consistent Pro Logic
+            if (navigator.share && navigator.canShare && navigator.canShare(shareData)) {
                 try {
                     await navigator.share(shareData);
                 } catch (err) {
@@ -316,7 +381,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Fallback
                 const shareText = `${shareData.text}\n\n${shareData.url}`;
                 navigator.clipboard.writeText(shareText).then(() => {
-                    alert('Project link copied to clipboard!');
+                    alert('Native sharing unavailable (requires HTTPS/Mobile). Link copied!');
                 }).catch(err => {
                     console.error('Failed to copy text: ', err);
                 });
@@ -340,11 +405,21 @@ document.addEventListener('DOMContentLoaded', () => {
         };
     }
 
+    // Modal Close Button
+    const closeArchiveBtn = document.querySelector('.close-archive');
+    if (closeArchiveBtn) {
+        closeArchiveBtn.onclick = () => {
+            archiveModal.classList.remove('show');
+            setTimeout(() => { archiveModal.style.display = 'none'; }, 300); // 300ms matches CSS transition
+        };
+    }
+
     // 9. Universal Closure (Click & Key)
     window.addEventListener('click', (event) => {
         // Exit Archive Modal if clicking backdrop
         if (archiveModal && event.target === archiveModal) {
-            archiveModal.style.display = 'none';
+            archiveModal.classList.remove('show');
+            setTimeout(() => { archiveModal.style.display = 'none'; }, 300);
         }
         // Exit Easter Egg if clicking ANYWHERE (Overlay itself or children)
         if (document.body.classList.contains('easter-egg-active')) {
@@ -355,7 +430,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Handle Escape key for both
     window.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
-            if (archiveModal) archiveModal.style.display = 'none';
+            if (archiveModal && archiveModal.classList.contains('show')) {
+                archiveModal.classList.remove('show');
+                setTimeout(() => { archiveModal.style.display = 'none'; }, 300);
+            }
             document.body.classList.remove('easter-egg-active');
         }
     });
