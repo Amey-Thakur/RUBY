@@ -1,15 +1,4 @@
-# frozen_string_literal: true
-
-# ==============================================================================
-#            💎 THE RUBY PROGRAMMING CHALLENGE MANIFESTO 💎
-# ==============================================================================
-# This script outputs a verbatim replica of the root README.md.
-# All paths have been adjusted to work from the 'Ruby web' directory.
-# ==============================================================================
-
-class RubyChallengeREADME
-  def self.render
-    puts <<~MARKDOWN
+puts <<~MARKDOWN
       <div align="center">
       
         <a name="readme-top"></a>
@@ -345,8 +334,3 @@ class RubyChallengeREADME
       
       </div>
     MARKDOWN
-  end
-end
-
-# Run the Documentation
-RubyChallengeREADME.render
