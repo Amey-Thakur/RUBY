@@ -1,0 +1,20 @@
+{
+    "name": "Ruby Programming Challenge",
+    "short_name": "RubyChallenge",
+    "start_url": "index.html",
+    "display": "standalone",
+    "background_color": "#0d0d0d",
+    "theme_color": "#e0115f",
+    "icons": [
+        {
+            "src": "assets/Ruby Logo.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "assets/Ruby Logo.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
