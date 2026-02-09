@@ -133,7 +133,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const archivePath = document.getElementById('archive-path');
     const downloadBtn = document.getElementById('download-btn');
     const githubBtn = document.getElementById('github-link-btn');
-    const shareBtn = document.getElementById('share-code-btn');
+    // 3. Copy Code Button
+    const copyBtn = document.getElementById('copy-code-btn');
+    if (copyBtn) {
+        copyBtn.onclick = () => {
+            const codeToCopy = archiveCodeDisplay.textContent;
+            navigator.clipboard.writeText(codeToCopy).then(() => {
+                alert('Source code copied to clipboard!');
+            }).catch(err => {
+                console.error('Copy failed:', err);
+                alert('Failed to copy code.');
+            });
+        };
+    }
     const archiveExecutionScript = document.getElementById('archive-execution-script');
 
     let activeDayFiles = [];
@@ -236,36 +248,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 window.URL.revokeObjectURL(url);
             };
 
-            // 3. Share Button - Shares the specific GitHub Link
-            shareBtn.onclick = () => {
-                const dayLabel = activeDayFolder.split('Day ')[1] || 'Code';
-                const shareTitle = 'Ruby Challenge Solution';
-                const shareText = `Check out Day ${dayLabel} of the Ruby Challenge: ${filename}`;
-
-                // Construct the payload
-                const shareData = {
-                    title: shareTitle,
-                    text: shareText,
-                    url: githubUrl
-                };
-
-                // Prioritize Native Sharing (Works best on mobile/HTTPS)
-                if (navigator.share && navigator.canShare && navigator.canShare(shareData)) {
-                    navigator.share(shareData).catch((error) => {
-                        console.error('Share failed:', error);
-                        // If user cancels or it fails, no fallback needed usually, or log it.
-                    });
-                } else {
-                    // Fallback for Desktop/Non-HTTPS contexts
-                    const fallbackText = `${shareText}\n\n${githubUrl}`;
-                    navigator.clipboard.writeText(fallbackText).then(() => {
-                        alert('Native sharing unavailable (requires HTTPS/Mobile). Link copied to clipboard!');
-                    }).catch(err => {
-                        console.error('Clipboard failed:', err);
-                        prompt('Copy this link:', githubUrl); // Last resort
-                    });
-                }
-            };
 
         } catch (err) {
             console.error("Fetch Error:", err);
@@ -274,10 +256,6 @@ document.addEventListener('DOMContentLoaded', () => {
             // Still enable GitHub button even if fetch fails
             githubBtn.onclick = () => window.open(githubUrl, '_blank');
 
-            // Share fallback
-            shareBtn.onclick = () => {
-                navigator.clipboard.writeText(githubUrl).then(() => alert('GitHub link copied!'));
-            };
         }
     }
 
