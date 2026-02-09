@@ -278,6 +278,17 @@ body {
 
 #mastery-count {
     color: var(--accent-ruby) !important;
+    font-size: 2.2rem;
+    /* Substantial Cinematic Scale */
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+}
+
+.stat-footer-label {
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    color: var(--text-secondary);
+    text-transform: uppercase;
 }
 
 .stats-animation-track {
@@ -517,15 +528,24 @@ body {
 }
 
 .loader-ruby-wrapper {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.loader-ruby-icon img {
+    width: 96px;
+    /* Cinematic Scale */
+    height: 96px;
 }
 
 .loader-progress-container {
-    width: 200px;
+    width: 320px;
+    /* Wider for balance */
     height: 4px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 2px;
-    margin-top: 2rem;
     overflow: hidden;
 }
 
@@ -537,11 +557,13 @@ body {
 }
 
 .pulse-text {
-    margin-top: 1rem;
-    font-size: 0.9rem;
-    letter-spacing: 2px;
+    margin-top: 2rem;
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
     color: var(--text-secondary);
     animation: pulse 1.5s infinite;
+    text-align: center;
 }
 
 @keyframes pulse {
