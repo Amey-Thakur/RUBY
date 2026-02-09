@@ -143,7 +143,7 @@ To maintain the authenticity of the original learning journey, the following pri
 - [x] **Day 21** - [TicTacToe Game in Ruby](Source%20Code/Day%2021/TicTacToe)
 - [x] **Day 22** - [Hangman Game in Ruby](Source%20Code/Day%2022)
 
-### Full-Stack Web: Ruby on Rails
+### <img src="docs/Ruby%20on%20Rails%20Logo.png" height="30" valign="middle"> Full-Stack Web: Ruby on Rails
 - [x] **Day 23** - [Installation and First Web Page](Source%20Code/Day%2023-30)
 - [x] **Day 24** - [Website Development](Source%20Code/Day%2023-30)
 - [x] **Day 25** - [CRUD Database Orchestration](Source%20Code/Day%2023-30)
