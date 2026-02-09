@@ -295,6 +295,8 @@ Copyright © 2022 Amey Thakur & Mega Satish
 <a name="about-this-repository"></a>
 ## About This Repository
 
+**Created & Maintained by**: [Amey Thakur](https://github.com/Amey-Thakur) & [Mega Satish](https://github.com/msatmod)
+
 **Collaborator's Repository**: [Ruby Programming Challenge - Mega Satish](https://github.com/msatmod/Ruby)
 
 This project features **Ruby Programming Challenge**, a comprehensive study conducted to master the Ruby language and Ruby on Rails. It represents a personal exploration into **Web Engineering**, **Full-Stack Development**, and **Automated Scripting**.
