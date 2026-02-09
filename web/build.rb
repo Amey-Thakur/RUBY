@@ -1,4 +1,5 @@
 require 'erb'
+require 'json'
 require_relative 'data'
 
 # The Build Script: Translating Art into Interaction
