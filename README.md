@@ -247,9 +247,12 @@ cd "Source Code/Day <Number>"
 ```
 
 ### 3. Execution
-Launch the primary script:
+
+To execute a specific module, navigate to its directory and run the primary Ruby script. For example, to play **Hangman**:
+
 ```bash
-ruby <ScriptName>.rb
+cd "Source Code/Day 22"
+ruby Hangman.rb
 ```
 
 ---
