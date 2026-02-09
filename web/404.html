@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Ruby Logic Error | Ruby Programming Challenge</title>
+    <link rel="icon" type="image/png" href="assets/Ruby Logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #0d0d0d;
+            --text-primary: #f0f0f0;
+            --text-secondary: #a0a0a0;
+            --accent-ruby: #e0115f;
+            --accent-crimson: #990000;
+            --font-heading: 'Play', sans-serif;
+            --font-body: 'Play', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            background-image: radial-gradient(circle at 50% -20%, #1a1a1a 0%, #0d0d0d 100%);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .error-code {
+            font-family: var(--font-heading);
+            font-size: 12rem;
+            font-weight: 700;
+            margin: 0;
+            line-height: 1;
+            background: linear-gradient(135deg, var(--accent-ruby), var(--accent-crimson));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            animation: glitch 2s infinite linear alternate-reverse;
+        }
+
+        @keyframes glitch {
+            0% {
+                transform: translate(0);
+                filter: hue-rotate(0deg);
+            }
+
+            20% {
+                transform: translate(-3px, 3px);
+            }
+
+            40% {
+                transform: translate(-3px, -3px);
+                filter: hue-rotate(45deg);
+            }
+
+            60% {
+                transform: translate(3px, 3px);
+            }
+
+            80% {
+                transform: translate(3px, -3px);
+                filter: hue-rotate(-45deg);
+            }
+
+            100% {
+                transform: translate(0);
+            }
+        }
+
+        .message {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 2rem 0 3rem;
+            font-weight: 300;
+        }
+
+        .btn-home {
+            padding: 1rem 2.5rem;
+            background: rgba(224, 17, 95, 0.1);
+            border: 1px solid var(--accent-ruby);
+            color: var(--accent-ruby);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-family: var(--font-heading);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-home:hover {
+            background: var(--accent-ruby);
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(224, 17, 95, 0.4);
+        }
+
+        footer {
+            position: absolute;
+            bottom: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .author-link {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .author-link:hover {
+            color: var(--accent-ruby);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Premium Splash Loader -->
+    <div id="skeleton-loader">
+        <div class="loader-content">
+            <div class="loader-ruby-wrapper">
+                <div class="loader-ruby-icon" id="splash-ruby-icon">
+                    <img src="assets/Ruby Logo.png" alt="Ruby Logo">
+                </div>
+                <div class="loader-progress-container">
+                    <div id="splash-progress-bar"></div>
+                </div>
+            </div>
+            <p class="loader-text pulse-text">Re-evaluating Ruby Logic...</p>
+        </div>
+        <footer class="splash-footer">
+            <p>Created by <a href="https://github.com/Amey-Thakur" class="author-link" target="_blank">Amey Thakur</a> &
+                <a href="https://github.com/msatmod" class="author-link" target="_blank">Mega Satish</a> • &copy; 2022
+            </p>
+        </footer>
+    </div>
+    <h2 style="font-family: var(--font-heading); font-size: 2.8rem; margin-top: 1rem; margin-bottom: 1.5rem;">Logic
+        Error!</h2>
+
+    <div class="message" style="margin-bottom: 2rem; line-height: 1.8; font-size: 1.15rem; opacity: 0.8;">
+        <p style="margin: 0.5rem 0;">You've hit an undefined route in the Ruby Challenge.</p>
+        <p style="margin: 0.5rem 0;">This object hasn't been instantiated yet.</p>
+        <p style="margin: 0.5rem 0;">Return to the main module to re-evaluate your scope.</p>
+    </div>
+
+    <a href="index.html" class="btn-home" style="margin-bottom: 3rem;">Evaluate Home Scope</a>
+
+    <footer>
+        <p>Created by <a href="https://github.com/Amey-Thakur" class="author-link" target="_blank">Amey Thakur</a> & <a
+                href="https://github.com/msatmod" class="author-link" target="_blank">Mega Satish</a> • &copy; 2022</p>
+    </footer>
+</body>
+
+</html>

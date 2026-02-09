@@ -1,3 +1,68 @@
+// Global Animation Function - Exposed immediately
+window.animateStatsCard = function () {
+    console.log("💎 Ruby Stats Animation Triggered");
+    const milestoneCount = document.getElementById('milestone-count');
+    const projectCount = document.getElementById('project-count');
+    const masteryCount = document.getElementById('mastery-count');
+    const iconElement = document.getElementById('stats-ruby-icon');
+
+    if (!milestoneCount || !masteryCount || !iconElement) {
+        console.error("Missing critical stats elements:", { milestoneCount, masteryCount, iconElement });
+        return;
+    }
+
+    // Check if we are already animating
+    if (window.isStatsAnimating) {
+        console.log("Animation already in progress, skipping.");
+        return;
+    }
+    window.isStatsAnimating = true;
+
+    // Reset values immediately for a clean replay
+    milestoneCount.innerText = '0';
+    if (projectCount) projectCount.innerText = '0';
+    masteryCount.innerText = '0%';
+    iconElement.style.left = '0%';
+
+    const targetMilestones = 30;
+    const targetProjects = 3;
+    const targetMastery = 100;
+    const duration = 2500;
+
+    // Release lock after animation
+    setTimeout(() => {
+        window.isStatsAnimating = false;
+        console.log("Animation lock released");
+    }, duration + 100);
+
+    function animateValue(obj, start, end, duration, suffix = '') {
+        let startTimestamp = null;
+        const step = (timestamp) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            const ease = 1 - Math.pow(1 - progress, 4); // Quartic Out for smoothness
+
+            const current = Math.floor(ease * (end - start) + start);
+            obj.innerText = current + suffix;
+
+            if (obj === milestoneCount) {
+                iconElement.style.left = (ease * (end / 30) * 100) + '%';
+            }
+
+            if (progress < 1) {
+                window.requestAnimationFrame(step);
+            }
+        };
+        window.requestAnimationFrame(step);
+    }
+
+    animateValue(milestoneCount, 0, targetMilestones, duration);
+    if (projectCount) {
+        animateValue(projectCount, 0, targetProjects, duration);
+    }
+    animateValue(masteryCount, 0, targetMastery, duration, '%');
+};
+
 document.addEventListener('DOMContentLoaded', () => {
     const splash = document.getElementById('skeleton-loader');
     const progressBar = document.getElementById('splash-progress-bar');
@@ -24,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 splash.style.opacity = '0';
                 setTimeout(() => {
                     splash.style.display = 'none';
-                    animateStatsCard(); // Trigger stats animation when home screen appears
+                    if (window.animateStatsCard) window.animateStatsCard(); // Trigger stats animation
                 }, 800);
             }, 600);
         }
@@ -33,59 +98,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Global Animation State
     window.isStatsAnimating = false;
 
-    window.animateStatsCard = function () {
-        const milestoneCount = document.getElementById('milestone-count');
-        const projectCount = document.getElementById('project-count');
-        const masteryCount = document.getElementById('mastery-count');
-        const iconElement = document.getElementById('stats-ruby-icon');
-
-        if (!milestoneCount || !masteryCount || !iconElement) return;
-
-        // Prevent overlap
-        if (window.isStatsAnimating) return;
-        window.isStatsAnimating = true;
-
-        // Reset values immediately for a clean replay
-        milestoneCount.innerText = '0';
-        if (projectCount) projectCount.innerText = '0';
-        masteryCount.innerText = '0%';
-        iconElement.style.left = '0%';
-
-        const targetMilestones = 30;
-        const targetProjects = 3;
-        const targetMastery = 100;
-        const duration = 2500;
-
-        // Release lock after animation
-        setTimeout(() => {
-            window.isStatsAnimating = false;
-        }, duration + 100);
-
-        function animateValue(obj, start, end, duration, suffix = '') {
-            let startTimestamp = null;
-            const step = (timestamp) => {
-                if (!startTimestamp) startTimestamp = timestamp;
-                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                const ease = 1 - Math.pow(1 - progress, 4); // Quartic Out for smoothness
-
-                const current = Math.floor(ease * (end - start) + start);
-                obj.innerHTML = current + suffix;
-
-                if (obj === milestoneCount) {
-                    iconElement.style.left = (ease * (end / 30) * 100) + '%';
-                }
-
-                if (progress < 1) {
-                    window.requestAnimationFrame(step);
-                }
-            };
-            window.requestAnimationFrame(step);
-        }
-
-        animateValue(milestoneCount, 0, targetMilestones, duration);
-        animateValue(projectCount, 0, targetProjects, duration);
-        animateValue(masteryCount, 0, targetMastery, duration, '%');
-    };
+    // Explicit Click Listener (Backup for inline onclick)
+    const statsIcon = document.getElementById('stats-ruby-icon');
+    if (statsIcon) {
+        statsIcon.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (window.animateStatsCard) window.animateStatsCard();
+        });
+    }
 
     // 2. Filter Logic
     filterBtns.forEach(btn => {
@@ -267,12 +287,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Theme Toggle (Simplified)
     const themeToggle = document.getElementById('theme-toggle');
-    themeToggle.onclick = () => {
-        const currentTheme = document.body.getAttribute('data-theme');
-        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-        document.body.setAttribute('data-theme', newTheme);
-        themeToggle.innerHTML = newTheme === 'light' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
-    };
+    if (themeToggle) {
+        themeToggle.onclick = () => {
+            const currentTheme = document.body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            document.body.setAttribute('data-theme', newTheme);
+            themeToggle.innerHTML = newTheme === 'light' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+        };
+    }
+
+    // Hero Share Button
+    const heroShareBtn = document.getElementById('share-btn');
+    if (heroShareBtn) {
+        heroShareBtn.onclick = async () => {
+            const shareData = {
+                title: 'Ruby Programming Challenge',
+                text: "Check out this Ruby mastery journey by Amey & Mega! 💎",
+                url: 'https://github.com/Amey-Thakur/RUBY'
+            };
+
+            if (navigator.share) {
+                try {
+                    await navigator.share(shareData);
+                } catch (err) {
+                    console.error('Error sharing:', err);
+                }
+            } else {
+                // Fallback
+                const shareText = `${shareData.text}\n\n${shareData.url}`;
+                navigator.clipboard.writeText(shareText).then(() => {
+                    alert('Project link copied to clipboard!');
+                }).catch(err => {
+                    console.error('Failed to copy text: ', err);
+                });
+            }
+        };
+    }
 
     // 8. Footer Cinematic Ruby
     const footerRuby = document.querySelector('.footer-branding img');

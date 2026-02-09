@@ -44,7 +44,7 @@
     </div>
 
     <div id="app">
-        <header class="hero">
+        <header class="hero reveal">
             <div class="glass-panel">
                 <div class="top-controls">
                     <button id="theme-toggle" class="control-btn" aria-label="Toggle Theme">
@@ -122,7 +122,7 @@
         </header>
 
         <main class="container">
-            <section id="projects" class="project-section">
+            <section id="projects" class="project-section reveal">
                 <h2 class="section-title">Ruby Projects</h2>
                 <div class="project-grid">
                     <div class="project-card glass-panel" data-link="https://github.com/Amey-Thakur/RAILSFRIENDS">
@@ -162,7 +162,7 @@
                 </div>
             </section>
 
-            <section id="curriculum" class="curriculum-section">
+            <section id="curriculum" class="curriculum-section reveal">
                 <h2 class="section-title">Curriculum Explorer</h2>
                 <div class="filter-bar">
                     <button class="filter-btn active" data-filter="all">All Modules</button>
@@ -206,58 +206,50 @@
             </div>
         </footer>
 
-        <button id="back-to-top" title="Back to Top">
-            <i class="fas fa-chevron-up"></i>
-        </button>
     </div>
 
     <!-- High-Fidelity Archive Explorer Modal -->
-    <div id="archive-modal" class="modal">
-        <div class="modal-content archive-explorer glass-panel">
-            <div class="archive-header">
+    <div id="archive-modal">
+        <div class="archive-explorer glass-panel">
+            <header class="archive-header">
                 <div class="archive-info">
-                    <h3 id="archive-title">Day X: Topic</h3>
-                    <p id="archive-path" class="breadcrumb">Source Code/Day X</p>
+                    <h3 id="archive-title">Day 0: Loading...</h3>
+                    <div class="breadcrumb">Ruby Challenge / <span id="archive-path">Source Code</span></div>
                 </div>
                 <div class="archive-controls">
-                    <button id="download-btn" class="icon-btn" title="Download Source">
-                        <i class="fas fa-download"></i>
-                    </button>
-                    <button id="github-link-btn" class="icon-btn" title="View on GitHub">
-                        <i class="fab fa-github"></i>
-                    </button>
-                    <button id="share-code-btn" class="icon-btn" title="Share Module">
-                        <i class="fas fa-share-alt"></i>
-                    </button>
-                    <button class="close-modal close-archive">&times;</button>
+                    <button id="download-btn" class="icon-btn" title="Download Source"><i class="fas fa-download"></i></button>
+                    <button id="github-link-btn" class="icon-btn" title="View on GitHub"><i class="fab fa-github"></i></button>
+                    <button id="share-code-btn" class="icon-btn" title="Share Module"><i class="fas fa-share-alt"></i></button>
+                    <i class="fas fa-times close-archive"></i>
                 </div>
-            </div>
-            
+            </header>
             <div class="archive-body">
-                <aside class="archive-sidebar">
-                    <div class="sidebar-label">MODULE FILES</div>
+                <aside class="file-sidebar">
+                    <div class="sidebar-header">
+                        <span>FILES</span>
+                        <span class="badge" id="file-count-badge">0</span>
+                    </div>
                     <ul id="file-list" class="file-list">
-                        <!-- Populated by JS -->
+                        <!-- Injected via JS -->
                     </ul>
                 </aside>
-                
-                <section class="archive-viewer">
-                    <div class="viewer-header">
-                        <span id="current-file-name">filename.rb</span>
+                <main class="code-viewer">
+                    <div class="code-header">
+                        <span id="current-file-name">script.rb</span>
+                        <span class="language-tag">RUBY</span>
                     </div>
-                    <div class="code-container">
-                        <pre class="line-numbers"><code id="archive-code-display" class="language-ruby"># Initializing Archive...</code></pre>
+                    <pre><code id="archive-code-display" class="language-ruby line-numbers"># Select a file to view source code...</code></pre>
+                    <div class="execution-hint">
+                        <i class="fas fa-terminal"></i>
+                        <code>ruby <span id="archive-execution-script">script</span>.rb</code>
                     </div>
-                </section>
-            </div>
-            
-            <div class="archive-footer">
-                <div class="execution-hint">
-                    <i class="fas fa-terminal"></i> <code>ruby <span id="archive-execution-script">script</span>.rb</code>
-                </div>
+                </main>
             </div>
         </div>
     </div>
+
+    <!-- Cinematic Easter Egg Overlay -->
+    <button id="back-to-top" class="back-to-top"><i class="fas fa-arrow-up"></i></button>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-ruby.min.js"></script>
@@ -270,7 +262,7 @@
             <img src="assets/Ruby Logo.png" class="ee-ruby-glow" alt="Ruby Logo">
             <h2 class="ee-title">The Sacred Ruby Discovered</h2>
             <div id="ee-message-box" class="ee-message"></div>
-            <p class="ee-close-hint">Press ESC to exit the archive</p>
+            <p class="ee-close-hint">Click anywhere or press ESC to exit</p>
         </div>
     </div>
 </body>

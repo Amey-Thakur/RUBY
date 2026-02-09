@@ -392,6 +392,8 @@ body {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    z-index: 100 !important;
+    /* Ensure clickability */
 }
 
 .stats-ruby-icon img {
@@ -399,6 +401,28 @@ body {
     height: 28px;
     filter: drop-shadow(0 0 8px rgba(224, 17, 95, 0.6));
     transition: all 0.3s ease;
+}
+
+/* Custom Tooltip */
+.stats-ruby-icon::after {
+    content: "Click to Replay Analysis";
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.stats-ruby-icon:hover::after {
+    opacity: 1;
 }
 
 .stats-ruby-icon:hover img {
