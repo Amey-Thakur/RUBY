@@ -17,6 +17,14 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+
+      - name: Run Ruby Build System
+        run: ruby web/build.rb
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
