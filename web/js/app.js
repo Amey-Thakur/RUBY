@@ -252,7 +252,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (archiveExecutionScript) {
             if (filename.endsWith('.rb')) {
                 archiveExecutionScript.parentElement.style.display = 'flex';
-                archiveExecutionScript.innerText = filename.replace('.rb', '');
+                // USER REQUEST: Perfect spacing for "ruby filename"
+                archiveExecutionScript.innerHTML = `&nbsp;${filename.replace('.rb', '')}`;
             } else {
                 archiveExecutionScript.parentElement.style.display = 'none';
             }
@@ -262,11 +263,12 @@ document.addEventListener('DOMContentLoaded', () => {
         // The build script now syncs "Source Code" to "web/source"
         // Since app.js is in "web/js", we go up one and into "source"
         const relativePath = activeDayFolder.replace('Source Code/', '');
+        const encodedRelativePath = relativePath.split('/').map(encodeURIComponent).join('/');
         const encodedFilename = encodeURIComponent(filename);
-        const fetchUrl = `source/${encodeURIComponent(relativePath)}/${encodedFilename}`;
+        const fetchUrl = `source/${encodedRelativePath}/${encodedFilename}?v=${new Date().getTime()}`;
 
-        // GitHub URL (spaces encoded)
-        const githubUrl = `https://github.com/Amey-Thakur/RUBY/blob/main/${encodedPath}`;
+        // GitHub URL (spaces encoded) - Case-Sensitive fix
+        const githubUrl = `https://github.com/Amey-Thakur/RUBY/blob/main/Source%20Code/${encodedRelativePath}/${encodedFilename}`;
 
         try {
             const response = await fetch(fetchUrl);
