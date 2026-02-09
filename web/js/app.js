@@ -15,15 +15,14 @@ document.addEventListener('DOMContentLoaded', () => {
     let progress = 0;
     const interval = setInterval(() => {
         progress += Math.random() * 30;
-        if (progress > 100) progress = 100;
-        progressBar.style.width = `${progress}%`;
-
-        if (progress === 100) {
+        if (progress >= 100) {
+            progress = 100;
+            progressBar.style.width = '100%';
             clearInterval(interval);
             setTimeout(() => {
                 splash.style.opacity = '0';
                 setTimeout(() => splash.style.display = 'none', 800);
-            }, 500);
+            }, 600);
         }
     }, 200);
 
@@ -89,8 +88,8 @@ document.addEventListener('DOMContentLoaded', () => {
     closeModal.onclick = () => modal.style.display = 'none';
     window.onclick = (e) => { if (e.target === modal) modal.style.display = 'none'; };
 
-    // Initial Render
-    renderGrid();
+    // Initial Render - Handled by Ruby ERB Template
+    // renderGrid();
 
     // Theme Toggle (Simplified)
     const themeToggle = document.getElementById('theme-toggle');

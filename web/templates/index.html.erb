@@ -167,7 +167,7 @@
                     <% CURRICULUM_DATA.each do |item| %>
                     <div class="day-card glass-panel" 
                          data-category="<%= item[:category] %>"
-                         onclick="openCodeViewer({day: <%= item[:day] %>, topic: '<%= item[:topic] %>, file: '<%= item[:file] %>'})">
+                         onclick="openCodeViewer({day: <%= item[:day] %>, topic: '<%= item[:topic] %>', file: '<%= item[:file] %>'})">
                         <div class="day-number">Day <%= item[:day] %></div>
                         <div class="day-title"><%= item[:topic] %></div>
                         <div class="day-footer">
