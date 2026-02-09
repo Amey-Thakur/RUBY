@@ -309,4 +309,30 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.classList.remove('easter-egg-active');
         }
     });
+
+    // 10. Scroll Interactions & Back to Top
+    const revealElements = document.querySelectorAll('.reveal');
+    const backToTopBtn = document.getElementById('back-to-top');
+
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTopBtn.classList.add('visible');
+        } else {
+            backToTopBtn.classList.remove('visible');
+        }
+    });
+
+    backToTopBtn.onclick = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
 });
