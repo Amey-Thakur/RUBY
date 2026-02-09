@@ -59,6 +59,16 @@
     box-shadow: 0 0 15px rgba(204, 0, 0, 0.4);
 }
 
+/* Light Mode Scrollbar Overrides */
+[data-theme="light"] ::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #ff1a75 0%, #cc0000 100%);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
 body {
     background-color: var(--bg-color);
     background-image: radial-gradient(circle at 50% -20%, var(--panel-bg) 0%, var(--bg-color) 100%);
@@ -790,6 +800,10 @@ body {
     overflow-y: auto;
 }
 
+[data-theme="light"] .file-sidebar {
+    background: #f8f8f8;
+}
+
 .sidebar-header {
     display: flex;
     justify-content: space-between;
@@ -839,6 +853,11 @@ body {
     margin-top: 8px;
 }
 
+[data-theme="light"] .folder-label {
+    background: rgba(204, 0, 0, 0.05);
+    color: #880000;
+}
+
 .folder-label i {
     font-size: 0.8rem;
 }
@@ -881,12 +900,20 @@ body {
     /* Removed translateX to save space */
 }
 
+[data-theme="light"] .file-item:hover {
+    background: rgba(0, 0, 0, 0.04);
+}
+
 .file-item.active {
     background: linear-gradient(90deg, rgba(204, 0, 0, 0.15) 0%, rgba(204, 0, 0, 0.05) 100%);
     color: var(--accent-ruby);
     font-weight: 700;
     border-left: 4px solid var(--accent-ruby);
     box-shadow: inset 0 0 15px rgba(204, 0, 0, 0.05);
+}
+
+[data-theme="light"] .file-item.active {
+    background: linear-gradient(90deg, rgba(204, 0, 0, 0.08) 0%, rgba(204, 0, 0, 0.02) 100%);
 }
 
 @keyframes activePulse {
