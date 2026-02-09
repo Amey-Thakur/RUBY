@@ -137,9 +137,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const copyBtn = document.getElementById('copy-code-btn');
     if (copyBtn) {
         copyBtn.onclick = () => {
-            const codeToCopy = archiveCodeDisplay.textContent;
-            navigator.clipboard.writeText(codeToCopy).then(() => {
-                alert('Source code copied to clipboard!');
+            const codeContent = archiveCodeDisplay.textContent;
+            const header = `# ==========================================\n` +
+                `# 💎 Ruby Programming Challenge\n` +
+                `# File:    ${filename}\n` +
+                `# Authors: Amey Thakur & Mega Satish\n` +
+                `# Repo:    https://github.com/Amey-Thakur/RUBY\n` +
+                `# \n` +
+                `# Profiles:\n` +
+                `# - https://github.com/Amey-Thakur\n` +
+                `# - https://github.com/msatmod\n` +
+                `# ==========================================\n\n`;
+
+            const fullText = header + codeContent;
+
+            navigator.clipboard.writeText(fullText).then(() => {
+                alert('Source code with authorship copied!');
             }).catch(err => {
                 console.error('Copy failed:', err);
                 alert('Failed to copy code.');
