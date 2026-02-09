@@ -1,37 +1,65 @@
-# Bundler
+# RUBY - Academic Repository
+# Specialized .gitignore for Ruby/Rails development and scholarly archiving
+
+# --- OS-generated files ---
+[Tt]humbs.db
+[Dd]esktop.ini
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# --- Editor and IDE configuration ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.iml
+*.code-workspace
+
+# --- Bundler ---
 /.bundle/
 /vendor/bundle/
 /lib/bundler/man/
 
-# Rails
+# --- Rails ---
 /log/*
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+
+# Database
 /db/*.sqlite3
 /db/*.sqlite3-journal
+/db/*.sqlite3-setup
+/db/schema.rb # Usually kept, but sometimes ignored in small learning repos. We'll keep it.
+
+# Assets and Storage
 /public/system
 /public/assets
 /public/packs
 /public/packs-test
 /node_modules
 /yarn-error.log
+/storage/*
+!/storage/.keep
 
-# Key configuration
+# --- Key configuration ---
 /config/master.key
 /config/credentials.yml.enc
 
-# IDEs and Editors
-.idea/
-.vscode/
-*.swp
-*.swo
-.DS_Store
-
-# Documentation
+# --- Documentation and Testing ---
 /doc/
 /coverage/
+.rspec
 
-# OS Files
-Thumbs.db
-Desktop.ini
+# --- Archives and Temps ---
+*.tmp
+*.bak
+*.sav
+*.old
+~*
+*.zip
+*.tar.gz
+*.rar
+*.7z

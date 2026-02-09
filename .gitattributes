@@ -1,26 +1,29 @@
-# Standardized Git Attributes for Scholarly Archiving
+# RUBY - Academic Repository
+# Professional .gitattributes for scholarly archiving
 
-# Handle line endings automatically for files detected as text
-# and perform LF normalization on checkin.
+# Set default behavior to automatically normalize line endings
 * text=auto eol=lf
 
 # Explicitly mark source files as text
-*.rb text
-*.erb text
-*.html text
-*.css text
-*.scss text
-*.js text
-*.json text
-*.yml text
-*.yaml text
-*.md text
-*.rake text
-Gemfile text
-Rakefile text
+*.rb text eol=lf
+*.erb text eol=lf
+*.html text eol=lf
+*.css text eol=lf
+*.scss text eol=lf
+*.js text eol=lf
+*.json text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.md text eol=lf
+*.rake text eol=lf
+Gemfile text eol=lf
+Rakefile text eol=lf
+.gitattributes text eol=lf
+.gitignore text eol=lf
 
 # Mark binary files
 *.jpg binary
+*.jpeg binary
 *.png binary
 *.gif binary
 *.ico binary
@@ -30,5 +33,7 @@ Rakefile text
 *.woff binary
 *.woff2 binary
 
-# Academic/Scholarly classification
+# Improve diff handling and scholarly classification
+*.md text diff=markdown
+*.rb text diff=ruby
 *.md linguist-documentation
