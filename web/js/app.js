@@ -287,4 +287,14 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log("%c💎 Mastery Acknowledged %c- Signature: Amey & Mega", "color: #ff1a75; font-weight: bold;", "color: #888;");
         };
     }
+
+    // 9. Universal Closure (Click Outside)
+    window.onclick = (event) => {
+        if (event.target === archiveModal) {
+            archiveModal.style.display = 'none';
+        }
+        if (event.target === eeOverlay) {
+            document.body.classList.remove('easter-egg-active');
+        }
+    };
 });

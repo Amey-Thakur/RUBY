@@ -716,7 +716,18 @@ body {
 
 .footer-branding img {
     transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    filter: grayscale(0.5);
+    border: 2px solid rgba(204, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 3px;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 15px rgba(204, 0, 0, 0.1);
+}
+
+.footer-branding img:hover {
+    transform: scale(1.3) rotate(15deg);
+    border-color: var(--accent-ruby);
+    box-shadow: 0 0 20px var(--accent-ruby);
+    background: rgba(204, 0, 0, 0.1);
 }
 
 .footer-branding img:hover {
@@ -732,17 +743,21 @@ body {
 .modal {
     display: none;
     position: fixed;
-    top: 0;
+    z-index: 2000;
     left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.85);
+    background-color: rgba(0, 0, 0, 0.85);
+    /* Darker backdrop */
     backdrop-filter: blur(8px);
-    z-index: 1000;
-    padding: 2rem;
+    cursor: pointer;
+    /* Hint that click-to-close works */
 }
 
+/* Ensure modal content resets cursor to prevent confusion */
 .modal-content {
+    cursor: default;
     max-width: 1000px;
     margin: 0 auto;
     height: 100%;
@@ -903,16 +918,19 @@ body {
 
 /* Cinematic Easter Egg Overlay */
 #easter-egg-overlay {
-    display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.95);
-    z-index: 20000;
-    align-items: center;
+    background: radial-gradient(circle at center, rgba(30, 0, 10, 0.98), #000);
+    z-index: 3000;
+    display: none;
     justify-content: center;
+    align-items: center;
+    color: #fff;
+    cursor: pointer;
+    /* Hint that click-to-close works */
     opacity: 0;
     transition: opacity 1s ease;
     backdrop-filter: blur(20px);
