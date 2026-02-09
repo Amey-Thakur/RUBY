@@ -973,6 +973,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    cursor: pointer;
+    /* Signify click anywhere to exit */
 }
 
 .ee-title {

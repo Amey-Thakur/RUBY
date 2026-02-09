@@ -280,7 +280,8 @@ document.addEventListener('DOMContentLoaded', () => {
         footerRuby.style.cursor = 'pointer';
         footerRuby.onclick = () => {
             const signature = "A collaborative masterpiece by Amey & Mega.";
-            eeMessageBox.innerText = `The Archive has been acknowledged.\n\n${signature} 🥂💎`;
+            const hints = "\n\nSeek the Architect (4), the Pioneer (4), and the Titans (8). Pure sequences of mastery await.";
+            eeMessageBox.innerText = `The Archive has been acknowledged.\n\n${signature}${hints} 🥂💎`;
             document.body.classList.add('easter-egg-active');
 
             // Special Console Log
@@ -288,13 +289,17 @@ document.addEventListener('DOMContentLoaded', () => {
         };
     }
 
-    // 9. Universal Closure (Click Outside)
+    // 9. Universal Closure (Click & Key)
     window.addEventListener('click', (event) => {
+        // Exit Archive Modal if clicking backdrop
         if (event.target === archiveModal) {
             archiveModal.style.display = 'none';
         }
-        if (event.target === eeOverlay) {
-            document.body.classList.remove('easter-egg-active');
+        // Exit Easter Egg if clicking ANYWHERE (Overlay itself or children)
+        if (eeOverlay.classList.contains('active') || document.body.classList.contains('easter-egg-active')) {
+            if (eeOverlay.contains(event.target)) {
+                document.body.classList.remove('easter-egg-active');
+            }
         }
     });
 
