@@ -273,7 +273,7 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             const response = await fetch(fetchUrl);
             if (!response.ok) throw new Error(`HTTP ${response.status}`);
-            const code = await response.text();
+            const code = (await response.text()).trim();
 
             archiveCodeDisplay.textContent = code;
             if (window.Prism) Prism.highlightElement(archiveCodeDisplay);
