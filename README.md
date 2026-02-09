@@ -284,6 +284,9 @@ Reference these artifacts as a verifiable case study in self-paced technical edu
 
 This repository and all its creative and technical assets are made available under the **MIT License**. See the [LICENSE](LICENSE) file for complete terms.
 
+> [!NOTE]
+> **Summary**: You are free to share and adapt this content for any purpose, even commercially, as long as you provide appropriate attribution to the original authors.
+
 Copyright © 2022 Amey Thakur & Mega Satish
 
 ---
