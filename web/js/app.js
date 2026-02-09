@@ -148,6 +148,60 @@ document.addEventListener('DOMContentLoaded', () => {
     closeModal.onclick = () => modal.style.display = 'none';
     window.onclick = (e) => { if (e.target === modal) modal.style.display = 'none'; };
 
+    // 6. Institutional Security Features
+    document.addEventListener('contextmenu', e => e.preventDefault());
+    document.addEventListener('dragstart', e => e.preventDefault());
+
+    document.addEventListener('keydown', e => {
+        // Disable DevTools & Save shortcuts
+        if (
+            e.key === 'F12' ||
+            (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) ||
+            (e.ctrlKey && (e.key === 'u' || e.key === 's' || e.key === 'p'))
+        ) {
+            e.preventDefault();
+        }
+    });
+
+    // 7. Cinematic Easter Egg System
+    let typedBuffer = "";
+    const eeOverlay = document.getElementById('easter-egg-overlay');
+    const eeMessageBox = document.getElementById('ee-message-box');
+
+    const secretMessages = {
+        'amey': "Welcome to the core logic, Amey. Your technical discipline and architectural vision have brought this Ruby challenge to its high-fidelity conclusion. The archive is ready.",
+        'mega': "Access Granted, Mega. Your ability to synthesize complex concepts and drive progress through collaboration is the heartbeat of this project. Intellectual agility at its peak.",
+        'ameymega': "Synchronization Complete. A testament to the power of collaborative engineering and mutual dedication. The Amey-Mega partnership has defined a new standard for Ruby mastery."
+    };
+
+    document.addEventListener('keyup', (e) => {
+        if (e.key === 'Escape') {
+            document.body.classList.remove('easter-egg-active');
+            typedBuffer = "";
+            return;
+        }
+
+        typedBuffer += e.key.toLowerCase();
+        if (typedBuffer.length > 10) typedBuffer = typedBuffer.substring(typedBuffer.length - 10);
+
+        for (const key in secretMessages) {
+            if (typedBuffer.endsWith(key)) {
+                eeMessageBox.innerText = secretMessages[key];
+                document.body.classList.add('easter-egg-active');
+                typedBuffer = "";
+                break;
+            }
+        }
+    });
+
+    // Personalized Console Signature
+    console.log(
+        "%c💎 RUBY PROGRAMMING CHALLENGE %c\n\nAuthorship: Amey Thakur & Mega Satish\nProject Scope: Full-Stack Ruby Engineering\n\n%c\"A disciplined pursuit of technical excellence.\"",
+        "color: #CC0000; font-size: 24px; font-weight: bold; text-shadow: 2px 2px 0px rgba(0,0,0,0.2);",
+        "color: #a0a0a0; font-size: 16px;",
+        "color: #ffffff; font-style: italic; font-size: 14px; background: #990000; padding: 2px 8px; border-radius: 4px;"
+    );
+
     // Initial Render - Handled by Ruby ERB Template
     // renderGrid();
 
