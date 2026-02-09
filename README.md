@@ -187,7 +187,27 @@ RUBY/
 │
 ├── Source Code/                     # Primary Engineering Layer
 │   ├── Day 1/                       # Variables & Input
+│   ├── Day 2/                       # Methods & Conditionals
+│   ├── Day 3/                       # Classes & Objects
+│   ├── Day 4/                       # Getters & Setters
+│   ├── Day 5/                       # Class Variables & Self
+│   ├── Day 6/                       # Loops
+│   ├── Day 7/                       # Control Flow (Break/Next/Redo)
+│   ├── Day 8/                       # Blocks & Yield
+│   ├── Day 9/                       # Modules
+│   ├── Day 10/                      # Requirements & Inclusion
+│   ├── Day 11/                      # Array Fundamentals
+│   ├── Day 12/                      # 2D Arrays
+│   ├── Day 13/                      # Hashes
+│   ├── Day 14/                      # Logic & Menu Class
+│   ├── Day 15/                      # Inheritance
+│   ├── Day 16/                      # Operator Overloading
+│   ├── Day 17/                      # Object Freezing
+│   ├── Day 18/                      # Procs & Lambdas
+│   ├── Day 19/                      # Functional Scoping
+│   ├── Day 20/                      # Date & Time
 │   ├── Day 21/                      # TicTacToe Game
+│   ├── Day 22/                      # Hangman Game
 │   └── Day 23-30/                   # RailsFriends App (Full-Stack)
 │
 ├── CITATION.cff                     # Project Citation Manifest
