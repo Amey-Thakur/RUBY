@@ -823,6 +823,33 @@ body {
     gap: 8px;
 }
 
+.folder-label {
+    padding: 12px 8px 4px 8px;
+    font-size: 0.72rem;
+    color: var(--accent-ruby);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    opacity: 0.9;
+    background: rgba(224, 17, 95, 0.05);
+    border-radius: 4px;
+    margin-top: 8px;
+}
+
+.folder-label i {
+    font-size: 0.8rem;
+}
+
+.file-item.nested {
+    margin-left: 12px;
+    width: calc(100% - 12px);
+    border-left: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 0 10px 10px 0;
+}
+
 .file-item {
     padding: 10px 12px;
     border-radius: 10px;

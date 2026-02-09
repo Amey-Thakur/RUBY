@@ -213,15 +213,51 @@ document.addEventListener('DOMContentLoaded', () => {
             archivePath.innerText = activeDayFolder;
             if (fileCountBadge) fileCountBadge.innerText = activeDayFiles.length;
 
-            // Populate Sidebar
+            // Populate Sidebar with Folder Support
             fileList.innerHTML = '';
-            activeDayFiles.forEach((file, index) => {
+
+            // Group files by folder
+            const folders = {};
+            const rootFiles = [];
+
+            activeDayFiles.forEach(file => {
+                const parts = file.split('/');
+                if (parts.length > 1) {
+                    const folderName = parts[0];
+                    const fileName = parts.slice(1).join('/');
+                    if (!folders[folderName]) folders[folderName] = [];
+                    folders[folderName].push(file); // Keep full path for loading
+                } else {
+                    rootFiles.push(file);
+                }
+            });
+
+            // Helper to create file item
+            const createFileItem = (fullPath, isNested = false) => {
                 const li = document.createElement('li');
-                li.className = `file-item ${index === 0 ? 'active' : ''}`;
-                const icon = file.endsWith('.rb') ? 'fab fa-ruby' : 'fas fa-file-alt';
-                li.innerHTML = `<i class="${icon}"></i> <span>${file}</span>`;
-                li.onclick = () => loadArchiveFile(file, li);
-                fileList.appendChild(li);
+                const displayName = fullPath.split('/').pop();
+                li.className = `file-item ${isNested ? 'nested' : ''}`;
+                const icon = fullPath.endsWith('.rb') ? 'fab fa-ruby' : 'fas fa-file-alt';
+                li.innerHTML = `<i class="${icon}"></i> <span>${displayName}</span>`;
+                li.onclick = () => loadArchiveFile(fullPath, li);
+                return li;
+            };
+
+            // Render Root Files
+            rootFiles.forEach(file => {
+                fileList.appendChild(createFileItem(file));
+            });
+
+            // Render Folders
+            Object.keys(folders).sort().forEach(folderName => {
+                const label = document.createElement('div');
+                label.className = 'folder-label';
+                label.innerHTML = `<i class="fas fa-folder-open"></i> ${folderName}`;
+                fileList.appendChild(label);
+
+                folders[folderName].forEach(file => {
+                    fileList.appendChild(createFileItem(file, true));
+                });
             });
 
             archiveModal.style.display = 'flex';
@@ -278,15 +314,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const fullPath = `${activeDayFolder}/${filename}`;
-        // The build script now syncs "Source Code" to "web/source"
-        // Since app.js is in "web/js", we go up one and into "source"
+
+        // Handle nested paths correctly for the fetch URL
         const relativePath = activeDayFolder.replace('Source Code/', '');
         const encodedRelativePath = relativePath.split('/').map(encodeURIComponent).join('/');
-        const encodedFilename = encodeURIComponent(filename);
-        const fetchUrl = `source/${encodedRelativePath}/${encodedFilename}?v=${new Date().getTime()}`;
+
+        // Split filename (which might be "folder/file.rb") and encode segments
+        const filenameSegments = filename.split('/').map(encodeURIComponent).join('/');
+        const fetchUrl = `source/${encodedRelativePath}/${filenameSegments}?v=${new Date().getTime()}`;
 
         // GitHub URL (spaces encoded) - Case-Sensitive fix
-        const githubUrl = `https://github.com/Amey-Thakur/RUBY/blob/main/Source%20Code/${encodedRelativePath}/${encodedFilename}`;
+        // We also split the nested filename segments for the GitHub URL
+        const githubUrl = `https://github.com/Amey-Thakur/RUBY/blob/main/Source%20Code/${encodedRelativePath}/${filenameSegments}`;
 
         try {
             const response = await fetch(fetchUrl);

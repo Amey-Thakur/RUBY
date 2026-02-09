@@ -24,10 +24,13 @@ def build_website
       # Handle special Day ranges like 23-30
       day_folder = "Source Code/Day 23-30" if day_info[:day] >= 23
       
-      # Collect all .rb and .md files in that directory
+      # Collect all .rb and .md files recursively in that directory
       files = []
       if Dir.exist?(day_folder)
-        files = Dir.children(day_folder).select { |f| f.end_with?('.rb', '.md') }
+        # Use glob to find all nested .rb and .md files
+        all_files = Dir.glob(File.join(day_folder, '**', '*.{rb,md}'))
+        # Store paths relative to the day folder
+        files = all_files.map { |f| f.sub("#{day_folder}/", "") }
       end
       
       day_info.merge(files: files, folder_path: day_folder)
