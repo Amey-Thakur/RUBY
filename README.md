@@ -8,6 +8,8 @@
   [![Technology](https://img.shields.io/badge/Technology-Ruby%20%7C%20Ruby%20on%20Rails-CC0000)](https://github.com/Amey-Thakur/RUBY)
   [![Developed by Amey Thakur and Mega Satish](https://img.shields.io/badge/Developed%20by-Amey%20Thakur%20%26%20Mega%20Satish-blue.svg)](https://github.com/Amey-Thakur/RUBY)
 
+  **[View Interactive Portfolio](https://Amey-Thakur.github.io/RUBY/)**
+
   A disciplined 30-day collaborative challenge undertaken to master Ruby programming and Ruby on Rails development, featuring a structured curriculum from basic syntax to full-stack web engineering and cloud deployment.
 
   **[Curriculum](#features)** &nbsp;·&nbsp; **[RailsFriends](https://github.com/Amey-Thakur/RAILSFRIENDS)** &nbsp;·&nbsp; **[TicTacToe](https://github.com/Amey-Thakur/TIC-TAC-TOE-IN-RUBY)** &nbsp;·&nbsp; **[Hangman](https://github.com/Amey-Thakur/HANGMAN-IN-RUBY)**
