@@ -1,0 +1,40 @@
+{
+    "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+    "@type": "SoftwareSourceCode",
+    "name": "RUBY",
+    "version": "1.0.0",
+    "description": "A comprehensive collection of Ruby scripts and Ruby on Rails projects, covering foundational concepts, games, and full-stack web development through a 30-day challenge.",
+    "identifier": "RUBY",
+    "license": "https://spdx.org/licenses/MIT.html",
+    "programmingLanguage": [
+        "Ruby",
+        "Ruby on Rails"
+    ],
+    "author": [
+        {
+            "@type": "Person",
+            "givenName": "Amey",
+            "familyName": "Thakur",
+            "id": "https://orcid.org/0000-0001-5644-1575"
+        },
+        {
+            "@type": "Person",
+            "givenName": "Mega",
+            "familyName": "Satish",
+            "id": "https://orcid.org/0000-0002-1844-9557"
+        }
+    ],
+    "dateReleased": "2022-05-21",
+    "codeRepository": "https://github.com/Amey-Thakur/RUBY",
+    "developmentStatus": "complete",
+    "applicationCategory": "Education / Tools",
+    "keywords": [
+        "Ruby",
+        "Ruby on Rails",
+        "Programming",
+        "Scripts",
+        "Web Development",
+        "Challenge",
+        "Algorithms"
+    ]
+}
