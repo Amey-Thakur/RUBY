@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 7. Cinematic Easter Egg System
     let typedBuffer = "";
-    const eeOverlay = document.getElementById('easter-egg-overlay');
+    let eeTimeout;
     const eeMessageBox = document.getElementById('ee-message-box');
 
     const secretMessages = {
@@ -181,17 +181,25 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        typedBuffer += e.key.toLowerCase();
-        if (typedBuffer.length > 10) typedBuffer = typedBuffer.substring(typedBuffer.length - 10);
+        // Ignore metadata keys (Shift, Ctrl, etc)
+        if (e.key.length > 1) return;
 
-        for (const key in secretMessages) {
-            if (typedBuffer.endsWith(key)) {
-                eeMessageBox.innerText = secretMessages[key];
-                document.body.classList.add('easter-egg-active');
-                typedBuffer = "";
-                break;
+        typedBuffer += e.key.toLowerCase();
+        if (typedBuffer.length > 20) typedBuffer = typedBuffer.substring(typedBuffer.length - 20);
+
+        // Debounce to allow full word completion (avoids 'amey' triggering before 'ameymega')
+        clearTimeout(eeTimeout);
+        eeTimeout = setTimeout(() => {
+            const sortedKeys = Object.keys(secretMessages).sort((a, b) => b.length - a.length);
+            for (const key of sortedKeys) {
+                if (typedBuffer.endsWith(key)) {
+                    eeMessageBox.innerText = secretMessages[key];
+                    document.body.classList.add('easter-egg-active');
+                    typedBuffer = "";
+                    break;
+                }
             }
-        }
+        }, 400);
     });
 
     // Personalized Console Signature
