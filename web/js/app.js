@@ -133,14 +133,39 @@ document.addEventListener('DOMContentLoaded', () => {
     const archivePath = document.getElementById('archive-path');
     const downloadBtn = document.getElementById('download-btn');
     const githubBtn = document.getElementById('github-link-btn');
+    const archiveExecutionScript = document.getElementById('archive-execution-script');
+
+    // Toast Notification Helper
+    function showToast(message) {
+        let toast = document.querySelector('.toast-notification');
+        if (!toast) {
+            toast = document.createElement('div');
+            toast.className = 'toast-notification';
+            document.body.appendChild(toast);
+        }
+        toast.innerHTML = `<i class="fas fa-check-circle"></i> <span>${message}</span>`;
+
+        // Trigger reflow
+        void toast.offsetWidth;
+
+        toast.classList.add('show');
+
+        setTimeout(() => {
+            toast.classList.remove('show');
+        }, 3000);
+    }
+
     // 3. Copy Code Button
     const copyBtn = document.getElementById('copy-code-btn');
     if (copyBtn) {
         copyBtn.onclick = () => {
             const codeContent = archiveCodeDisplay.textContent;
+            // Use currentFileName.innerText as filename is not in this scope
+            const currentFile = currentFileName.innerText || 'script.rb';
+
             const header = `# ==========================================\n` +
                 `# 💎 Ruby Programming Challenge\n` +
-                `# File:    ${filename}\n` +
+                `# File:    ${currentFile}\n` +
                 `# Authors: Amey Thakur & Mega Satish\n` +
                 `# Repo:    https://github.com/Amey-Thakur/RUBY\n` +
                 `# \n` +
@@ -152,14 +177,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const fullText = header + codeContent;
 
             navigator.clipboard.writeText(fullText).then(() => {
-                alert('Source code with authorship copied!');
+                showToast('Code copied to clipboard!');
             }).catch(err => {
                 console.error('Copy failed:', err);
                 alert('Failed to copy code.');
             });
         };
     }
-    const archiveExecutionScript = document.getElementById('archive-execution-script');
 
     let activeDayFiles = [];
     let activeDayFolder = "";
