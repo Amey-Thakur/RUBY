@@ -1,5 +1,6 @@
 require 'erb'
 require 'json'
+require 'fileutils'
 require_relative 'data'
 
 # The Build Script: Translating Art into Interaction
@@ -42,6 +43,13 @@ def build_website
     File.write(output_path, html_content)
     puts "✅ Production artifact saved to: #{output_path}"
   end
+
+  # NEW: Copy Source Code to web/source for GitHub Pages accessibility
+  puts "📂 Synchronizing Source Code to production directory..."
+  source_dest = 'web/source'
+  FileUtils.mkdir_p(source_dest)
+  FileUtils.cp_r('Source Code/.', source_dest)
+  puts "✅ Source Code synchronized to: #{source_dest}"
   
   puts "🎊 Build Process Complete!"
 end

@@ -747,13 +747,15 @@ body {
     color: var(--accent-ruby);
 }
 
+/* Main Archive Explorer Structure */
 .archive-body {
     flex-grow: 1;
     display: flex;
     overflow: hidden;
+    position: relative;
 }
 
-.archive-sidebar {
+.file-sidebar {
     width: 250px;
     border-right: 1px solid var(--border-color);
     padding: 1.5rem;
@@ -762,63 +764,55 @@ body {
     overflow-y: auto;
 }
 
-.sidebar-label {
-    font-size: 0.7rem;
-    letter-spacing: 2px;
-    color: var(--text-secondary);
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-    font-weight: 700;
-}
-
-.file-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    padding: 0;
-}
-
-.file-item {
-    padding: 0.75rem 1rem;
-    border-radius: 10px;
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    cursor: pointer;
-    transition: all 0.2s ease;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-}
-
-.file-item i {
-    font-size: 1rem;
-}
-
-.file-item:hover {
-    background: rgba(255, 255, 255, 0.05);
-    color: var(--text-primary);
-}
-
-.file-item.active {
-    background: rgba(204, 0, 0, 0.1);
-    color: var(--accent-ruby);
-    font-weight: 700;
-    border-left: 3px solid var(--accent-ruby);
-}
-
-.archive-viewer {
+.code-viewer {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     background: #0d0d0d;
-    overflow: hidden;
+    position: relative;
+    /* For absolute positioning of hint */
     min-width: 0;
-    /* Important for flex child text-overflow */
 }
 
-.viewer-header {
+.code-header {
+    background: rgba(255, 255, 255, 0.02);
     padding: 0.75rem 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#archive-code-display {
+    padding: 1.5rem;
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    height: 100%;
+    overflow-y: auto;
+    /* USER REQUEST: Make code selectable */
+    user-select: text !important;
+    -webkit-user-select: text !important;
+    cursor: text;
+}
+
+.execution-hint {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(15, 15, 15, 0.9);
+    border: 1px solid var(--border-color);
+    padding: 8px 16px;
+    border-radius: 8px;
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    backdrop-filter: blur(5px);
+    pointer-events: none;
+    z-index: 10;
 }
 
 /* Mobile Responsiveness for Archive Explorer */
@@ -906,106 +900,6 @@ body {
     }
 }
 
-.archive-controls {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-}
-
-.icon-btn {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid var(--border-color);
-    color: var(--text-secondary);
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-}
-
-.icon-btn:hover {
-    background: var(--accent-ruby);
-    color: white;
-    transform: translateY(-2px);
-}
-
-.close-archive {
-    font-size: 2.5rem;
-    margin-left: 1rem;
-}
-
-.archive-body {
-    flex-grow: 1;
-    display: flex;
-    overflow: hidden;
-}
-
-.archive-sidebar {
-    width: 250px;
-    border-right: 1px solid var(--border-color);
-    padding: 1.5rem;
-    background: rgba(0, 0, 0, 0.1);
-}
-
-.sidebar-label {
-    font-size: 0.7rem;
-    letter-spacing: 2px;
-    color: var(--text-secondary);
-    margin-bottom: 1rem;
-}
-
-.file-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.file-item {
-    padding: 0.75rem 1rem;
-    border-radius: 10px;
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    cursor: pointer;
-    transition: all 0.2s ease;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-}
-
-.file-item i {
-    font-size: 1rem;
-}
-
-.file-item:hover {
-    background: rgba(255, 255, 255, 0.05);
-    color: var(--text-primary);
-}
-
-.file-item.active {
-    background: rgba(204, 0, 0, 0.1);
-    color: var(--accent-ruby);
-    font-weight: 700;
-}
-
-.archive-viewer {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    background: #0d0d0d;
-}
-
-.viewer-header {
-    padding: 0.75rem 1.5rem;
-    background: rgba(255, 255, 255, 0.02);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    font-family: var(--font-mono);
-    font-size: 0.85rem;
-    color: var(--accent-ruby);
-}
 
 .code-container {
     flex-grow: 1;

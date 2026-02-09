@@ -134,6 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const downloadBtn = document.getElementById('download-btn');
     const githubBtn = document.getElementById('github-link-btn');
     const archiveExecutionScript = document.getElementById('archive-execution-script');
+    const fileCountBadge = document.getElementById('file-count-badge');
 
     // Toast Notification Helper
     function showToast(message) {
@@ -206,6 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             archiveTitle.innerText = `Day ${day}: ${topic}`;
             archivePath.innerText = activeDayFolder;
+            if (fileCountBadge) fileCountBadge.innerText = activeDayFiles.length;
 
             // Populate Sidebar
             fileList.innerHTML = '';
@@ -246,15 +248,22 @@ document.addEventListener('DOMContentLoaded', () => {
         currentFileName.innerText = filename;
         archiveCodeDisplay.textContent = "# Loading source code...";
 
-        // Execution Hint
+        // Execution Hint - Hidden for non-ruby files
         if (archiveExecutionScript) {
-            archiveExecutionScript.innerText = filename.replace('.rb', '');
+            if (filename.endsWith('.rb')) {
+                archiveExecutionScript.parentElement.style.display = 'flex';
+                archiveExecutionScript.innerText = filename.replace('.rb', '');
+            } else {
+                archiveExecutionScript.parentElement.style.display = 'none';
+            }
         }
 
         const fullPath = `${activeDayFolder}/${filename}`;
-        // Encode each segment of the path to handle spaces (e.g., "Source Code")
-        const encodedPath = fullPath.split('/').map(encodeURIComponent).join('/');
-        const fetchUrl = `../${encodedPath}`;
+        // The build script now syncs "Source Code" to "web/source"
+        // Since app.js is in "web/js", we go up one and into "source"
+        const relativePath = activeDayFolder.replace('Source Code/', '');
+        const encodedFilename = encodeURIComponent(filename);
+        const fetchUrl = `source/${encodeURIComponent(relativePath)}/${encodedFilename}`;
 
         // GitHub URL (spaces encoded)
         const githubUrl = `https://github.com/Amey-Thakur/RUBY/blob/main/${encodedPath}`;
