@@ -44,6 +44,12 @@ document.addEventListener('DOMContentLoaded', () => {
         if (window.isStatsAnimating) return;
         window.isStatsAnimating = true;
 
+        // Reset values immediately for a clean replay
+        milestoneCount.innerText = '0';
+        if (projectCount) projectCount.innerText = '0';
+        masteryCount.innerText = '0%';
+        iconElement.style.left = '0%';
+
         const targetMilestones = 30;
         const targetProjects = 3;
         const targetMastery = 100;

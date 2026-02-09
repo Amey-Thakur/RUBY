@@ -301,7 +301,6 @@ body {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: left 0.1s linear;
 }
 
 .stats-ruby-icon img {
