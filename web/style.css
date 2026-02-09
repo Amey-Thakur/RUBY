@@ -771,6 +771,10 @@ body {
     transform: translateY(-2px);
 }
 
+[data-theme="light"] .icon-btn {
+    background: rgba(0, 0, 0, 0.05);
+}
+
 .close-archive {
     font-size: 2.5rem;
     margin-left: 1rem;
@@ -948,6 +952,11 @@ body {
     min-width: 0;
 }
 
+[data-theme="light"] .code-viewer {
+    background: #f0f0f0;
+    /* Light Grey background as requested */
+}
+
 .code-header {
     background: rgba(255, 255, 255, 0.02);
     padding: 0.75rem 1.5rem;
@@ -955,6 +964,11 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+[data-theme="light"] .code-header {
+    background: #e0e0e0;
+    color: #1a1a1a;
 }
 
 #archive-code-display {
@@ -973,6 +987,12 @@ body {
     box-shadow: none !important;
 }
 
+[data-theme="light"] #archive-code-display code {
+    /* Slight adjustment for tomorrow theme tokens on light background */
+    text-shadow: none;
+    color: #333;
+}
+
 #archive-code-display code {
     padding: 0 !important;
     margin: 0 !important;
@@ -981,8 +1001,6 @@ body {
     outline: none !important;
     box-shadow: none !important;
 }
-
-
 
 .execution-hint {
     position: absolute;
@@ -1001,6 +1019,13 @@ body {
     backdrop-filter: blur(5px);
     pointer-events: none;
     z-index: 10;
+}
+
+[data-theme="light"] .execution-hint {
+    background: rgba(255, 255, 255, 0.9);
+    color: #444;
+    border-color: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 /* Mobile Responsiveness for Archive Explorer */
