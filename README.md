@@ -164,7 +164,7 @@ To maintain the authenticity of the original learning journey, the following pri
 
 | Project | Description | Repository |
 | :--- | :--- | :---: |
-| **RailsFriends** | A high-fidelity Friends List App engineered using Ruby on Rails with SQLite3 data persistence. | [Open](https://github.com/Amey-Thakur/RAILSFRIENDS) |
+| <img src="docs/Ruby%20on%20Rails%20Logo.png" width="80" height="80" alt="Ruby on Rails"><br>**RailsFriends** | A high-fidelity Friends List App engineered using Ruby on Rails with SQLite3 data persistence. | [Open](https://github.com/Amey-Thakur/RAILSFRIENDS) |
 | **TicTacToe** | Algorithmic implementation of the classic TicTacToe game in pure Ruby. | [Open](https://github.com/Amey-Thakur/TIC-TAC-TOE-IN-RUBY) |
 | **Hangman** | Logic-driven Hangman game implemented to demonstrate set operations and lexical processing. | [Open](https://github.com/Amey-Thakur/HANGMAN-IN-RUBY) |
 
@@ -283,7 +283,7 @@ Grateful acknowledgment to [**Mega Satish**](https://github.com/msatmod) for her
 
   <br>
 
-  <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/ruby/ruby.png" width="18" height="18" valign="middle"> **[Ruby Programming Challenge](https://amey-thakur.github.io/RUBY/)**
+  <img src="docs/Ruby%20Logo.png" width="18" height="18" valign="middle"> **[Ruby Programming Challenge](https://amey-thakur.github.io/RUBY/)**
 
   ---
 
