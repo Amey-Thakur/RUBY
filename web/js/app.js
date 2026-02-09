@@ -185,11 +185,12 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.key.length > 1) return;
 
         typedBuffer += e.key.toLowerCase();
-        if (typedBuffer.length > 20) typedBuffer = typedBuffer.substring(typedBuffer.length - 20);
+        if (typedBuffer.length > 50) typedBuffer = typedBuffer.substring(typedBuffer.length - 50);
 
         // Debounce to allow full word completion (avoids 'amey' triggering before 'ameymega')
         clearTimeout(eeTimeout);
         eeTimeout = setTimeout(() => {
+            // Sort by length DESC to ensure 'ameymega' is checked before 'amey'
             const sortedKeys = Object.keys(secretMessages).sort((a, b) => b.length - a.length);
             for (const key of sortedKeys) {
                 if (typedBuffer.endsWith(key)) {

@@ -686,4 +686,80 @@ body {
         top: 1rem;
         right: 1rem;
     }
-}$css
+}
+
+/* Cinematic Easter Egg Overlay */
+#easter-egg-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 20000;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 1s ease;
+    backdrop-filter: blur(20px);
+}
+
+.easter-egg-active #easter-egg-overlay {
+    display: flex;
+    opacity: 1;
+}
+
+.ee-ruby-glow {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 2rem;
+    filter: drop-shadow(0 0 30px var(--accent-ruby));
+    animation: ee-pulse 2s infinite ease-in-out;
+}
+
+@keyframes ee-pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 30px var(--accent-ruby));
+    }
+
+    50% {
+        transform: scale(1.15);
+        filter: drop-shadow(0 0 60px var(--accent-ruby));
+    }
+}
+
+.ee-content {
+    text-align: center;
+    max-width: 800px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ee-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.ee-message {
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+.ee-close-hint {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    letter-spacing: 2px;
+}
