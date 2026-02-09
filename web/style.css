@@ -915,7 +915,8 @@ body {
     cursor: text;
     white-space: pre !important;
     background: transparent !important;
-    /* Prism tomorrow theme is already on pre */
+    outline: none !important;
+    box-shadow: none !important;
 }
 
 #archive-code-display code {
@@ -923,8 +924,11 @@ body {
     margin: 0 !important;
     background: transparent !important;
     display: block;
-    /* Ensure it behaves as a clean block */
+    outline: none !important;
+    box-shadow: none !important;
 }
+
+
 
 .execution-hint {
     position: absolute;
