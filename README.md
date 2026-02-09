@@ -1,7 +1,7 @@
 <div align="center">
 
   <a name="readme-top"></a>
-  # <img src="docs/Ruby%20Logo.png" height="55" valign="middle"> <br> Ruby Programming Challenge
+  # <a href="https://amey-thakur.github.io/RUBY/"><img src="docs/Ruby%20Logo.png" height="55" valign="middle"></a> <br> Ruby Programming Challenge
 
   [![License: MIT](https://img.shields.io/badge/License-MIT-lightgrey)](LICENSE)
   ![Status](https://img.shields.io/badge/Status-Completed-success)
