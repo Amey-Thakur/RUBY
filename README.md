@@ -10,7 +10,7 @@
 
   A disciplined 30-day collaborative challenge undertaken to master Ruby programming and Ruby on Rails development, featuring a structured curriculum from basic syntax to full-stack web engineering and cloud deployment.
 
-  **[Curriculum](#features)** &nbsp;·&nbsp; **[RubyMine](https://www.jetbrains.com/ruby)** &nbsp;·&nbsp; **[JDoodle](https://www.jdoodle.com/execute-ruby-online/)** &nbsp;·&nbsp; **[Ruby on Rails](https://rubyonrails.org)**
+  **[Curriculum](#features)** &nbsp;·&nbsp; **[RailsFriends](https://github.com/Amey-Thakur/RAILSFRIENDS)** &nbsp;·&nbsp; **[TicTacToe](https://github.com/Amey-Thakur/TIC-TAC-TOE-IN-RUBY)** &nbsp;·&nbsp; **[Hangman](https://github.com/Amey-Thakur/HANGMAN-IN-RUBY)**
 
 </div>
 
