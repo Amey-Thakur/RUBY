@@ -115,6 +115,13 @@ body {
     opacity: 0;
     transform: translateY(30px);
     animation: slideUpFade 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards, gradientBG 15s ease infinite;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.glass-panel:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent-ruby);
+    box-shadow: 0 20px 40px rgba(224, 17, 95, 0.25);
 }
 
 /* Hero Section */
