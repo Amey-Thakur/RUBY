@@ -32,18 +32,18 @@
  - [x] **[Day 16](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2016)** - Operator Overloading
  - [x] **[Day 17](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2017)** - Freezing Objects and Linguistics Package
  - [x] **[Day 18](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2018)** - Proc and Lambda
- - [x] **[Day 19](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2019)** - Arity method and Difference between Proc & Lambda
+ - [x] **[Day 19](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2019)** - Arity Method and Difference between Proc & Lambda
  - [x] **[Day 20](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2020)** - Date and Time
  - [x] **[Day 21](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2021/TicTacToe)** - TicTacToe Game in Ruby 
  - [x] **[Day 22](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2022)** - Hangman Game in Ruby
- - [x] **[Day 23](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2023%20-%20Day%2030)** - Installation and First Web Page
- - [x] **[Day 24](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2023%20-%20Day%2030)** - Website
- - [x] **[Day 25](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2023%20-%20Day%2030)** - CRUD Database
- - [x] **[Day 26](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2023%20-%20Day%2030)** - Bootstrap
- - [x] **[Day 27](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2023%20-%20Day%2030)** - Devise & Style Devise
- - [x] **[Day 28](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2023%20-%20Day%2030)** - User Association & Rails Association
- - [x] **[Day 29](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2023%20-%20Day%2030)** - List Style & Rails Controller
- - [x] **[Day 30](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2023%20-%20Day%2030)** - Heroku Deployment
+ - [x] **[Day 23](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2023-30)** - Installation and First Web Page
+ - [x] **[Day 24](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2023-30)** - Website
+ - [x] **[Day 25](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2023-30)** - CRUD Database
+ - [x] **[Day 26](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2023-30)** - Bootstrap
+ - [x] **[Day 27](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2023-30)** - Devise & Style Devise
+ - [x] **[Day 28](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2023-30)** - User Association & Rails Association
+ - [x] **[Day 29](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2023-30)** - List Style & Rails Controller
+ - [x] **[Day 30](https://github.com/Amey-Thakur/RUBY/tree/main/Day%2023-30)** - Heroku Deployment
 
 
 ## Projects in Ruby
@@ -60,4 +60,4 @@
  
 <p align="center"> <b> 👷 Project Authors: Amey Thakur and Mega Satish <b> </p>
  
-<p align="center"><a href='https://github.com/Amey-Thakur/COMPUTER-ENGINEERING', style='color: greenyellow;'> ✌🏻 Back To Engineering ✌🏻</p> 
+<p align="center"><a href='https://github.com/Amey-Thakur/COMPUTER-ENGINEERING' style='color: greenyellow;'> ✌🏻 Back To Engineering ✌🏻</p> 
