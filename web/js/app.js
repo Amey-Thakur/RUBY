@@ -246,7 +246,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         currentFileName.innerText = filename;
-        archiveCodeDisplay.textContent = "# Loading source code...";
+        const codeElement = archiveCodeDisplay.querySelector('code');
+        if (codeElement) codeElement.textContent = "# Loading source code...";
 
         // Execution Hint - Hidden for non-ruby files
         if (archiveExecutionScript) {
@@ -302,11 +303,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         } catch (err) {
             console.error("Fetch Error:", err);
-            archiveCodeDisplay.textContent = `# Error: Could not load the script.\n# Path: ${fetchUrl}\n# Details: ${err.message}\n\n# Tip: If viewing locally via file://, browser security blocks 'fetch'.\n# Please use a local server (e.g., Live Server) or view on GitHub.`;
+            const codeElement = archiveCodeDisplay.querySelector('code');
+            if (codeElement) {
+                codeElement.textContent = `# Error: Could not load the script.\n# Path: ${fetchUrl}\n# Details: ${err.message}`;
+            }
 
             // Still enable GitHub button even if fetch fails
             githubBtn.onclick = () => window.open(githubUrl, '_blank');
-
         }
     }
 
