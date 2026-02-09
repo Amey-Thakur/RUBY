@@ -21,10 +21,64 @@ document.addEventListener('DOMContentLoaded', () => {
             clearInterval(interval);
             setTimeout(() => {
                 splash.style.opacity = '0';
-                setTimeout(() => splash.style.display = 'none', 800);
+                setTimeout(() => {
+                    splash.style.display = 'none';
+                    animateStatsCard(); // Trigger stats animation when home screen appears
+                }, 800);
             }, 600);
         }
     }, 200);
+
+    // Global Animation State
+    window.isStatsAnimating = false;
+
+    window.animateStatsCard = function () {
+        const milestoneCount = document.getElementById('milestone-count');
+        const projectCount = document.getElementById('project-count');
+        const masteryCount = document.getElementById('mastery-count');
+        const iconElement = document.getElementById('stats-ruby-icon');
+
+        if (!milestoneCount || !masteryCount || !iconElement) return;
+
+        // Prevent overlap
+        if (window.isStatsAnimating) return;
+        window.isStatsAnimating = true;
+
+        const targetMilestones = 30;
+        const targetProjects = 3;
+        const targetMastery = 100;
+        const duration = 2500;
+
+        // Release lock after animation
+        setTimeout(() => {
+            window.isStatsAnimating = false;
+        }, duration + 100);
+
+        function animateValue(obj, start, end, duration, suffix = '') {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const ease = 1 - Math.pow(1 - progress, 4); // Quartic Out for smoothness
+
+                const current = Math.floor(ease * (end - start) + start);
+                obj.innerHTML = current + suffix;
+
+                if (obj === milestoneCount) {
+                    iconElement.style.left = (ease * (end / 30) * 100) + '%';
+                }
+
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        animateValue(milestoneCount, 0, targetMilestones, duration);
+        animateValue(projectCount, 0, targetProjects, duration);
+        animateValue(masteryCount, 0, targetMastery, duration, '%');
+    };
 
     // 2. Render Curriculum Grid
     function renderGrid(filter = 'all') {

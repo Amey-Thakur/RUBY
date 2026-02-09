@@ -259,17 +259,25 @@ body {
     text-align: right;
 }
 
-.stat-label {
-    font-size: 0.7rem;
-    letter-spacing: 2px;
-    color: var(--text-secondary);
-    text-transform: uppercase;
+.stat-check-icon,
+.stat-cert-icon {
+    color: #4cd964;
+    /* Scientific Green */
+}
+
+.stat-check-icon {
+    color: #4cd964;
+    /* Scientific Green */
 }
 
 .stat-value {
     font-size: 2.5rem;
     font-weight: 700;
     color: var(--accent-ruby);
+}
+
+#mastery-count {
+    color: var(--accent-ruby) !important;
 }
 
 .stats-animation-track {
@@ -285,14 +293,27 @@ body {
     top: 50%;
     left: 100%;
     transform: translate(-50%, -50%);
-    background: var(--accent-ruby);
+    background: transparent;
+    /* Remove square bg */
     width: 32px;
     height: 32px;
-    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 0 15px var(--accent-ruby);
+    cursor: pointer;
+    transition: left 0.1s linear;
+}
+
+.stats-ruby-icon img {
+    width: 28px;
+    height: 28px;
+    filter: drop-shadow(0 0 8px rgba(224, 17, 95, 0.6));
+    transition: all 0.3s ease;
+}
+
+.stats-ruby-icon:hover img {
+    transform: scale(1.2) rotate(15deg);
+    filter: drop-shadow(0 0 15px var(--accent-ruby));
 }
 
 /* Projects Section */
