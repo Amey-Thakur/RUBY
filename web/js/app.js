@@ -240,9 +240,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (typedBuffer.length > 50) typedBuffer = typedBuffer.substring(typedBuffer.length - 50);
 
         // Debounce to allow full word completion (avoids 'amey' triggering before 'ameymega')
-        clearTimeout(eeTimeout);
         eeTimeout = setTimeout(() => {
-            // Sort by length DESC to ensure 'ameymega' is checked before 'amey'
             const sortedKeys = Object.keys(secretMessages).sort((a, b) => b.length - a.length);
             for (const key of sortedKeys) {
                 if (typedBuffer.endsWith(key)) {
@@ -279,9 +277,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const footerRuby = document.querySelector('.footer-branding img');
     if (footerRuby) {
         footerRuby.style.cursor = 'pointer';
-        footerRuby.onclick = () => {
+        footerRuby.onclick = (e) => {
+            e.stopPropagation(); // Prevent immediate closure from universal click listener
             const signature = "A collaborative masterpiece by Amey & Mega.";
-            const hints = "\n\nInvoke the Architect 'amey', the Pioneer 'mega', or the Titans 'ameymega'. Pure sequences of mastery await.";
+            const hints = "\n\nType the names of the architects to unlock the hidden rhythms of the machine. 'Amey', 'Mega', or the unified 'AmeyMega' await your command.";
             eeMessageBox.innerText = `The Archive has been acknowledged.\n\n${signature}${hints} 🥂💎`;
             document.body.classList.add('easter-egg-active');
 
