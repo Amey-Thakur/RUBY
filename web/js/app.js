@@ -237,6 +237,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const li = document.createElement('li');
                 const displayName = fullPath.split('/').pop();
                 li.className = `file-item ${isNested ? 'nested' : ''}`;
+                li.dataset.path = fullPath; // Store full path for precise matching
                 const icon = fullPath.endsWith('.rb') ? 'fab fa-ruby' : 'fas fa-file-alt';
                 li.innerHTML = `<i class="${icon}"></i> <span>${displayName}</span>`;
                 li.onclick = () => loadArchiveFile(fullPath, li);
@@ -289,7 +290,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // If loaded by default or keyboard, update sidebar active state
             const items = document.querySelectorAll('.file-item');
             items.forEach((li, idx) => {
-                if (li.innerText.trim() === filename) {
+                if (li.dataset.path === filename) {
                     li.classList.add('active');
                     currentFileIndex = idx;
                 } else {
