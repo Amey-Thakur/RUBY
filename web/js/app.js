@@ -188,6 +188,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let activeDayFiles = [];
     let activeDayFolder = "";
+    let currentDay = 0;
+    let currentFileIndex = 0;
 
     window.openArchiveExplorer = async function (day) {
         try {
@@ -203,6 +205,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             activeDayFiles = JSON.parse(card.dataset.files);
             activeDayFolder = card.dataset.folder;
+            currentDay = parseInt(day);
+            currentFileIndex = 0;
             const topic = card.querySelector('.day-title').innerText;
 
             archiveTitle.innerText = `Day ${day}: ${topic}`;
@@ -243,6 +247,19 @@ document.addEventListener('DOMContentLoaded', () => {
         if (element) {
             document.querySelectorAll('.file-item').forEach(li => li.classList.remove('active'));
             element.classList.add('active');
+            // Update current index based on sidebar click
+            currentFileIndex = activeDayFiles.indexOf(filename);
+        } else {
+            // If loaded by default or keyboard, update sidebar active state
+            const items = document.querySelectorAll('.file-item');
+            items.forEach((li, idx) => {
+                if (li.innerText.trim() === filename) {
+                    li.classList.add('active');
+                    currentFileIndex = idx;
+                } else {
+                    li.classList.remove('active');
+                }
+            });
         }
 
         currentFileName.innerText = filename;
@@ -313,8 +330,48 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Modal Close Button
-    // (This block was redundant and removed to fix duplicate declaration error)
+    // 5. Keyboard Navigation Logic
+    window.addEventListener('keydown', (e) => {
+        // Only run if modal is open
+        if (getComputedStyle(archiveModal).display === 'none') return;
+
+        // Constraint: Don't work if code or inputs are focused
+        const focused = document.activeElement;
+        if (focused === archiveCodeDisplay || focused.tagName === 'INPUT' || focused.tagName === 'TEXTAREA') return;
+
+        // Navigation Keys
+        switch (e.key) {
+            case 'ArrowRight':
+                e.preventDefault();
+                if (currentDay < 30) openArchiveExplorer(currentDay + 1);
+                break;
+            case 'ArrowLeft':
+                e.preventDefault();
+                if (currentDay > 1) openArchiveExplorer(currentDay - 1);
+                break;
+            case 'ArrowDown':
+                e.preventDefault();
+                if (currentFileIndex < activeDayFiles.length - 1) {
+                    currentFileIndex++;
+                    const nextFile = activeDayFiles[currentFileIndex];
+                    loadArchiveFile(nextFile);
+                    // Scroll active item into view
+                    const nextItem = document.querySelectorAll('.file-item')[currentFileIndex];
+                    if (nextItem) nextItem.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+                }
+                break;
+            case 'ArrowUp':
+                e.preventDefault();
+                if (currentFileIndex > 0) {
+                    currentFileIndex--;
+                    const prevFile = activeDayFiles[currentFileIndex];
+                    loadArchiveFile(prevFile);
+                    const prevItem = document.querySelectorAll('.file-item')[currentFileIndex];
+                    if (prevItem) prevItem.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+                }
+                break;
+        }
+    });
 
     // 6. Institutional Security Features
     document.addEventListener('contextmenu', e => e.preventDefault());
