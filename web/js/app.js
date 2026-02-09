@@ -14,8 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Splash Loader Animation
     let progress = 0;
     const interval = setInterval(() => {
-        // Precision rhythmic progress for brand visibility
-        progress += Math.random() * 1.5 + 0.5;
+        // High-frequency small increments for a linear "glide" effect
+        progress += Math.random() * 0.8 + 0.2;
         if (progress > 100) progress = 100;
         progressBar.style.width = `${progress}%`;
 
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 setTimeout(() => splash.style.display = 'none', 800);
             }, 600);
         }
-    }, 100);
+    }, 50);
 
     // 2. Render Curriculum Grid
     function renderGrid(filter = 'all') {
