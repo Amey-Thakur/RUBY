@@ -293,7 +293,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 9. Universal Closure (Click & Key)
     window.addEventListener('click', (event) => {
         // Exit Archive Modal if clicking backdrop
-        if (event.target === archiveModal) {
+        if (archiveModal && event.target === archiveModal) {
             archiveModal.style.display = 'none';
         }
         // Exit Easter Egg if clicking ANYWHERE (Overlay itself or children)
@@ -305,7 +305,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Handle Escape key for both
     window.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
-            archiveModal.style.display = 'none';
+            if (archiveModal) archiveModal.style.display = 'none';
             document.body.classList.remove('easter-egg-active');
         }
     });
@@ -324,15 +324,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     revealElements.forEach(el => revealObserver.observe(el));
 
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) {
-            backToTopBtn.classList.add('visible');
-        } else {
-            backToTopBtn.classList.remove('visible');
-        }
-    });
+    if (backToTopBtn) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
 
-    backToTopBtn.onclick = () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    };
+        backToTopBtn.onclick = () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+    }
 });

@@ -149,9 +149,10 @@ body {
 }
 
 .glass-panel:hover {
-    transform: translateY(-10px) scale(1.01);
+    transform: translateY(-10px) scale(1.02) !important;
     border: 2px solid var(--accent-ruby);
     box-shadow: 0 0 30px rgba(224, 17, 95, 0.4);
+    z-index: 5;
 }
 
 /* Hero Section */
