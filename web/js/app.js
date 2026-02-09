@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalTopic = document.getElementById('modal-topic');
     const executionScript = document.getElementById('execution-script');
     const externalLinkBtn = document.getElementById('external-link-btn');
+    const eeOverlay = document.getElementById('easter-egg-overlay');
 
     // 1. Splash Loader Animation
     let progress = 0;
@@ -280,7 +281,7 @@ document.addEventListener('DOMContentLoaded', () => {
         footerRuby.style.cursor = 'pointer';
         footerRuby.onclick = () => {
             const signature = "A collaborative masterpiece by Amey & Mega.";
-            const hints = "\n\nSeek the Architect (4), the Pioneer (4), and the Titans (8). Pure sequences of mastery await.";
+            const hints = "\n\nInvoke the Architect 'amey', the Pioneer 'mega', or the Titans 'ameymega'. Pure sequences of mastery await.";
             eeMessageBox.innerText = `The Archive has been acknowledged.\n\n${signature}${hints} 🥂💎`;
             document.body.classList.add('easter-egg-active');
 
@@ -296,10 +297,8 @@ document.addEventListener('DOMContentLoaded', () => {
             archiveModal.style.display = 'none';
         }
         // Exit Easter Egg if clicking ANYWHERE (Overlay itself or children)
-        if (eeOverlay.classList.contains('active') || document.body.classList.contains('easter-egg-active')) {
-            if (eeOverlay.contains(event.target)) {
-                document.body.classList.remove('easter-egg-active');
-            }
+        if (document.body.classList.contains('easter-egg-active')) {
+            document.body.classList.remove('easter-egg-active');
         }
     });
 
