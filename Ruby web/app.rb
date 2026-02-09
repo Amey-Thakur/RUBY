@@ -1,10 +1,14 @@
+require 'bundler/setup'
+Bundler.require(:default)
 require 'sinatra'
+require 'commonmarker'
 require 'json'
 require 'fileutils'
 
 # Dynamic Source Code Explorer logic
 module RubyChallenge
-  SOURCE_DIR = File.expand_path('../../Source Code', __dir__)
+  # Source Code is in the parent directory of 'Ruby web'
+  SOURCE_DIR = File.expand_path('../Source Code', __dir__)
 
   CURRICULUM_DATA = [
     { day: 1, topic: "Installation, Variables & User Input", category: "basics" },
@@ -46,8 +50,15 @@ module RubyChallenge
       
       files = []
       if Dir.exist?(day_folder_path)
-        all_files = Dir.glob(File.join(day_folder_path, '**', '*.{rb,md}'))
-        files = all_files.map { |f| f.sub("#{day_folder_path}/", "") }
+        # Use absolute glob and then strip the base path for display
+        # Handle both forward and backslashes for Windows
+        search_pattern = File.join(day_folder_path, '**', '*.{rb,md,txt}')
+        all_files = Dir.glob(search_pattern.gsub('\\', '/'))
+        files = all_files.reject { |f| File.directory?(f) }.map do |f|
+          # Robust path cleaning
+          clean_path = f.gsub(day_folder_path.gsub('\\', '/'), '')
+          clean_path.sub(/^[\/\\]/, '')
+        end
       end
       
       day_info.merge(files: files, folder_path: "Source Code/#{day_folder_name}")
@@ -59,6 +70,7 @@ end
 set :port, 4567
 set :public_folder, File.dirname(__FILE__) + '/public'
 set :views, File.dirname(__FILE__) + '/views'
+set :protection, false # Disable protection for local development to allow serving assets from parent directories
 
 # Routes
 get '/' do
@@ -66,38 +78,46 @@ get '/' do
   erb :index
 end
 
-# Dynamic route for fetching source files
-get '/source/*' do
+# Serve assets from parent directories using File.read to bypass send_file restrictions
+get '/docs/*' do
   path = params[:splat].first
-  full_path = File.join(RubyChallenge::SOURCE_DIR, path)
-  
-  if File.exist?(full_path) && !File.directory?(full_path)
-    content_type 'text/plain'
-    File.read(full_path)
+  file_path = File.expand_path(File.join(__dir__, '..', 'docs', path))
+  if File.exist?(file_path)
+    content_type File.extname(file_path)
+    File.binread(file_path) # Use binread for images
   else
     status 404
-    "File not found: #{path}"
   end
 end
 
-require 'redcarpet'
+get '/Mega/*' do
+  path = params[:splat].first
+  file_path = File.expand_path(File.join(__dir__, '..', 'Mega', path))
+  if File.exist?(file_path)
+    content_type File.extname(file_path)
+    File.binread(file_path) # Use binread for images
+  else
+    status 404
+  end
+end
 
-# Route to render README.rb output as formatted Markdown
+# Route to render README.md content as formatted Markdown
 get '/manifesto' do
-  markdown_content = `ruby README.rb`
+  # Read README.rb from the current directory
+  readme_path = File.join(__dir__, 'README.rb')
   
-  # Configure Redcarpet to handle GitHub-style Markdown
-  renderer = Redcarpet::Render::HTML.new(hard_wrap: true, filter_html: false)
-  markdown = Redcarpet::Markdown.new(renderer, 
-    autolink: true, 
-    tables: true, 
-    fenced_code_blocks: true, 
-    strikethrough: true,
-    superscript: true,
-    no_intra_emphasis: true
-  )
+  if File.exist?(readme_path)
+    # Execute the Ruby script and capture its output
+    # This fulfills the "entirely in Ruby" requirement while maintaining rendering logic in one place
+    @manifesto_content = `ruby "#{readme_path}"`.force_encoding('UTF-8')
+    
+    if @manifesto_content.strip.empty?
+      @manifesto_content = "<h1>Error: README.rb execution produced no output</h1>"
+    end
+  else
+    @manifesto_content = "<h1>Error: README.md not found at #{readme_path}</h1>"
+  end
   
-  @manifesto_content = markdown.render(markdown_content)
   erb :manifesto
 end
 

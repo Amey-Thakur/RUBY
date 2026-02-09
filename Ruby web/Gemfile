@@ -1,7 +1,9 @@
 source 'https://rubygems.org'
 
 gem 'sinatra'
+gem 'rackup'
 gem 'puma'
 gem 'json'
 gem 'erb'
 gem 'redcarpet'
+gem 'commonmarker'

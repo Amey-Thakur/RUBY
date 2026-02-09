@@ -14,6 +14,36 @@
             margin: 0;
             padding: 0;
         }
+        
+        /* AGGRESSIVE LOGO SIZE FIXES */
+        /* use strict attribute selectors for robustness */
+        .markdown-body img[src*="Ruby"][src*="on"][src*="Rails"],
+        .markdown-body h3 img,
+        .markdown-body h3 a img {
+            height: 30px !important;
+            width: 30px !important;
+            min-width: 30px !important;
+            max-width: 30px !important;
+            object-fit: contain !important;
+            vertical-align: middle !important;
+            display: inline-block !important; 
+            margin: 0 5px !important;
+        }
+
+        /* 2. Footer Tiny Ruby Logo */
+        /* Use the width attribute selector strictly */
+        .markdown-body img[width="18"],
+        .markdown-body p img[width="18"],
+        .markdown-body div[align="center"] p img[width="18"] {
+            height: 18px !important;
+            width: 18px !important;
+            min-width: 18px !important;
+            max-width: 18px !important;
+            object-fit: contain !important;
+            vertical-align: middle !important;
+            display: inline-block !important;
+        }
+
         .markdown-container {
             max-width: 1012px;
             margin: 0 auto;
@@ -24,28 +54,165 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             margin-top: 50px;
             margin-bottom: 50px;
+            text-align: left !important;
         }
         .markdown-body {
             background-color: transparent !important;
             color: #c9d1d9 !important;
+            text-align: left !important;
         }
-        .markdown-body h1, .markdown-body h2, .markdown-body h3, .markdown-body h4, .markdown-body h5, .markdown-body h6 {
-            color: #f0f6fc !important;
-            border-bottom-color: rgba(255, 255, 255, 0.1) !important;
+        /* High-fidelity GFM alignment handling */
+        .markdown-body [align="center"] {
+            text-align: center !important;
+            display: block !important;
+            width: 100% !important;
         }
-        .markdown-body blockquote {
-            border-left-color: #30363d !important;
-            color: #8b949e !important;
+        .markdown-body [align="center"] table {
+            margin: 20px auto !important;
+            display: table !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            table-layout: fixed !important;
+            border-collapse: collapse !important;
+            text-align: center !important;
+        }
+        .markdown-body table thead,
+        .markdown-body table tbody {
+            display: table-row-group !important;
         }
         .markdown-body table tr {
-            background-color: #0d1117 !important;
-            border-top-color: #30363d !important;
+            display: table-row !important;
         }
-        .markdown-body table tr:nth-child(2n) {
-            background-color: #161b22 !important;
+        .markdown-body table td,
+        .markdown-body table th {
+            display: table-cell !important;
+            width: 50% !important; /* FORCE side-by-side */
+            text-align: center !important;
+            vertical-align: top !important;
+            padding: 20px 10px !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
         }
-        .markdown-body table td, .markdown-body table th {
-            border-color: #30363d !important;
+        /* Image stabilization - DO NOT override height/width if set in HTML */
+        .markdown-body img {
+            max-width: 100%;
+            height: auto;
+            width: auto;
+        }
+
+        /* STRICT BRAND LOGO SIZING */
+        /* Header Logo (Main Title) */
+        .markdown-body h1 img,
+        .markdown-body [align="center"] h1 img {
+            height: 55px !important;
+            width: auto !important;
+        }
+
+        /* Footer Logo & Inline Brandtaps - Sizing down for elegance */
+        .markdown-body div[align="center"] img[height="55"],
+        .markdown-body p img[src*="Ruby Logo"],
+        .markdown-body img[src*="Ruby Logo"]:not(h1 img) {
+            height: 35px !important;
+            width: auto !important;
+        }
+
+        /* Ruby on Rails & Project Logos */
+        .markdown-body img[src*="Ruby on Rails Logo"],
+        .markdown-body img[alt="Ruby on Rails"] {
+            height: 40px !important;
+            width: auto !important;
+        }
+
+        /* Table specific branding - slightly larger but still controlled */
+        .markdown-body td img[alt="Ruby on Rails"],
+        .markdown-body table img[alt="Ruby on Rails"] {
+            height: 60px !important;
+            width: auto !important;
+        }
+
+        .markdown-body a img, 
+        .markdown-body p img {
+            display: inline-block !important;
+            vertical-align: middle;
+            margin: 4px !important;
+        }
+
+        /* AUTHOR SECTION PARITY - ABSOLUTE */
+        #authors-section table {
+            width: 100% !important;
+            display: table !important;
+            table-layout: fixed !important;
+            border-collapse: collapse !important;
+        }
+        #authors-section tr {
+            display: flex !important; /* Force flexbox for side-by-side */
+            width: 100% !important;
+        }
+        #authors-section th,
+        #authors-section td {
+            flex: 1 !important; /* Equal split */
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            justify-content: flex-start !important;
+            padding: 24px !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            background: rgba(255, 255, 255, 0.02) !important;
+        }
+        #authors-section img[alt="Amey Thakur"],
+        #authors-section img[alt="Mega Satish"] {
+            width: 180px !important;
+            height: 180px !important;
+            min-width: 180px !important;
+            min-height: 180px !important;
+            max-width: 180px !important;
+            max-height: 180px !important;
+            object-fit: cover !important;
+            border-radius: 12px !important;
+            border: 2px solid rgba(255, 255, 255, 0.2) !important;
+            margin-bottom: 12px !important;
+        }
+
+        /* ORCID and small badges */
+        .markdown-body img[src*="img.shields.io"] {
+            height: 20px !important;
+            width: auto !important;
+        }
+
+        /* EXPLICIT OVERRIDES FOR USER REQUESTED FIXES */
+        /* 1. Rails Logo in H3 Header (Curriculum) - Force 30px */
+        .markdown-body h3 img[src*="Ruby on Rails Logo"],
+        .markdown-body h3 img[alt="Ruby on Rails"] {
+            height: 30px !important;
+            width: auto !important;
+            vertical-align: middle !important;
+        }
+
+        /* 2. Footer Tiny Ruby Logo - Force 18px */
+        /* Specific selector to override general rules */
+        .markdown-body div[align="center"] img[src*="Ruby Logo"][width="18"],
+        .markdown-body div[align="center"] p img[src*="Ruby Logo"][width="18"] {
+            height: 18px !important;
+            width: 18px !important;
+            vertical-align: middle !important;
+        }
+        /* Alignments */
+        .markdown-body h1, .markdown-body h2, .markdown-body h3, .markdown-body p, .markdown-body ul, .markdown-body ol {
+            text-align: left !important;
+        }
+        .markdown-body [align="center"], 
+        .markdown-body [align="center"] h1, 
+        .markdown-body [align="center"] h2, 
+        .markdown-body [align="center"] h3, 
+        .markdown-body [align="center"] p {
+            text-align: center !important;
+        }
+        /* Task lists */
+        .task-list-item {
+            list-style-type: none !important;
+        }
+        .task-list-item input {
+            margin: 0 0.2em 0.25em -1.6em;
+            vertical-align: middle;
         }
         .back-link {
             position: fixed;
