@@ -86,67 +86,118 @@ document.addEventListener('DOMContentLoaded', () => {
         animateValue(masteryCount, 0, targetMastery, duration, '%');
     };
 
-    // 2. Render Curriculum Grid
-    function renderGrid(filter = 'all') {
-        dayGrid.innerHTML = '';
-        const filteredData = filter === 'all' ? curriculumData : curriculumData.filter(d => d.category === filter);
-
-        filteredData.forEach(item => {
-            const card = document.createElement('div');
-            card.className = 'day-card glass-panel';
-            card.innerHTML = `
-                <div class="day-number">Day ${item.day}</div>
-                <div class="day-title">${item.topic}</div>
-                <div class="day-footer">
-                    <span class="category-tag">${item.category.toUpperCase()}</span>
-                </div>
-            `;
-            card.onclick = () => openCodeViewer(item);
-            dayGrid.appendChild(card);
-        });
-    }
-
-    // 3. Filter Logic
+    // 2. Filter Logic
     filterBtns.forEach(btn => {
         btn.onclick = () => {
+            const filter = btn.dataset.filter;
             filterBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-            renderGrid(btn.dataset.filter);
+
+            document.querySelectorAll('.day-card').forEach(card => {
+                if (filter === 'all' || card.dataset.category === filter) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
         };
     });
 
-    // 4. Code Viewer Logic
-    async function openCodeViewer(item) {
-        modalTitle.innerText = `Day ${item.day} Source Code`;
-        modalTopic.innerText = item.topic;
-        codeDisplay.textContent = "# Loading source code from repository...";
+    // 3. High-Fidelity Archive Explorer
+    const archiveModal = document.getElementById('archive-modal');
+    const fileList = document.getElementById('file-list');
+    const archiveCodeDisplay = document.getElementById('archive-code-display');
+    const currentFileName = document.getElementById('current-file-name');
+    const archiveTitle = document.getElementById('archive-title');
+    const archivePath = document.getElementById('archive-path');
+    const downloadBtn = document.getElementById('download-btn');
+    const githubBtn = document.getElementById('github-link-btn');
+    const shareBtn = document.getElementById('share-code-btn');
+    const archiveExecutionScript = document.getElementById('archive-execution-script');
 
-        // Extract script name for execution hint
-        const scriptName = item.file.split('/').pop().replace('.rb', '');
-        executionScript.innerText = scriptName;
+    let activeDayFiles = [];
+    let activeDayFolder = "";
 
-        modal.style.display = 'block';
+    window.openArchiveExplorer = async function (day) {
+        const card = document.querySelector(`.day-card[onclick*="openArchiveExplorer(${day})"]`);
+        if (!card) return;
+
+        activeDayFiles = JSON.parse(card.dataset.files);
+        activeDayFolder = card.dataset.folder;
+        const topic = card.querySelector('.day-title').innerText;
+
+        archiveTitle.innerText = `Day ${day}: ${topic}`;
+        archivePath.innerText = activeDayFolder;
+
+        // Populate Sidebar
+        fileList.innerHTML = '';
+        activeDayFiles.forEach((file, index) => {
+            const li = document.createElement('li');
+            li.className = `file-item ${index === 0 ? 'active' : ''}`;
+            const icon = file.endsWith('.rb') ? 'fab fa-ruby' : 'fas fa-file-alt';
+            li.innerHTML = `<i class="${icon}"></i> <span>${file}</span>`;
+            li.onclick = () => loadArchiveFile(file, li);
+            fileList.appendChild(li);
+        });
+
+        archiveModal.style.display = 'block';
+
+        // Load first file by default
+        if (activeDayFiles.length > 0) {
+            loadArchiveFile(activeDayFiles[0]);
+        }
+    };
+
+    async function loadArchiveFile(filename, element = null) {
+        if (element) {
+            document.querySelectorAll('.file-item').forEach(li => li.classList.remove('active'));
+            element.classList.add('active');
+        }
+
+        currentFileName.innerText = filename;
+        archiveCodeDisplay.textContent = "# Loading source code...";
+
+        // Execution Hint
+        archiveExecutionScript.innerText = filename.replace('.rb', '');
 
         try {
-            // Adjust path: index.html is in web/, files are in root/Source Code/
-            const response = await fetch(`../${item.file}`);
+            const response = await fetch(`../${activeDayFolder}/${filename}`);
             if (!response.ok) throw new Error('File not found');
             const code = await response.text();
 
-            codeDisplay.textContent = code;
-            Prism.highlightElement(codeDisplay);
+            archiveCodeDisplay.textContent = code;
+            Prism.highlightElement(archiveCodeDisplay);
 
-            externalLinkBtn.onclick = () => {
-                window.open(`https://github.com/Amey-Thakur/RUBY/blob/main/${item.file}`, '_blank');
+            // Update Actions
+            const fullPath = `${activeDayFolder}/${filename}`;
+            githubBtn.onclick = () => window.open(`https://github.com/Amey-Thakur/RUBY/blob/main/${fullPath}`, '_blank');
+
+            downloadBtn.onclick = () => {
+                const blob = new Blob([code], { type: 'text/plain' });
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = filename;
+                a.click();
             };
+
+            shareBtn.onclick = () => {
+                const shareText = `Check out Day ${activeDayFolder.split('Day ')[1]} of the Ruby Challenge: ${filename}\n\n${window.location.href}`;
+                navigator.clipboard.writeText(shareText).then(() => {
+                    alert('Share link copied to clipboard!');
+                });
+            };
+
         } catch (err) {
-            codeDisplay.textContent = `# Error: Could not load the script.\n# Path: ${item.file}\n# Verify the file exists in the repository.`;
+            archiveCodeDisplay.textContent = `# Error: Could not load the script.\n# Path: ${activeDayFolder}/${filename}`;
         }
     }
 
-    // 5. Modal Close
-    closeModal.onclick = () => modal.style.display = 'none';
-    window.onclick = (e) => { if (e.target === modal) modal.style.display = 'none'; };
+    // Modal Close
+    document.querySelector('.close-archive').onclick = () => archiveModal.style.display = 'none';
+    window.onclick = (e) => {
+        if (e.target === archiveModal) archiveModal.style.display = 'none';
+    };
 
     // 6. Institutional Security Features
     document.addEventListener('contextmenu', e => e.preventDefault());
@@ -222,4 +273,18 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.setAttribute('data-theme', newTheme);
         themeToggle.innerHTML = newTheme === 'light' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
     };
+
+    // 8. Footer Cinematic Ruby
+    const footerRuby = document.querySelector('.footer-branding img');
+    if (footerRuby) {
+        footerRuby.style.cursor = 'pointer';
+        footerRuby.onclick = () => {
+            const signature = "A collaborative masterpiece by Amey & Mega.";
+            eeMessageBox.innerText = `The Archive has been acknowledged.\n\n${signature} 🥂💎`;
+            document.body.classList.add('easter-egg-active');
+
+            // Special Console Log
+            console.log("%c💎 Mastery Acknowledged %c- Signature: Amey & Mega", "color: #ff1a75; font-weight: bold;", "color: #888;");
+        };
+    }
 });

@@ -14,11 +14,28 @@ def build_website
     puts "🎨 Rendering #{template_path}..."
     
     # Load the professional ERB template
-    template = File.read(template_path)
-    renderer = ERB.new(template)
+    template_content = File.read(template_path)
+    
+    # Pre-process CURRICULUM_DATA to include all files in the respective Day folders
+    processed_curriculum = CURRICULUM_DATA.map do |day_info|
+      day_folder = "Source Code/Day #{day_info[:day]}"
+      # Handle special Day ranges like 23-30
+      day_folder = "Source Code/Day 23-30" if day_info[:day] >= 23
+      
+      # Collect all .rb and .md files in that directory
+      files = []
+      if Dir.exist?(day_folder)
+        files = Dir.children(day_folder).select { |f| f.end_with?('.rb', '.md') }
+      end
+      
+      day_info.merge(files: files, folder_path: day_folder)
+    end
+
+    renderer = ERB.new(template_content)
     
     # Inject data and generate high-fidelity HTML
-    html_content = renderer.result(binding)
+    # We pass processed_curriculum to the template
+    html_content = renderer.result_with_hash(curriculum: processed_curriculum)
     
     # Write the production artifact
     File.write(output_path, html_content)
