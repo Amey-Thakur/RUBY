@@ -479,9 +479,10 @@ body {
 }
 
 .day-card:hover {
-    transform: translateY(-8px) scale(1.02);
+    transform: translateY(-12px) scale(1.05);
+    z-index: 10;
     border-color: var(--accent-ruby);
-    box-shadow: 0 10px 30px rgba(204, 0, 0, 0.15);
+    box-shadow: 0 20px 40px rgba(204, 0, 0, 0.3);
 }
 
 .card-header {
