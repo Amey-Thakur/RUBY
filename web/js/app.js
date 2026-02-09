@@ -194,10 +194,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Modal Close
-    document.querySelector('.close-archive').onclick = () => archiveModal.style.display = 'none';
-    window.onclick = (e) => {
-        if (e.target === archiveModal) archiveModal.style.display = 'none';
-    };
+    const closeArchiveBtn = document.querySelector('.close-archive');
+    if (closeArchiveBtn) {
+        closeArchiveBtn.onclick = () => archiveModal.style.display = 'none';
+    }
 
     // 6. Institutional Security Features
     document.addEventListener('contextmenu', e => e.preventDefault());
@@ -289,12 +289,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 9. Universal Closure (Click Outside)
-    window.onclick = (event) => {
+    window.addEventListener('click', (event) => {
         if (event.target === archiveModal) {
             archiveModal.style.display = 'none';
         }
         if (event.target === eeOverlay) {
             document.body.classList.remove('easter-egg-active');
         }
-    };
+    });
+
+    // Handle Escape key for both
+    window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            archiveModal.style.display = 'none';
+            document.body.classList.remove('easter-egg-active');
+        }
+    });
 });
