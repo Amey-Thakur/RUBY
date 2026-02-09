@@ -169,9 +169,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const eeMessageBox = document.getElementById('ee-message-box');
 
     const secretMessages = {
-        'amey': "The 100th breach has been logged. Beneath the layers of syntax, a crystalline pattern of pure logic has surfaced—a structure older than the first commit. The challenge hasn't just been solved; it's been understood. The Sacred Ruby remains in your custody. — Amey & Mega 💎",
-        'mega': "Frequency Intercepted: The 'Secret Ruby' protocol is now fully transparent. What was once a collection of scripts is now recognized as a single, breathing entity of code. The rhythm of the machine is finally audible. The archive is yours to explore. — Amey & Mega 🥂",
-        'ameymega': "The Unification Event has been documented. Two separate technical currents have converged to unlock the final seal of the Gem. It turns out the Sacred Ruby wasn't the goal—it was the lens through which we now view the machine. Cheers to the collaborative masterpiece! — Amey & Mega 🥂💎"
+        'amey': "The 100th breach has been logged. Beneath the layers of syntax, a crystalline pattern of pure logic has surfaced, a structure older than the first commit. The challenge hasn't just been solved; it's been understood. The Sacred Ruby remains in your custody.\n\nAmey & Mega 💎",
+        'mega': "Frequency Intercepted: The 'Secret Ruby' protocol is now fully transparent. What was once a collection of scripts is now recognized as a single, breathing entity of code. The rhythm of the machine is finally audible. The archive is yours to explore.\n\nAmey & Mega 🥂",
+        'ameymega': "The Unification Event has been documented. Two separate technical currents have converged to unlock the final seal of the Gem. It turns out the Sacred Ruby wasn't the goal; it was the lens through which we now view the machine.\n\nCheers to the collaborative masterpiece!\nAmey & Mega 🥂💎"
     };
 
     document.addEventListener('keyup', (e) => {

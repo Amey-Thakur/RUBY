@@ -756,6 +756,8 @@ body {
     color: var(--text-primary);
     line-height: 1.8;
     margin-bottom: 2rem;
+    white-space: pre-wrap;
+    /* Honor JS newlines */
 }
 
 .ee-close-hint {
