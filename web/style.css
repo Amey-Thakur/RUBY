@@ -773,6 +773,19 @@ body {
 
 [data-theme="light"] .icon-btn {
     background: rgba(0, 0, 0, 0.05);
+    color: #1a1a1a;
+}
+
+[data-theme="light"] .icon-btn:hover {
+    background: var(--gradient);
+    color: white;
+    border-color: transparent;
+    box-shadow: 0 4px 15px rgba(204, 0, 0, 0.2);
+}
+
+[data-theme="light"] .breadcrumb {
+    color: #333;
+    font-weight: 600;
 }
 
 .close-archive {
