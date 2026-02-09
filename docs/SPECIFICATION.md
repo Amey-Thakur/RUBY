@@ -2,7 +2,7 @@
 
 ## Architectural Overview
 
-**Ruby Programming Challenge** is a structured, modular repository architecture designed to facilitate a disciplined 30-day curriculum into Ruby programming and Full-Stack Web Development. The project serves as an extensive study into object-oriented design, functional paradigms, and rapid application engineering, bridging the gap from foundational syntax to cloud-deployed production environments.
+**Ruby Programming Challenge** is a structured, modular repository architecture designed to facilitate a disciplined 30-day curriculum into Ruby programming and Ruby on Rails Development. The project serves as an extensive study into object-oriented design, functional paradigms, and rapid application engineering, bridging the gap from foundational syntax to cloud-deployed production environments.
 
 ### Learning Logic Flow
 

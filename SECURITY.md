@@ -26,9 +26,9 @@ Submissions include:
   2. Demonstrable steps or technical evidence sufficient to contextualize the finding.
   3. An explanation of the issue’s relevance within the defined scope of the project.
 
-## Implementation Context: Ruby Programming & Web Development
+## Implementation Context: Ruby Programming & Ruby on Rails Development
 
-This project consists of a curated collection of **Ruby scripts**, **modular classes**, and **full-stack web applications**, designed for educational and archival purposes in the field of Software Engineering and Web Development.
+This project consists of a curated collection of **Ruby scripts**, **modular classes**, and **full-stack web applications**, designed for educational and archival purposes in the field of Software Engineering and Ruby on Rails Development.
 
 -   **Scope Limitation**: This policy applies exclusively to the documentation, code, and asset resources contained within this repository and does not extend to the runtime environment (Ruby/Rails) or third-party dependencies.
 
