@@ -386,10 +386,15 @@ body {
     box-shadow: 0 0 20px var(--accent-ruby);
 }
 
-.project-icon-wrapper img {
+.project-icon-wrapper img,
+.project-icon-wrapper svg {
     width: 55px;
     height: 55px;
     filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2));
+}
+
+.project-card:hover .project-icon-wrapper svg {
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
 }
 
 .project-card h3 {
