@@ -143,7 +143,7 @@ To maintain the authenticity of the original learning journey, the following pri
 - [x] **Day 21** - [TicTacToe Game in Ruby](Source%20Code/Day%2021/TicTacToe)
 - [x] **Day 22** - [Hangman Game in Ruby](Source%20Code/Day%2022)
 
-### Full-Stack Web: <img src="docs/Ruby%20on%20Rails%20Logo.png" height="30" valign="middle"> Ruby on Rails
+### Full-Stack Web: [<img src="docs/Ruby%20on%20Rails%20Logo.png" height="30" valign="middle">](https://github.com/Amey-Thakur/RAILSFRIENDS) Ruby on Rails
 - [x] **Day 23** - [Installation and First Web Page](Source%20Code/Day%2023-30)
 - [x] **Day 24** - [Website Development](Source%20Code/Day%2023-30)
 - [x] **Day 25** - [CRUD Database Orchestration](Source%20Code/Day%2023-30)
@@ -164,7 +164,7 @@ To maintain the authenticity of the original learning journey, the following pri
 
 | Project | Description | Repository |
 | :--- | :--- | :---: |
-| <img src="docs/Ruby%20on%20Rails%20Logo.png" width="80" height="80" alt="Ruby on Rails"><br>**RailsFriends** | A high-fidelity Friends List App engineered using Ruby on Rails with SQLite3 data persistence. | [Open](https://github.com/Amey-Thakur/RAILSFRIENDS) |
+| [<img src="docs/Ruby%20on%20Rails%20Logo.png" width="80" height="80" alt="Ruby on Rails">](https://github.com/Amey-Thakur/RAILSFRIENDS)<br>**RailsFriends** | A high-fidelity Friends List App engineered using Ruby on Rails with SQLite3 data persistence. | [Open](https://github.com/Amey-Thakur/RAILSFRIENDS) |
 | **TicTacToe** | Algorithmic implementation of the classic TicTacToe game in pure Ruby. | [Open](https://github.com/Amey-Thakur/TIC-TAC-TOE-IN-RUBY) |
 | **Hangman** | Logic-driven Hangman game implemented to demonstrate set operations and lexical processing. | [Open](https://github.com/Amey-Thakur/HANGMAN-IN-RUBY) |
 
