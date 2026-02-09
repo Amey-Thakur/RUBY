@@ -878,16 +878,19 @@ body {
 }
 
 #archive-code-display {
-    padding: 1.5rem;
+    padding: 2rem !important;
+    /* Increased padding for spacious feel */
     margin: 0;
     font-size: 0.95rem;
-    line-height: 1.6;
+    line-height: 1.7;
     height: 100%;
     overflow-y: auto;
     /* USER REQUEST: Make code selectable */
     user-select: text !important;
     -webkit-user-select: text !important;
     cursor: text;
+    white-space: pre !important;
+    /* Force strict pre preservation */
 }
 
 .execution-hint {
