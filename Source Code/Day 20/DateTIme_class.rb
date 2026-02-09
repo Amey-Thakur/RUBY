@@ -52,7 +52,7 @@ d = d + 1
 puts d
 
 
-d = Date.parse('20th Juky 2000').to_date
+d = Date.parse('20th July 2000').to_date
 
 d = d + 1
 
