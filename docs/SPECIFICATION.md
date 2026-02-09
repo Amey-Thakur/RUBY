@@ -1,18 +1,20 @@
-# Technical Specification: RUBY
+# Technical Specification: Ruby Programming Challenge
 
 ## Architectural Overview
 
-**RUBY** is a comprehensive, modular repository architecture designed to facilitate a structured 30-day journey into Ruby programming and Web Development. The project serves as an extensive study into object-oriented design, functional paradigms (Procs/Lambdas), and full-stack engineering using the Ruby on Rails framework, ranging from basic syntax to cloud deployment.
+**Ruby Programming Challenge** is a structured, modular repository architecture designed to facilitate a disciplined 30-day curriculum into Ruby programming and Full-Stack Web Development. The project serves as an extensive study into object-oriented design, functional paradigms, and rapid application engineering, bridging the gap from foundational syntax to cloud-deployed production environments.
 
-### Repository Modular Flow
+### Learning Logic Flow
 
 ```mermaid
 graph TD
-    Start["Foundational Syntax (Variables/Methods)"] --> OOP["Object-Oriented Design (Classes/Inheritance)"]
-    OOP --> Functional["Functional Patterns (Blocks/Procs/Lambdas)"]
-    Functional --> Logic["Game Logic (TicTacToe/Hangman)"]
-    Logic --> Web["Full-Stack Web (Ruby on Rails)"]
-    Web --> End["Cloud Deployment (Heroku/Production)"]
+    Start["Foundations (Days 1-8)"] --> OOP["Object-Oriented Design (Days 3-5, 15-16)"]
+    OOP --> Functional["Functional Patterns (Days 8, 18-19)"]
+    Functional --> Struct["Data Structures & Logic (Days 11-13, 17, 20)"]
+    Struct --> Games["Interactive Systems (Days 21-22)"]
+    Games --> Web{"Full-Stack Development"}
+    Web -->|Ruby on Rails| Apps["Web Engineering (Days 23-29)"]
+    Apps --> End["Cloud Deployment (Day 30)"]
 ```
 
 ---
@@ -20,16 +22,16 @@ graph TD
 ## Technical Implementations
 
 ### 1. Core Ruby Engine
--   **Runtime Environment**: Optimized for **Ruby 3.x**, utilizing the **Gems** ecosystem and standard library for robust computational logic.
--   **Modular Design**: Implements a highly organized source code architecture where each daily module focuses on specific linguistic features or engineering patterns.
+-   **Runtime Environment**: Optimized for **Ruby 3.x**, utilizing the **Rubygems** ecosystem and standard library for robust computational and engineering logic.
+-   **Modular Design**: Implements a highly organized source code architecture where each daily module focused on specific linguistic features, design patterns, or framework components.
 
 ### 2. Specialized Frameworks & Libraries
--   **Full-Stack Development**: Leverages **Ruby on Rails** for rapid application development, implementing MVC architecture and RESTful principles.
+-   **Full-Stack Development**: Leverages **Ruby on Rails** for high-velocity application development, implementing MVC architecture, RESTful routing, and database migrations.
 -   **Database Management**: Utilizes **Active Record** with **SQLite3** for development and production-ready data persistence.
 -   **Authentication & Styling**: Integrates **Devise** for secure identity management and **Bootstrap** for responsive UI/UX engineering.
 
-### 3. Engineering Workflows
--   **Software Design Patterns**: Implements core OOP principles including encapsulation (Getters/Setters), inheritance, and module-based composition.
+### 3. Engineering Frameworks
+-   **Software Design Patterns**: Implements core OOP principles including encapsulation (Getters/Setters), inheritance, and module-based composition for scalable software architecture.
 -   **Interactive Systems**: Features algorithmic implementations of classic games (TicTacToe, Hangman) and linguistic processing utilities.
 
 ---
@@ -43,4 +45,4 @@ graph TD
 
 ---
 
-*Technical Specification | RUBY | Version 1.0*
+*Technical Specification | Ruby Language | Version 1.0*
