@@ -240,6 +240,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (typedBuffer.length > 50) typedBuffer = typedBuffer.substring(typedBuffer.length - 50);
 
         // Debounce to allow full word completion (avoids 'amey' triggering before 'ameymega')
+        clearTimeout(eeTimeout);
         eeTimeout = setTimeout(() => {
             const sortedKeys = Object.keys(secretMessages).sort((a, b) => b.length - a.length);
             for (const key of sortedKeys) {
