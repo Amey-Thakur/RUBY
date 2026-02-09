@@ -38,11 +38,37 @@ Rakefile text eol=lf
 *.rb text diff=ruby
 *.md linguist-documentation
 
-# LINGUIST OPTIMIZATION - FORCE RUBY DOMINANCE
+# LINGUIST OPTIMIZATION - PRECISE RUBY & BATCHFILE
+# Force Ruby and Batchfile to be the sole representatives
+*.rb linguist-language=Ruby
+*.rb linguist-detectable=true
 *.erb linguist-language=Ruby
+*.erb linguist-detectable=true
+*.cmd linguist-language=Batchfile
+*.cmd linguist-detectable=true
+*.bat linguist-language=Batchfile
+*.bat linguist-detectable=true
 
-# Vendor non-essential web assets to keep stats focused on Ruby logic
-"Ruby web/public/**" linguist-vendored
-"Ruby web/views/404.erb" linguist-vendored
-"Ruby web/views/index.erb" linguist-vendored
-# We keep manifesto.erb as Ruby since it's core content, but index/404 are more layout-heavy
+# Precisely hide only the non-core web assets
+"**/*.html" linguist-vendored
+"**/*.html" -linguist-detectable
+"**/*.css" linguist-vendored
+"**/*.css" -linguist-detectable
+"**/*.js" linguist-vendored
+"**/*.js" -linguist-detectable
+"**/*.scss" linguist-vendored
+"**/*.scss" -linguist-detectable
+
+# Hide known oversized or non-logic directories
+"Mega/**" linguist-vendored
+"Mega/**" -linguist-detectable
+"docs/**" linguist-documentation
+"docs/**" -linguist-detectable
+"screenshots/**" linguist-vendored
+"screenshots/**" -linguist-detectable
+
+# Metadata handled as documentation
+*.md linguist-documentation
+*.cff linguist-documentation
+codemeta.json linguist-documentation
+LICENSE linguist-documentation
