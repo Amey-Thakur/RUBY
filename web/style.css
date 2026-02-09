@@ -119,9 +119,9 @@ body {
 }
 
 .glass-panel:hover {
-    transform: translateY(-8px);
-    border-color: var(--accent-ruby);
-    box-shadow: 0 20px 40px rgba(224, 17, 95, 0.25);
+    transform: translateY(-10px);
+    border: 2px solid var(--accent-ruby);
+    box-shadow: 0 0 30px rgba(224, 17, 95, 0.4);
 }
 
 /* Hero Section */
@@ -153,60 +153,88 @@ body {
     margin: 0 auto 3rem;
 }
 
-/* Identity Grid */
+/* Identity Grid - Redesigned for Premium Sync */
 .hero-identity-grid {
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    gap: 3rem;
     flex-wrap: wrap;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
+    margin-top: 1rem;
 }
 
 .profile-unit {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: 0;
+    position: relative;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    min-width: 220px;
+}
+
+.profile-unit:hover {
+    transform: scale(1.05) translateY(-5px);
+    background: rgba(224, 17, 95, 0.05);
+    border-color: var(--accent-ruby);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .author-pill {
     display: flex;
+    flex-direction: column;
+    /* Profile Image on top of name */
     align-items: center;
-    gap: 0.75rem;
-    background: rgba(255, 255, 255, 0.05);
-    padding: 0.5rem 1.25rem;
-    border-radius: 50px;
-    border: 1px solid var(--border-color);
+    gap: 0.5rem;
     text-decoration: none;
     color: var(--text-primary);
-    transition: all 0.3s ease;
+    margin-bottom: 1.2rem;
 }
 
 .author-pill img {
-    width: 40px;
-    height: 40px;
+    width: 64px;
+    height: 64px;
     border-radius: 50%;
-    border: 2px solid var(--accent-ruby);
+    border: 3px solid var(--accent-ruby);
+    box-shadow: 0 0 15px rgba(224, 17, 95, 0.3);
+    transition: all 0.5s ease;
+}
+
+.profile-unit:hover img {
+    transform: rotate(5deg) scale(1.1);
+    box-shadow: 0 0 25px rgba(224, 17, 95, 0.6);
+}
+
+.author-pill span {
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
 }
 
 .repo-btn {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    background: var(--panel-bg);
-    padding: 0.5rem 1rem;
-    border-radius: 10px;
-    border: 1px solid var(--border-color);
+    background: var(--accent-ruby);
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 12px;
     text-decoration: none;
-    color: var(--text-secondary);
     font-size: 0.85rem;
+    font-weight: 600;
     transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 4px 10px rgba(224, 17, 95, 0.3);
 }
 
 .repo-btn:hover {
-    color: var(--text-primary);
-    border-color: var(--accent-ruby);
-    transform: scale(1.05);
+    background: #ff1a75;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(224, 17, 95, 0.5);
 }
 
 /* Stats */
