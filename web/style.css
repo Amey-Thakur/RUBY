@@ -478,7 +478,7 @@ body {
     width: 0%;
     height: 100%;
     background: var(--accent-ruby);
-    transition: width 0.15s linear;
+    transition: width 0.4s ease;
 }
 
 .pulse-text {
@@ -516,7 +516,7 @@ body {
 }
 
 .loader-ruby-icon {
-    animation: breathing 1.5s ease-in-out infinite;
+    animation: breathing 3s ease-in-out infinite;
 }
 
 .splash-footer {

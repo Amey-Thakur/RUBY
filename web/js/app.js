@@ -14,11 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Splash Loader Animation
     let progress = 0;
     const interval = setInterval(() => {
-        // High-frequency small increments for a linear "glide" effect
-        progress += Math.random() * 0.8 + 0.2;
-        if (progress > 100) progress = 100;
-        progressBar.style.width = `${progress}%`;
-
+        progress += Math.random() * 30;
         if (progress >= 100) {
             progress = 100;
             progressBar.style.width = '100%';
@@ -28,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 setTimeout(() => splash.style.display = 'none', 800);
             }, 600);
         }
-    }, 50);
+    }, 200);
 
     // 2. Render Curriculum Grid
     function renderGrid(filter = 'all') {
