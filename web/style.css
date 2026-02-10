@@ -555,21 +555,46 @@ body {
     line-height: 1.6;
 }
 
-.view-btn {
+.project-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    width: 100%;
+}
+
+.view-btn, .play-btn {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
-    background: var(--accent-ruby);
-    color: white !important;
-    padding: 0.75rem 2rem;
+    padding: 0.75rem 1.2rem;
     border-radius: 12px;
     text-decoration: none;
     font-weight: 700;
+    font-size: 0.85rem;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(224, 17, 95, 0.3);
+    flex: 1;
+}
+
+.view-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary) !important;
 }
 
 .view-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
+    border-color: var(--text-secondary);
+}
+
+.play-btn {
+    background: var(--accent-ruby);
+    color: white !important;
+    box-shadow: 0 4px 15px rgba(224, 17, 95, 0.3);
+}
+
+.play-btn:hover {
     background: #ff1a75;
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(224, 17, 95, 0.5);
