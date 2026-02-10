@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>404 - Ruby Logic Error | Ruby Programming Challenge</title>
     <link rel="icon" type="image/png" href="assets/Ruby Logo.png">
-
+    
     <!-- Fonts & Global Styles -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,41 +19,35 @@
         /* 404 Specific Overrides */
         body {
             height: 100vh;
-            height: 100dvh;
-            /* Mobile viewport fix */
+            height: 100dvh; /* Mobile viewport fix */
             width: 100vw;
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden;
-            /* Strict no-scroll */
+            overflow: hidden; /* Strict no-scroll */
             flex-direction: column;
             margin: 0;
             padding: 0;
-            background-color: #050505;
-            /* Deep cinematic black */
+            background-color: #050505; /* Deep cinematic black */
         }
 
         .error-container {
             text-align: center;
             width: 100%;
-            max-width: 1000px;
-            /* Increased max-width for cinematic feel */
+            max-width: 1000px; /* Increased max-width for cinematic feel */
             padding: 2rem;
             position: relative;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            flex-grow: 1;
-            gap: 2.5rem;
-            /* Consistent large spacing */
+            flex-grow: 1; 
+            gap: 2.5rem; /* Consistent large spacing */
         }
 
         .error-code {
             font-family: var(--font-heading);
-            font-size: 12rem;
-            /* Massive impact */
+            font-size: 12rem; /* Massive impact */
             font-weight: 700;
             line-height: 0.8;
             margin: 0;
@@ -62,56 +56,28 @@
             -webkit-text-fill-color: transparent;
             position: relative;
             animation: glitch 3s infinite;
-            text-shadow: 0 0 50px rgba(224, 17, 95, 0.4);
-            /* Stronger glow */
+            text-shadow: 0 0 50px rgba(224, 17, 95, 0.4); /* Stronger glow */
             letter-spacing: -5px;
         }
 
         @keyframes glitch {
-            0% {
-                text-shadow: 3px 3px 0px var(--accent-ruby);
-                filter: hue-rotate(0deg);
-            }
-
-            5% {
-                text-shadow: -3px -3px 0px var(--accent-crimson);
-            }
-
-            10% {
-                text-shadow: 3px -3px 0px var(--accent-ruby);
-            }
-
-            15% {
-                text-shadow: 0px 0px 0px transparent;
-                filter: hue-rotate(360deg);
-            }
-
-            100% {
-                text-shadow: 0px 0px 0px transparent;
-            }
+            0% { text-shadow: 3px 3px 0px var(--accent-ruby); filter: hue-rotate(0deg); }
+            5% { text-shadow: -3px -3px 0px var(--accent-crimson); }
+            10% { text-shadow: 3px -3px 0px var(--accent-ruby); }
+            15% { text-shadow: 0px 0px 0px transparent; filter: hue-rotate(360deg); }
+            100% { text-shadow: 0px 0px 0px transparent; }
         }
 
         .ruby-glitch-icon {
-            width: 140px;
-            /* Much larger */
+            width: 140px; /* Much larger */
             height: 140px;
-            filter: drop-shadow(0 0 40px var(--accent-ruby));
-            /* Intense glow */
+            filter: drop-shadow(0 0 40px var(--accent-ruby)); /* Intense glow */
             animation: float 5s ease-in-out infinite;
         }
 
         @keyframes float {
-
-            0%,
-            100% {
-                transform: translateY(0) scale(1);
-            }
-
-            50% {
-                transform: translateY(-20px) scale(1.05);
-            }
-
-            /* Breathing effect */
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-20px) scale(1.05); } /* Breathing effect */
         }
 
         .premium-title {
@@ -136,11 +102,9 @@
             display: inline-flex;
             align-items: center;
             gap: 1rem;
-            padding: 1.2rem 3.5rem;
-            /* Larger button */
+            padding: 1.2rem 3.5rem; /* Larger button */
             background: rgba(224, 17, 95, 0.15);
-            border: 2px solid var(--accent-ruby);
-            /* Thicker border */
+            border: 2px solid var(--accent-ruby); /* Thicker border */
             color: var(--accent-ruby);
             text-decoration: none;
             border-radius: 50px;
@@ -157,16 +121,15 @@
             background: var(--accent-ruby);
             color: white;
             transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 10px 40px rgba(224, 17, 95, 0.6);
-            /* Cinematic glow */
+            box-shadow: 0 10px 40px rgba(224, 17, 95, 0.6); /* Cinematic glow */
         }
 
         /* Standard Footer Styling - Minimal & Clean */
         .copyright-footer {
-            position: absolute;
-            bottom: 2rem;
-            color: var(--text-secondary);
-            font-size: 0.9rem;
+            position: absolute; 
+            bottom: 2rem; 
+            color: var(--text-secondary); 
+            font-size: 0.9rem; 
             opacity: 0.6;
             width: 100%;
             text-align: center;
@@ -181,7 +144,7 @@
             transition: color 0.3s ease;
             position: relative;
         }
-
+        
         .author-link::after {
             content: '';
             position: absolute;
@@ -196,102 +159,38 @@
         .author-link:hover {
             color: var(--accent-ruby);
         }
-
+        
         .author-link:hover::after {
             width: 100%;
         }
 
         /* Responsive Adjustments */
         @media (max-width: 1024px) {
-            .error-code {
-                font-size: 10rem;
-            }
-
-            .ruby-glitch-icon {
-                width: 120px;
-                height: 120px;
-            }
-
-            .premium-title {
-                font-size: 2.5rem !important;
-            }
+            .error-code { font-size: 10rem; }
+            .ruby-glitch-icon { width: 120px; height: 120px; }
+            .premium-title { font-size: 2.5rem !important; }
         }
 
-        @media (max-width: 768px),
-        (max-height: 900px) {
-            .error-container {
-                gap: 1.5rem;
-                padding: 1.5rem;
-            }
-
-            .error-code {
-                font-size: 7rem;
-            }
-
-            .ruby-glitch-icon {
-                width: 90px;
-                height: 90px;
-            }
-
-            .premium-title {
-                font-size: 2rem !important;
-            }
-
-            .error-message {
-                font-size: 1.1rem;
-                line-height: 1.5;
-            }
-
-            .home-btn {
-                padding: 1rem 2.5rem;
-                font-size: 1rem;
-            }
-
-            .copyright-footer {
-                bottom: 1.5rem;
-            }
+        @media (max-width: 768px), (max-height: 900px) {
+            .error-container { gap: 1.5rem; padding: 1.5rem; }
+            .error-code { font-size: 7rem; }
+            .ruby-glitch-icon { width: 90px; height: 90px; }
+            .premium-title { font-size: 2rem !important; }
+            .error-message { font-size: 1.1rem; line-height: 1.5; }
+            .home-btn { padding: 1rem 2.5rem; font-size: 1rem; }
+            .copyright-footer { bottom: 1.5rem; }
         }
 
         /* Extreme Vertical Constraint */
         @media (max-height: 600px) {
-            .error-container {
-                gap: 0.8rem;
-            }
-
-            .ruby-glitch-icon {
-                width: 50px;
-                height: 50px;
-                margin: 0;
-            }
-
-            .error-code {
-                font-size: 4rem;
-                margin: 0;
-            }
-
-            .premium-title {
-                font-size: 1.5rem !important;
-                margin: 0;
-            }
-
-            .error-message {
-                display: none;
-            }
-
-            .home-btn {
-                padding: 0.7rem 2rem;
-                margin-top: 0.5rem;
-                font-size: 0.9rem;
-            }
-
-            .copyright-footer {
-                font-size: 0.8rem;
-                bottom: 1rem;
-            }
-
-            body {
-                justify-content: space-evenly;
-            }
+            .error-container { gap: 0.8rem; }
+            .ruby-glitch-icon { width: 50px; height: 50px; margin: 0; }
+            .error-code { font-size: 4rem; margin: 0; }
+            .premium-title { font-size: 1.5rem !important; margin: 0; }
+            .error-message { display: none; }
+            .home-btn { padding: 0.7rem 2rem; margin-top: 0.5rem; font-size: 0.9rem; }
+            .copyright-footer { font-size: 0.8rem; bottom: 1rem; }
+            body { justify-content: space-evenly; }
         }
     </style>
 </head>
@@ -300,11 +199,11 @@
     <div class="error-container">
         <!-- Floating Glitchy Ruby -->
         <img src="assets/Ruby Logo.png" alt="Ruby" class="ruby-glitch-icon">
-
+        
         <!-- Glitch Title -->
         <h1 class="error-code">404</h1>
         <h2 class="premium-title">Logic Error Detected</h2>
-
+        
         <!-- Error Context -->
         <p class="error-message">
             The route you decoded does not exist in the current runtime context.<br>
@@ -317,7 +216,7 @@
             <span>Evaluate Home Scope</span>
         </a>
     </div>
-
+    
     <footer class="copyright-footer">
         <p>Created by <a href="https://github.com/Amey-Thakur" class="author-link" target="_blank">Amey Thakur</a> &
             <a href="https://github.com/msatmod" class="author-link" target="_blank">Mega Satish</a> • &copy; 2022
@@ -330,5 +229,4 @@
         document.body.setAttribute('data-theme', currentTheme);
     </script>
 </body>
-
 </html>

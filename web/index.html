@@ -1,4 +1,3 @@
-<!-- Ruby Challenge - Final Build -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,11 +9,8 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- Prism.js for Syntax Highlighting -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
 
     <!-- PWA Metadata -->
@@ -32,7 +28,7 @@
         <div class="loader-content">
             <div class="loader-ruby-wrapper">
                 <div class="loader-ruby-icon" id="splash-ruby-icon">
-                    <img src="assets/Ruby Logo.png" width="48" height="48" alt="Ruby Logo">
+                    <img src="assets/Ruby Logo.png" alt="Ruby Logo">
                 </div>
                 <div class="loader-progress-container">
                     <div id="splash-progress-bar"></div>
@@ -59,12 +55,9 @@
                     </button>
                 </div>
                 <h1 class="premium-title">Ruby Programming <span class="gradient-text">Challenge</span></h1>
-                <p class="subtitle">A disciplined 30-day collaborative challenge undertaken to master Ruby programming
-                    and Ruby on Rails development, featuring a structured curriculum from basic syntax to full-stack web
-                    engineering.</p>
+                <p class="subtitle">A disciplined 30-day collaborative challenge undertaken to master Ruby programming and Ruby on Rails development, featuring a structured curriculum from basic syntax to full-stack web engineering.</p>
 
                 <div class="hero-identity-grid">
-                    <!-- Amey Thakur Profile Unit -->
                     <div class="profile-unit">
                         <a href="https://github.com/Amey-Thakur" target="_blank" class="author-pill">
                             <img src="https://github.com/Amey-Thakur.png" alt="Amey">
@@ -76,7 +69,6 @@
                         </a>
                     </div>
 
-                    <!-- Mega Satish Profile Unit -->
                     <div class="profile-unit">
                         <a href="https://github.com/msatmod" target="_blank" class="author-pill">
                             <img src="assets/Mega.png" alt="Mega">
@@ -99,7 +91,7 @@
                                 <span class="stat-label">CURRICULUM MODULES</span>
                             </div>
                             <div class="stat-value-container">
-                                <span id="milestone-count" class="stat-value">30</span>
+                                <span id="milestone-count" class="stat-value">0</span>
                                 <span class="stat-total">/ 30</span>
                             </div>
                         </div>
@@ -109,20 +101,20 @@
                                 <i class="fas fa-rocket stat-cert-icon"></i>
                             </div>
                             <div class="stat-value-container">
-                                <span id="project-count" class="stat-value">3</span>
+                                <span id="project-count" class="stat-value">0</span>
                             </div>
                         </div>
                     </div>
 
                     <div class="stats-animation-track">
-                        <div class="stats-ruby-icon" id="stats-ruby-icon" onclick="animateStatsCard()">
+                        <div class="stats-ruby-icon" id="stats-ruby-icon" onclick="animateStatsCard()" title="Click to Replay Analysis">
                             <img src="assets/Ruby Logo.png" width="24" height="24" alt="Ruby Logo">
                         </div>
                         <div class="stats-subtle-line"></div>
                     </div>
 
                     <div class="stat-center-unit">
-                        <div id="mastery-count" class="stat-footer-value accent-ruby">100%</div>
+                        <div id="mastery-count" class="stat-footer-value" style="color: var(--accent-ruby);">0%</div>
                         <div class="stat-footer-label">CHALLENGE MASTERY</div>
                     </div>
                 </div>
@@ -131,7 +123,7 @@
 
         <main class="container">
             <section id="projects" class="project-section reveal">
-                <h2 class="section-title">Core Technical Projects</h2>
+                <h2 class="section-title">Ruby Projects</h2>
                 <div class="project-grid">
                     <div class="project-card glass-panel" data-link="https://github.com/Amey-Thakur/RAILSFRIENDS">
                         <div class="project-icon-wrapper">
@@ -139,21 +131,21 @@
                         </div>
                         <h3>RailsFriends</h3>
                         <p>Full-stack web application with SQLite3 persistence.</p>
-                        <a href="https://github.com/Amey-Thakur/RAILSFRIENDS" target="_blank" class="view-btn">View
-                            Code</a>
+                        <a href="https://github.com/Amey-Thakur/RAILSFRIENDS" target="_blank" class="view-btn">View Code</a>
                     </div>
-                    <div class="project-card glass-panel"
-                        data-link="https://github.com/Amey-Thakur/TIC-TAC-TOE-IN-RUBY">
+                    <div class="project-card glass-panel" data-link="https://github.com/Amey-Thakur/TIC-TAC-TOE-IN-RUBY">
                         <div class="project-icon-wrapper">
                             <i class="fas fa-gamepad"></i>
                         </div>
                         <h3>TicTacToe</h3>
                         <p>Algorithmic implementation in pure Ruby.</p>
                         <div class="project-actions">
-                            <a href="https://amey-thakur.github.io/TIC-TAC-TOE-IN-RUBY/" target="_blank"
-                                class="play-btn"><i class="fas fa-play"></i> Play Game</a>
-                            <a href="https://github.com/Amey-Thakur/TIC-TAC-TOE-IN-RUBY" target="_blank"
-                                class="view-btn"><i class="fas fa-code"></i> Source</a>
+                            <a href="https://amey-thakur.github.io/TIC-TAC-TOE-IN-RUBY/" target="_blank" class="play-btn">
+                                <i class="fas fa-play"></i> Play Game
+                            </a>
+                            <a href="https://github.com/Amey-Thakur/TIC-TAC-TOE-IN-RUBY" target="_blank" class="view-btn">
+                                <i class="fas fa-code"></i> Source
+                            </a>
                         </div>
                     </div>
                     <div class="project-card glass-panel" data-link="https://github.com/Amey-Thakur/HANGMAN-IN-RUBY">
@@ -163,10 +155,12 @@
                         <h3>Hangman</h3>
                         <p>Logic-driven lexical processing engine.</p>
                         <div class="project-actions">
-                            <a href="https://amey-thakur.github.io/HANGMAN-IN-RUBY/" target="_blank" class="play-btn"><i
-                                    class="fas fa-play"></i> Play Game</a>
-                            <a href="https://github.com/Amey-Thakur/HANGMAN-IN-RUBY" target="_blank" class="view-btn"><i
-                                    class="fas fa-code"></i> Source</a>
+                            <a href="https://amey-thakur.github.io/HANGMAN-IN-RUBY/" target="_blank" class="play-btn">
+                                <i class="fas fa-play"></i> Play Game
+                            </a>
+                            <a href="https://github.com/Amey-Thakur/HANGMAN-IN-RUBY" target="_blank" class="view-btn">
+                                <i class="fas fa-code"></i> Source
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -183,347 +177,548 @@
                     <button class="filter-btn" data-filter="rails">Rails</button>
                 </div>
                 <div class="day-grid" id="day-grid">
-                    <!-- High-Fidelity Mastery Cards Injected via Build Synchronizer -->
-                    <div class="day-card glass-panel" data-category="basics"
-                        data-files='["Begin_&_End_Statement.rb","Chomp.rb","Length.rb","Name.rb","Round.rb"]'
-                        data-folder="Source Code/Day 1" onclick="openArchiveExplorer(1)">
+                    <!-- Static Grid generated by Ruby ERB -->
+                    
+                    <div class="day-card glass-panel" 
+                         data-category="basics"
+                         data-files='["Begin_&_End_Statement.rb","Chomp.rb","Length.rb","Name.rb","Round.rb"]'
+                         data-folder="Source Code/Day 1"
+                         onclick="openArchiveExplorer(1)">
                         <div class="card-header">
                             <div class="day-number">Day 1</div>
                             <div class="mastery-pulse"></div>
                         </div>
                         <div class="day-title">Installation, Variables & User Input</div>
-                        <div class="day-footer"><span class="category-tag">BASICS</span>
-                            <div class="file-count"><i class="fas fa-file-code"></i> 5 Sources</div>
+                        <div class="day-footer">
+                            <span class="category-tag">BASICS</span>
+                            <div class="file-count">
+                                <i class="fas fa-file-code"></i> 5 Sources
+                            </div>
                         </div>
                     </div>
-                    <div class="day-card glass-panel" data-category="basics"
-                        data-files='["Arithmetic_Logic_Operator.rb","Assignment_Operator_And_Parallel_Assignment.rb","Comparison_Operator.rb","If_Else_Statement.rb","Logical_Operator.rb","Ternary_Operator.rb"]'
-                        data-folder="Source Code/Day 2" onclick="openArchiveExplorer(2)">
+                    
+                    <div class="day-card glass-panel" 
+                         data-category="basics"
+                         data-files='["Case_statement.rb","Code_unless_condition.rb","Conditional_if.rb","Function.rb","If_elsif_else.rb","Methods_with_default_parameters.rb","Methods_with_parameters.rb","Passing_multiple_parameters_to_a_single_method.rb","Returning_values_from_methods.rb","Unless_conditional.rb"]'
+                         data-folder="Source Code/Day 2"
+                         onclick="openArchiveExplorer(2)">
                         <div class="card-header">
                             <div class="day-number">Day 2</div>
                             <div class="mastery-pulse"></div>
                         </div>
                         <div class="day-title">Methods and Conditional if-else</div>
-                        <div class="day-footer"><span class="category-tag">BASICS</span>
-                            <div class="file-count"><i class="fas fa-file-code"></i> 6 Sources</div>
+                        <div class="day-footer">
+                            <span class="category-tag">BASICS</span>
+                            <div class="file-count">
+                                <i class="fas fa-file-code"></i> 10 Sources
+                            </div>
                         </div>
                     </div>
-                    <div class="day-card glass-panel" data-category="basics"
-                        data-files='["Class_&_Object.rb","Initialize_Method.rb"]' data-folder="Source Code/Day 3"
-                        onclick="openArchiveExplorer(3)">
+                    
+                    <div class="day-card glass-panel" 
+                         data-category="basics"
+                         data-files='["Class_&_Object.rb"]'
+                         data-folder="Source Code/Day 3"
+                         onclick="openArchiveExplorer(3)">
                         <div class="card-header">
                             <div class="day-number">Day 3</div>
                             <div class="mastery-pulse"></div>
                         </div>
                         <div class="day-title">Classes and Objects</div>
-                        <div class="day-footer"><span class="category-tag">BASICS</span>
-                            <div class="file-count"><i class="fas fa-file-code"></i> 2 Sources</div>
+                        <div class="day-footer">
+                            <span class="category-tag">BASICS</span>
+                            <div class="file-count">
+                                <i class="fas fa-file-code"></i> 1 Sources
+                            </div>
                         </div>
                     </div>
-                    <div class="day-card glass-panel" data-category="basics"
-                        data-files='["Getter_&_Setter_Method.rb","To_s_Method.rb"]' data-folder="Source Code/Day 4"
-                        onclick="openArchiveExplorer(4)">
+                    
+                    <div class="day-card glass-panel" 
+                         data-category="basics"
+                         data-files='["Getter_&_Setter.rb","Getter_Setter_&_Initialize_Method.rb","Shortcut_of_Getter_Setter_and_to_s_Method.rb","Shortcut_to_Getter_&_Setter.rb","to_s_method.rb"]'
+                         data-folder="Source Code/Day 4"
+                         onclick="openArchiveExplorer(4)">
                         <div class="card-header">
                             <div class="day-number">Day 4</div>
                             <div class="mastery-pulse"></div>
                         </div>
                         <div class="day-title">Getter, Setter and to_s Method</div>
-                        <div class="day-footer"><span class="category-tag">BASICS</span>
-                            <div class="file-count"><i class="fas fa-file-code"></i> 2 Sources</div>
+                        <div class="day-footer">
+                            <span class="category-tag">BASICS</span>
+                            <div class="file-count">
+                                <i class="fas fa-file-code"></i> 5 Sources
+                            </div>
                         </div>
                     </div>
-                    <div class="day-card glass-panel" data-category="basics"
-                        data-files='["Class_Variable.rb","Self_Keyword.rb"]' data-folder="Source Code/Day 5"
-                        onclick="openArchiveExplorer(5)">
+                    
+                    <div class="day-card glass-panel" 
+                         data-category="basics"
+                         data-files='["Class_Variable.rb","Class_Variable_with_Self_Method.rb"]'
+                         data-folder="Source Code/Day 5"
+                         onclick="openArchiveExplorer(5)">
                         <div class="card-header">
                             <div class="day-number">Day 5</div>
                             <div class="mastery-pulse"></div>
                         </div>
                         <div class="day-title">Class Variable and Self Method</div>
-                        <div class="day-footer"><span class="category-tag">BASICS</span>
-                            <div class="file-count"><i class="fas fa-file-code"></i> 2 Sources</div>
+                        <div class="day-footer">
+                            <span class="category-tag">BASICS</span>
+                            <div class="file-count">
+                                <i class="fas fa-file-code"></i> 2 Sources
+                            </div>
                         </div>
                     </div>
-                    <div class="day-card glass-panel" data-category="logic"
-                        data-files='["Until_Loop.rb","While_Loop.rb"]' data-folder="Source Code/Day 6"
-                        onclick="openArchiveExplorer(6)">
+                    
+                    <div class="day-card glass-panel" 
+                         data-category="logic"
+                         data-files='["For_loop.rb","For_loop_Alternative.rb","More_on_loops.rb","Until_loop.rb","Until_modifier.rb","While_loop.rb","While_modifier.rb"]'
+                         data-folder="Source Code/Day 6"
+                         onclick="openArchiveExplorer(6)">
                         <div class="card-header">
                             <div class="day-number">Day 6</div>
                             <div class="mastery-pulse"></div>
                         </div>
                         <div class="day-title">Loops</div>
-                        <div class="day-footer"><span class="category-tag">LOGIC</span>
-                            <div class="file-count"><i class="fas fa-file-code"></i> 2 Sources</div>
+                        <div class="day-footer">
+                            <span class="category-tag">LOGIC</span>
+                            <div class="file-count">
+                                <i class="fas fa-file-code"></i> 7 Sources
+                            </div>
                         </div>
                     </div>
-                    <div class="day-card glass-panel" data-category="logic"
-                        data-files='["Break_Statement.rb","Next_Statement.rb","Redo_Statement.rb"]'
-                        data-folder="Source Code/Day 7" onclick="openArchiveExplorer(7)">
+                    
+                    <div class="day-card glass-panel" 
+                         data-category="logic"
+                         data-files='["Break_Statement.rb","Next_&_Redo_Statement.rb"]'
+                         data-folder="Source Code/Day 7"
+                         onclick="openArchiveExplorer(7)">
                         <div class="card-header">
                             <div class="day-number">Day 7</div>
                             <div class="mastery-pulse"></div>
                         </div>
                         <div class="day-title">Break, Next and Redo Statement</div>
-                        <div class="day-footer"><span class="category-tag">LOGIC</span>
-                            <div class="file-count"><i class="fas fa-file-code"></i> 3 Sources</div>
+                        <div class="day-footer">
+                            <span class="category-tag">LOGIC</span>
+                            <div class="file-count">
+                                <i class="fas fa-file-code"></i> 2 Sources
+                            </div>
                         </div>
                     </div>
-                    <div class="day-card glass-panel" data-category="logic" data-files='["Block_&_Yield.rb"]'
-                        data-folder="Source Code/Day 8" onclick="openArchiveExplorer(8)">
+                    
+                    <div class="day-card glass-panel" 
+                         data-category="logic"
+                         data-files='["Block_with_parameters.rb","Block_without_parameters.rb","Passing_a_block_to_a_method.rb"]'
+                         data-folder="Source Code/Day 8"
+                         onclick="openArchiveExplorer(8)">
                         <div class="card-header">
                             <div class="day-number">Day 8</div>
                             <div class="mastery-pulse"></div>
                         </div>
                         <div class="day-title">Block and Yield</div>
-                        <div class="day-footer"><span class="category-tag">LOGIC</span>
-                            <div class="file-count"><i class="fas fa-file-code"></i> 1 Source</div>
+                        <div class="day-footer">
+                            <span class="category-tag">LOGIC</span>
+                            <div class="file-count">
+                                <i class="fas fa-file-code"></i> 3 Sources
+                            </div>
                         </div>
                     </div>
-                    <div class="day-card glass-panel" data-category="modular" data-files='["Module_Concept.rb"]'
-                        data-folder="Source Code/Day 9" onclick="openArchiveExplorer(9)">
+                    
+                    <div class="day-card glass-panel" 
+                         data-category="modular"
+                         data-files='["Modules.rb","Modules_with_Class.rb"]'
+                         data-folder="Source Code/Day 9"
+                         onclick="openArchiveExplorer(9)">
                         <div class="card-header">
                             <div class="day-number">Day 9</div>
                             <div class="mastery-pulse"></div>
                         </div>
                         <div class="day-title">Module Concept with Class</div>
-                        <div class="day-footer"><span class="category-tag">MODULAR</span>
-                            <div class="file-count"><i class="fas fa-file-code"></i> 1 Source</div>
+                        <div class="day-footer">
+                            <span class="category-tag">MODULAR</span>
+                            <div class="file-count">
+                                <i class="fas fa-file-code"></i> 2 Sources
+                            </div>
                         </div>
                     </div>
-                    <div class="day-card glass-panel" data-category="modular"
-                        data-files='["Include_Statement.rb","Loading_Concept.rb","Requirement_Statement.rb"]'
-                        data-folder="Source Code/Day 10" onclick="openArchiveExplorer(10)">
+                    
+                    <div class="day-card glass-panel" 
+                         data-category="modular"
+                         data-files='["Include statement concept/Filly.rb","Include statement concept/Mega.rb","Mixins/Mixins.rb","Require & Require Relative/Class_in_modules.rb","Require & Require Relative/Modules.rb","Require & Require Relative/Require_example.rb","Require & Require Relative/Require_relative_example.rb"]'
+                         data-folder="Source Code/Day 10"
+                         onclick="openArchiveExplorer(10)">
                         <div class="card-header">
                             <div class="day-number">Day 10</div>
                             <div class="mastery-pulse"></div>
                         </div>
                         <div class="day-title">Require & Include Statement</div>
-                        <div class="day-footer"><span class="category-tag">MODULAR</span>
-                            <div class="file-count"><i class="fas fa-file-code"></i> 3 Sources</div>
+                        <div class="day-footer">
+                            <span class="category-tag">MODULAR</span>
+                            <div class="file-count">
+                                <i class="fas fa-file-code"></i> 7 Sources
+                            </div>
                         </div>
                     </div>
-                    <div class="day-card glass-panel" data-category="modular"
-                        data-files='["Array_Basics.rb","Array_Iteration.rb","Array_Methods.rb"]'
-                        data-folder="Source Code/Day 11" onclick="openArchiveExplorer(11)">
+                    
+                    <div class="day-card glass-panel" 
+                         data-category="modular"
+                         data-files='["Array_basics_&_fundamentals-1.rb","Array_basics_&_fundamentals-2.rb","Array_basics_&_fundamentals-3.rb"]'
+                         data-folder="Source Code/Day 11"
+                         onclick="openArchiveExplorer(11)">
                         <div class="card-header">
                             <div class="day-number">Day 11</div>
                             <div class="mastery-pulse"></div>
                         </div>
                         <div class="day-title">Array Basics</div>
-                        <div class="day-footer"><span class="category-tag">MODULAR</span>
-                            <div class="file-count"><i class="fas fa-file-code"></i> 3 Sources</div>
+                        <div class="day-footer">
+                            <span class="category-tag">MODULAR</span>
+                            <div class="file-count">
+                                <i class="fas fa-file-code"></i> 3 Sources
+                            </div>
                         </div>
                     </div>
-                    <div class="day-card glass-panel" data-category="modular" data-files='["2D_Array.rb"]'
-                        data-folder="Source Code/Day 12" onclick="openArchiveExplorer(12)">
+                    
+                    <div class="day-card glass-panel" 
+                         data-category="modular"
+                         data-files='["Two-dimensional_array-1.rb","Two-dimensional_array-2.rb"]'
+                         data-folder="Source Code/Day 12"
+                         onclick="openArchiveExplorer(12)">
                         <div class="card-header">
                             <div class="day-number">Day 12</div>
                             <div class="mastery-pulse"></div>
                         </div>
                         <div class="day-title">2D Arrays</div>
-                        <div class="day-footer"><span class="category-tag">MODULAR</span>
-                            <div class="file-count"><i class="fas fa-file-code"></i> 1 Source</div>
+                        <div class="day-footer">
+                            <span class="category-tag">MODULAR</span>
+                            <div class="file-count">
+                                <i class="fas fa-file-code"></i> 2 Sources
+                            </div>
                         </div>
                     </div>
-                    <div class="day-card glass-panel" data-category="modular" data-files='["Hash_Basics.rb"]'
-                        data-folder="Source Code/Day 13" onclick="openArchiveExplorer(13)">
+                    
+                    <div class="day-card glass-panel" 
+                         data-category="modular"
+                         data-files='["Hash-1.rb","Hash-2.rb","Hash-3.rb"]'
+                         data-folder="Source Code/Day 13"
+                         onclick="openArchiveExplorer(13)">
                         <div class="card-header">
                             <div class="day-number">Day 13</div>
                             <div class="mastery-pulse"></div>
                         </div>
                         <div class="day-title">Hash</div>
-                        <div class="day-footer"><span class="category-tag">MODULAR</span>
-                            <div class="file-count"><i class="fas fa-file-code"></i> 1 Source</div>
+                        <div class="day-footer">
+                            <span class="category-tag">MODULAR</span>
+                            <div class="file-count">
+                                <i class="fas fa-file-code"></i> 3 Sources
+                            </div>
                         </div>
                     </div>
-                    <div class="day-card glass-panel" data-category="modular"
-                        data-files='["Menu_Class.rb","Random_Numbers.rb"]' data-folder="Source Code/Day 14"
-                        onclick="openArchiveExplorer(14)">
+                    
+                    <div class="day-card glass-panel" 
+                         data-category="modular"
+                         data-files='["Menu_Class.rb","Random_Numbers.rb"]'
+                         data-folder="Source Code/Day 14"
+                         onclick="openArchiveExplorer(14)">
                         <div class="card-header">
                             <div class="day-number">Day 14</div>
                             <div class="mastery-pulse"></div>
                         </div>
                         <div class="day-title">Random Numbers and Menu Class</div>
-                        <div class="day-footer"><span class="category-tag">MODULAR</span>
-                            <div class="file-count"><i class="fas fa-file-code"></i> 2 Sources</div>
+                        <div class="day-footer">
+                            <span class="category-tag">MODULAR</span>
+                            <div class="file-count">
+                                <i class="fas fa-file-code"></i> 2 Sources
+                            </div>
                         </div>
                     </div>
-                    <div class="day-card glass-panel" data-category="advanced" data-files='["Inheritance.rb"]'
-                        data-folder="Source Code/Day 15" onclick="openArchiveExplorer(15)">
+                    
+                    <div class="day-card glass-panel" 
+                         data-category="advanced"
+                         data-files='["Inheritance-1.rb","Inheritance-2.rb","Inheritance-3.rb","Inheritance-4.rb","Inheritance-5.rb","Inheritance-6_Method_Overriding.rb"]'
+                         data-folder="Source Code/Day 15"
+                         onclick="openArchiveExplorer(15)">
                         <div class="card-header">
                             <div class="day-number">Day 15</div>
                             <div class="mastery-pulse"></div>
                         </div>
                         <div class="day-title">Inheritance</div>
-                        <div class="day-footer"><span class="category-tag">ADVANCED</span>
-                            <div class="file-count"><i class="fas fa-file-code"></i> 1 Source</div>
+                        <div class="day-footer">
+                            <span class="category-tag">ADVANCED</span>
+                            <div class="file-count">
+                                <i class="fas fa-file-code"></i> 6 Sources
+                            </div>
                         </div>
                     </div>
-                    <div class="day-card glass-panel" data-category="advanced" data-files='["Operator_Overloading.rb"]'
-                        data-folder="Source Code/Day 16" onclick="openArchiveExplorer(16)">
+                    
+                    <div class="day-card glass-panel" 
+                         data-category="advanced"
+                         data-files='["Operator_overloading-1.rb","Operator_overloading-2.rb","Operator_overloading-3.rb","Operator_overloading-4.rb","Operator_overloading-5.rb","Operator_overloading-6.rb"]'
+                         data-folder="Source Code/Day 16"
+                         onclick="openArchiveExplorer(16)">
                         <div class="card-header">
                             <div class="day-number">Day 16</div>
                             <div class="mastery-pulse"></div>
                         </div>
                         <div class="day-title">Operator Overloading</div>
-                        <div class="day-footer"><span class="category-tag">ADVANCED</span>
-                            <div class="file-count"><i class="fas fa-file-code"></i> 1 Source</div>
+                        <div class="day-footer">
+                            <span class="category-tag">ADVANCED</span>
+                            <div class="file-count">
+                                <i class="fas fa-file-code"></i> 6 Sources
+                            </div>
                         </div>
                     </div>
-                    <div class="day-card glass-panel" data-category="advanced" data-files='["Freeze_Object.rb"]'
-                        data-folder="Source Code/Day 17" onclick="openArchiveExplorer(17)">
+                    
+                    <div class="day-card glass-panel" 
+                         data-category="advanced"
+                         data-files='["Freezing_Objects-1.rb","Freezing_Objects-2.rb"]'
+                         data-folder="Source Code/Day 17"
+                         onclick="openArchiveExplorer(17)">
                         <div class="card-header">
                             <div class="day-number">Day 17</div>
                             <div class="mastery-pulse"></div>
                         </div>
                         <div class="day-title">Freezing Objects</div>
-                        <div class="day-footer"><span class="category-tag">ADVANCED</span>
-                            <div class="file-count"><i class="fas fa-file-code"></i> 1 Source</div>
+                        <div class="day-footer">
+                            <span class="category-tag">ADVANCED</span>
+                            <div class="file-count">
+                                <i class="fas fa-file-code"></i> 2 Sources
+                            </div>
                         </div>
                     </div>
-                    <div class="day-card glass-panel" data-category="advanced" data-files='["Proc_&_Lambda.rb"]'
-                        data-folder="Source Code/Day 18" onclick="openArchiveExplorer(18)">
+                    
+                    <div class="day-card glass-panel" 
+                         data-category="advanced"
+                         data-files='["&Block-1.rb","&Block-2.rb","Lambda.rb","Lambda_method_in_kernel.rb","Proc_method_in_kernel.rb","Proc_new.rb","Procs_execution-1.rb","Procs_execution-2.rb","Procs_execution-3.rb","Procs_execution-4.rb","Procs_execution-5.rb"]'
+                         data-folder="Source Code/Day 18"
+                         onclick="openArchiveExplorer(18)">
                         <div class="card-header">
                             <div class="day-number">Day 18</div>
                             <div class="mastery-pulse"></div>
                         </div>
                         <div class="day-title">Proc and Lambda</div>
-                        <div class="day-footer"><span class="category-tag">ADVANCED</span>
-                            <div class="file-count"><i class="fas fa-file-code"></i> 1 Source</div>
+                        <div class="day-footer">
+                            <span class="category-tag">ADVANCED</span>
+                            <div class="file-count">
+                                <i class="fas fa-file-code"></i> 11 Sources
+                            </div>
                         </div>
                     </div>
-                    <div class="day-card glass-panel" data-category="advanced" data-files='["Arity_Method.rb"]'
-                        data-folder="Source Code/Day 19" onclick="openArchiveExplorer(19)">
+                    
+                    <div class="day-card glass-panel" 
+                         data-category="advanced"
+                         data-files='["Arity_method.rb","Difference_between_Procs_&_Lambda.rb"]'
+                         data-folder="Source Code/Day 19"
+                         onclick="openArchiveExplorer(19)">
                         <div class="card-header">
                             <div class="day-number">Day 19</div>
                             <div class="mastery-pulse"></div>
                         </div>
                         <div class="day-title">Arity Method</div>
-                        <div class="day-footer"><span class="category-tag">ADVANCED</span>
-                            <div class="file-count"><i class="fas fa-file-code"></i> 1 Source</div>
+                        <div class="day-footer">
+                            <span class="category-tag">ADVANCED</span>
+                            <div class="file-count">
+                                <i class="fas fa-file-code"></i> 2 Sources
+                            </div>
                         </div>
                     </div>
-                    <div class="day-card glass-panel" data-category="advanced" data-files='["Date_Time.rb"]'
-                        data-folder="Source Code/Day 20" onclick="openArchiveExplorer(20)">
+                    
+                    <div class="day-card glass-panel" 
+                         data-category="advanced"
+                         data-files='["DateTIme_class.rb","Date_&_Time.rb","Formatting_Time_&_Date.rb"]'
+                         data-folder="Source Code/Day 20"
+                         onclick="openArchiveExplorer(20)">
                         <div class="card-header">
                             <div class="day-number">Day 20</div>
                             <div class="mastery-pulse"></div>
                         </div>
                         <div class="day-title">Date and Time</div>
-                        <div class="day-footer"><span class="category-tag">ADVANCED</span>
-                            <div class="file-count"><i class="fas fa-file-code"></i> 1 Source</div>
+                        <div class="day-footer">
+                            <span class="category-tag">ADVANCED</span>
+                            <div class="file-count">
+                                <i class="fas fa-file-code"></i> 3 Sources
+                            </div>
                         </div>
                     </div>
-                    <div class="day-card glass-panel" data-category="interactive" data-files='["TicTacToe.rb"]'
-                        data-folder="Source Code/Day 21/TicTacToe" onclick="openArchiveExplorer(21)">
+                    
+                    <div class="day-card glass-panel" 
+                         data-category="interactive"
+                         data-files='["README.md","TicTacToe/lib/board.rb","TicTacToe/lib/display.rb","TicTacToe/lib/game.rb","TicTacToe/lib/main.rb","TicTacToe/lib/player.rb","TicTacToe/spec/board_spec.rb","TicTacToe/spec/game_spec.rb","TicTacToe/spec/spec_helper.rb"]'
+                         data-folder="Source Code/Day 21"
+                         onclick="openArchiveExplorer(21)">
                         <div class="card-header">
                             <div class="day-number">Day 21</div>
                             <div class="mastery-pulse"></div>
                         </div>
                         <div class="day-title">TicTacToe Game</div>
-                        <div class="day-footer"><span class="category-tag">INTERACTIVE</span>
-                            <div class="file-count"><i class="fas fa-file-code"></i> 1 Source</div>
+                        <div class="day-footer">
+                            <span class="category-tag">INTERACTIVE</span>
+                            <div class="file-count">
+                                <i class="fas fa-file-code"></i> 9 Sources
+                            </div>
                         </div>
                     </div>
-                    <div class="day-card glass-panel" data-category="interactive" data-files='["Hangman.rb"]'
-                        data-folder="Source Code/Day 22" onclick="openArchiveExplorer(22)">
+                    
+                    <div class="day-card glass-panel" 
+                         data-category="interactive"
+                         data-files='["Hangman.rb","README.md"]'
+                         data-folder="Source Code/Day 22"
+                         onclick="openArchiveExplorer(22)">
                         <div class="card-header">
                             <div class="day-number">Day 22</div>
                             <div class="mastery-pulse"></div>
                         </div>
                         <div class="day-title">Hangman Game</div>
-                        <div class="day-footer"><span class="category-tag">INTERACTIVE</span>
-                            <div class="file-count"><i class="fas fa-file-code"></i> 1 Source</div>
+                        <div class="day-footer">
+                            <span class="category-tag">INTERACTIVE</span>
+                            <div class="file-count">
+                                <i class="fas fa-file-code"></i> 2 Sources
+                            </div>
                         </div>
                     </div>
-                    <div class="day-card glass-panel" data-category="rails" data-files='["README.md"]'
-                        data-folder="Source Code/Day 23-30" onclick="openArchiveExplorer(23)">
+                    
+                    <div class="day-card glass-panel" 
+                         data-category="rails"
+                         data-files='["README.md","RailsFriends/README.md","RailsFriends/app/channels/application_cable/channel.rb","RailsFriends/app/channels/application_cable/connection.rb","RailsFriends/app/controllers/application_controller.rb","RailsFriends/app/controllers/friends_controller.rb","RailsFriends/app/controllers/home_controller.rb","RailsFriends/app/helpers/application_helper.rb","RailsFriends/app/helpers/friends_helper.rb","RailsFriends/app/helpers/home_helper.rb","RailsFriends/app/jobs/application_job.rb","RailsFriends/app/mailers/application_mailer.rb","RailsFriends/app/models/application_record.rb","RailsFriends/app/models/friend.rb","RailsFriends/app/models/user.rb","RailsFriends/config/application.rb","RailsFriends/config/boot.rb","RailsFriends/config/environment.rb","RailsFriends/config/environments/development.rb","RailsFriends/config/environments/production.rb","RailsFriends/config/environments/test.rb","RailsFriends/config/importmap.rb","RailsFriends/config/initializers/assets.rb","RailsFriends/config/initializers/content_security_policy.rb","RailsFriends/config/initializers/devise.rb","RailsFriends/config/initializers/filter_parameter_logging.rb","RailsFriends/config/initializers/inflections.rb","RailsFriends/config/initializers/permissions_policy.rb","RailsFriends/config/puma.rb","RailsFriends/config/routes.rb","RailsFriends/db/migrate/20220524032601_create_friends.rb","RailsFriends/db/migrate/20220524040121_devise_create_users.rb","RailsFriends/db/migrate/20220524134140_add_user_id_to_friends.rb","RailsFriends/db/schema.rb","RailsFriends/db/seeds.rb","RailsFriends/test/application_system_test_case.rb","RailsFriends/test/channels/application_cable/connection_test.rb","RailsFriends/test/controllers/friends_controller_test.rb","RailsFriends/test/controllers/home_controller_test.rb","RailsFriends/test/models/friend_test.rb","RailsFriends/test/models/user_test.rb","RailsFriends/test/system/friends_test.rb","RailsFriends/test/test_helper.rb"]'
+                         data-folder="Source Code/Day 23-30"
+                         onclick="openArchiveExplorer(23)">
                         <div class="card-header">
                             <div class="day-number">Day 23</div>
                             <div class="mastery-pulse"></div>
                         </div>
                         <div class="day-title">Rails: Installation & Intro</div>
-                        <div class="day-footer"><span class="category-tag">RAILS</span>
-                            <div class="file-count"><i class="fas fa-file-code"></i> 1 Source</div>
+                        <div class="day-footer">
+                            <span class="category-tag">RAILS</span>
+                            <div class="file-count">
+                                <i class="fas fa-file-code"></i> 43 Sources
+                            </div>
                         </div>
                     </div>
-                    <div class="day-card glass-panel" data-category="rails" data-files='["README.md"]'
-                        data-folder="Source Code/Day 23-30" onclick="openArchiveExplorer(24)">
+                    
+                    <div class="day-card glass-panel" 
+                         data-category="rails"
+                         data-files='["README.md","RailsFriends/README.md","RailsFriends/app/channels/application_cable/channel.rb","RailsFriends/app/channels/application_cable/connection.rb","RailsFriends/app/controllers/application_controller.rb","RailsFriends/app/controllers/friends_controller.rb","RailsFriends/app/controllers/home_controller.rb","RailsFriends/app/helpers/application_helper.rb","RailsFriends/app/helpers/friends_helper.rb","RailsFriends/app/helpers/home_helper.rb","RailsFriends/app/jobs/application_job.rb","RailsFriends/app/mailers/application_mailer.rb","RailsFriends/app/models/application_record.rb","RailsFriends/app/models/friend.rb","RailsFriends/app/models/user.rb","RailsFriends/config/application.rb","RailsFriends/config/boot.rb","RailsFriends/config/environment.rb","RailsFriends/config/environments/development.rb","RailsFriends/config/environments/production.rb","RailsFriends/config/environments/test.rb","RailsFriends/config/importmap.rb","RailsFriends/config/initializers/assets.rb","RailsFriends/config/initializers/content_security_policy.rb","RailsFriends/config/initializers/devise.rb","RailsFriends/config/initializers/filter_parameter_logging.rb","RailsFriends/config/initializers/inflections.rb","RailsFriends/config/initializers/permissions_policy.rb","RailsFriends/config/puma.rb","RailsFriends/config/routes.rb","RailsFriends/db/migrate/20220524032601_create_friends.rb","RailsFriends/db/migrate/20220524040121_devise_create_users.rb","RailsFriends/db/migrate/20220524134140_add_user_id_to_friends.rb","RailsFriends/db/schema.rb","RailsFriends/db/seeds.rb","RailsFriends/test/application_system_test_case.rb","RailsFriends/test/channels/application_cable/connection_test.rb","RailsFriends/test/controllers/friends_controller_test.rb","RailsFriends/test/controllers/home_controller_test.rb","RailsFriends/test/models/friend_test.rb","RailsFriends/test/models/user_test.rb","RailsFriends/test/system/friends_test.rb","RailsFriends/test/test_helper.rb"]'
+                         data-folder="Source Code/Day 23-30"
+                         onclick="openArchiveExplorer(24)">
                         <div class="card-header">
                             <div class="day-number">Day 24</div>
                             <div class="mastery-pulse"></div>
                         </div>
                         <div class="day-title">Rails: Website Development</div>
-                        <div class="day-footer"><span class="category-tag">RAILS</span>
-                            <div class="file-count"><i class="fas fa-file-code"></i> 1 Source</div>
+                        <div class="day-footer">
+                            <span class="category-tag">RAILS</span>
+                            <div class="file-count">
+                                <i class="fas fa-file-code"></i> 43 Sources
+                            </div>
                         </div>
                     </div>
-                    <div class="day-card glass-panel" data-category="rails" data-files='["README.md"]'
-                        data-folder="Source Code/Day 23-30" onclick="openArchiveExplorer(25)">
+                    
+                    <div class="day-card glass-panel" 
+                         data-category="rails"
+                         data-files='["README.md","RailsFriends/README.md","RailsFriends/app/channels/application_cable/channel.rb","RailsFriends/app/channels/application_cable/connection.rb","RailsFriends/app/controllers/application_controller.rb","RailsFriends/app/controllers/friends_controller.rb","RailsFriends/app/controllers/home_controller.rb","RailsFriends/app/helpers/application_helper.rb","RailsFriends/app/helpers/friends_helper.rb","RailsFriends/app/helpers/home_helper.rb","RailsFriends/app/jobs/application_job.rb","RailsFriends/app/mailers/application_mailer.rb","RailsFriends/app/models/application_record.rb","RailsFriends/app/models/friend.rb","RailsFriends/app/models/user.rb","RailsFriends/config/application.rb","RailsFriends/config/boot.rb","RailsFriends/config/environment.rb","RailsFriends/config/environments/development.rb","RailsFriends/config/environments/production.rb","RailsFriends/config/environments/test.rb","RailsFriends/config/importmap.rb","RailsFriends/config/initializers/assets.rb","RailsFriends/config/initializers/content_security_policy.rb","RailsFriends/config/initializers/devise.rb","RailsFriends/config/initializers/filter_parameter_logging.rb","RailsFriends/config/initializers/inflections.rb","RailsFriends/config/initializers/permissions_policy.rb","RailsFriends/config/puma.rb","RailsFriends/config/routes.rb","RailsFriends/db/migrate/20220524032601_create_friends.rb","RailsFriends/db/migrate/20220524040121_devise_create_users.rb","RailsFriends/db/migrate/20220524134140_add_user_id_to_friends.rb","RailsFriends/db/schema.rb","RailsFriends/db/seeds.rb","RailsFriends/test/application_system_test_case.rb","RailsFriends/test/channels/application_cable/connection_test.rb","RailsFriends/test/controllers/friends_controller_test.rb","RailsFriends/test/controllers/home_controller_test.rb","RailsFriends/test/models/friend_test.rb","RailsFriends/test/models/user_test.rb","RailsFriends/test/system/friends_test.rb","RailsFriends/test/test_helper.rb"]'
+                         data-folder="Source Code/Day 23-30"
+                         onclick="openArchiveExplorer(25)">
                         <div class="card-header">
                             <div class="day-number">Day 25</div>
                             <div class="mastery-pulse"></div>
                         </div>
                         <div class="day-title">Rails: CRUD Database</div>
-                        <div class="day-footer"><span class="category-tag">RAILS</span>
-                            <div class="file-count"><i class="fas fa-file-code"></i> 1 Source</div>
+                        <div class="day-footer">
+                            <span class="category-tag">RAILS</span>
+                            <div class="file-count">
+                                <i class="fas fa-file-code"></i> 43 Sources
+                            </div>
                         </div>
                     </div>
-                    <div class="day-card glass-panel" data-category="rails" data-files='["README.md"]'
-                        data-folder="Source Code/Day 23-30" onclick="openArchiveExplorer(26)">
+                    
+                    <div class="day-card glass-panel" 
+                         data-category="rails"
+                         data-files='["README.md","RailsFriends/README.md","RailsFriends/app/channels/application_cable/channel.rb","RailsFriends/app/channels/application_cable/connection.rb","RailsFriends/app/controllers/application_controller.rb","RailsFriends/app/controllers/friends_controller.rb","RailsFriends/app/controllers/home_controller.rb","RailsFriends/app/helpers/application_helper.rb","RailsFriends/app/helpers/friends_helper.rb","RailsFriends/app/helpers/home_helper.rb","RailsFriends/app/jobs/application_job.rb","RailsFriends/app/mailers/application_mailer.rb","RailsFriends/app/models/application_record.rb","RailsFriends/app/models/friend.rb","RailsFriends/app/models/user.rb","RailsFriends/config/application.rb","RailsFriends/config/boot.rb","RailsFriends/config/environment.rb","RailsFriends/config/environments/development.rb","RailsFriends/config/environments/production.rb","RailsFriends/config/environments/test.rb","RailsFriends/config/importmap.rb","RailsFriends/config/initializers/assets.rb","RailsFriends/config/initializers/content_security_policy.rb","RailsFriends/config/initializers/devise.rb","RailsFriends/config/initializers/filter_parameter_logging.rb","RailsFriends/config/initializers/inflections.rb","RailsFriends/config/initializers/permissions_policy.rb","RailsFriends/config/puma.rb","RailsFriends/config/routes.rb","RailsFriends/db/migrate/20220524032601_create_friends.rb","RailsFriends/db/migrate/20220524040121_devise_create_users.rb","RailsFriends/db/migrate/20220524134140_add_user_id_to_friends.rb","RailsFriends/db/schema.rb","RailsFriends/db/seeds.rb","RailsFriends/test/application_system_test_case.rb","RailsFriends/test/channels/application_cable/connection_test.rb","RailsFriends/test/controllers/friends_controller_test.rb","RailsFriends/test/controllers/home_controller_test.rb","RailsFriends/test/models/friend_test.rb","RailsFriends/test/models/user_test.rb","RailsFriends/test/system/friends_test.rb","RailsFriends/test/test_helper.rb"]'
+                         data-folder="Source Code/Day 23-30"
+                         onclick="openArchiveExplorer(26)">
                         <div class="card-header">
                             <div class="day-number">Day 26</div>
                             <div class="mastery-pulse"></div>
                         </div>
                         <div class="day-title">Rails: Bootstrap Styling</div>
-                        <div class="day-footer"><span class="category-tag">RAILS</span>
-                            <div class="file-count"><i class="fas fa-file-code"></i> 1 Source</div>
+                        <div class="day-footer">
+                            <span class="category-tag">RAILS</span>
+                            <div class="file-count">
+                                <i class="fas fa-file-code"></i> 43 Sources
+                            </div>
                         </div>
                     </div>
-                    <div class="day-card glass-panel" data-category="rails" data-files='["README.md"]'
-                        data-folder="Source Code/Day 23-30" onclick="openArchiveExplorer(27)">
+                    
+                    <div class="day-card glass-panel" 
+                         data-category="rails"
+                         data-files='["README.md","RailsFriends/README.md","RailsFriends/app/channels/application_cable/channel.rb","RailsFriends/app/channels/application_cable/connection.rb","RailsFriends/app/controllers/application_controller.rb","RailsFriends/app/controllers/friends_controller.rb","RailsFriends/app/controllers/home_controller.rb","RailsFriends/app/helpers/application_helper.rb","RailsFriends/app/helpers/friends_helper.rb","RailsFriends/app/helpers/home_helper.rb","RailsFriends/app/jobs/application_job.rb","RailsFriends/app/mailers/application_mailer.rb","RailsFriends/app/models/application_record.rb","RailsFriends/app/models/friend.rb","RailsFriends/app/models/user.rb","RailsFriends/config/application.rb","RailsFriends/config/boot.rb","RailsFriends/config/environment.rb","RailsFriends/config/environments/development.rb","RailsFriends/config/environments/production.rb","RailsFriends/config/environments/test.rb","RailsFriends/config/importmap.rb","RailsFriends/config/initializers/assets.rb","RailsFriends/config/initializers/content_security_policy.rb","RailsFriends/config/initializers/devise.rb","RailsFriends/config/initializers/filter_parameter_logging.rb","RailsFriends/config/initializers/inflections.rb","RailsFriends/config/initializers/permissions_policy.rb","RailsFriends/config/puma.rb","RailsFriends/config/routes.rb","RailsFriends/db/migrate/20220524032601_create_friends.rb","RailsFriends/db/migrate/20220524040121_devise_create_users.rb","RailsFriends/db/migrate/20220524134140_add_user_id_to_friends.rb","RailsFriends/db/schema.rb","RailsFriends/db/seeds.rb","RailsFriends/test/application_system_test_case.rb","RailsFriends/test/channels/application_cable/connection_test.rb","RailsFriends/test/controllers/friends_controller_test.rb","RailsFriends/test/controllers/home_controller_test.rb","RailsFriends/test/models/friend_test.rb","RailsFriends/test/models/user_test.rb","RailsFriends/test/system/friends_test.rb","RailsFriends/test/test_helper.rb"]'
+                         data-folder="Source Code/Day 23-30"
+                         onclick="openArchiveExplorer(27)">
                         <div class="card-header">
                             <div class="day-number">Day 27</div>
                             <div class="mastery-pulse"></div>
                         </div>
                         <div class="day-title">Rails: Devise Auth</div>
-                        <div class="day-footer"><span class="category-tag">RAILS</span>
-                            <div class="file-count"><i class="fas fa-file-code"></i> 1 Source</div>
+                        <div class="day-footer">
+                            <span class="category-tag">RAILS</span>
+                            <div class="file-count">
+                                <i class="fas fa-file-code"></i> 43 Sources
+                            </div>
                         </div>
                     </div>
-                    <div class="day-card glass-panel" data-category="rails" data-files='["README.md"]'
-                        data-folder="Source Code/Day 23-30" onclick="openArchiveExplorer(28)">
+                    
+                    <div class="day-card glass-panel" 
+                         data-category="rails"
+                         data-files='["README.md","RailsFriends/README.md","RailsFriends/app/channels/application_cable/channel.rb","RailsFriends/app/channels/application_cable/connection.rb","RailsFriends/app/controllers/application_controller.rb","RailsFriends/app/controllers/friends_controller.rb","RailsFriends/app/controllers/home_controller.rb","RailsFriends/app/helpers/application_helper.rb","RailsFriends/app/helpers/friends_helper.rb","RailsFriends/app/helpers/home_helper.rb","RailsFriends/app/jobs/application_job.rb","RailsFriends/app/mailers/application_mailer.rb","RailsFriends/app/models/application_record.rb","RailsFriends/app/models/friend.rb","RailsFriends/app/models/user.rb","RailsFriends/config/application.rb","RailsFriends/config/boot.rb","RailsFriends/config/environment.rb","RailsFriends/config/environments/development.rb","RailsFriends/config/environments/production.rb","RailsFriends/config/environments/test.rb","RailsFriends/config/importmap.rb","RailsFriends/config/initializers/assets.rb","RailsFriends/config/initializers/content_security_policy.rb","RailsFriends/config/initializers/devise.rb","RailsFriends/config/initializers/filter_parameter_logging.rb","RailsFriends/config/initializers/inflections.rb","RailsFriends/config/initializers/permissions_policy.rb","RailsFriends/config/puma.rb","RailsFriends/config/routes.rb","RailsFriends/db/migrate/20220524032601_create_friends.rb","RailsFriends/db/migrate/20220524040121_devise_create_users.rb","RailsFriends/db/migrate/20220524134140_add_user_id_to_friends.rb","RailsFriends/db/schema.rb","RailsFriends/db/seeds.rb","RailsFriends/test/application_system_test_case.rb","RailsFriends/test/channels/application_cable/connection_test.rb","RailsFriends/test/controllers/friends_controller_test.rb","RailsFriends/test/controllers/home_controller_test.rb","RailsFriends/test/models/friend_test.rb","RailsFriends/test/models/user_test.rb","RailsFriends/test/system/friends_test.rb","RailsFriends/test/test_helper.rb"]'
+                         data-folder="Source Code/Day 23-30"
+                         onclick="openArchiveExplorer(28)">
                         <div class="card-header">
                             <div class="day-number">Day 28</div>
                             <div class="mastery-pulse"></div>
                         </div>
                         <div class="day-title">Rails: User Associations</div>
-                        <div class="day-footer"><span class="category-tag">RAILS</span>
-                            <div class="file-count"><i class="fas fa-file-code"></i> 1 Source</div>
+                        <div class="day-footer">
+                            <span class="category-tag">RAILS</span>
+                            <div class="file-count">
+                                <i class="fas fa-file-code"></i> 43 Sources
+                            </div>
                         </div>
                     </div>
-                    <div class="day-card glass-panel" data-category="rails" data-files='["README.md"]'
-                        data-folder="Source Code/Day 23-30" onclick="openArchiveExplorer(29)">
+                    
+                    <div class="day-card glass-panel" 
+                         data-category="rails"
+                         data-files='["README.md","RailsFriends/README.md","RailsFriends/app/channels/application_cable/channel.rb","RailsFriends/app/channels/application_cable/connection.rb","RailsFriends/app/controllers/application_controller.rb","RailsFriends/app/controllers/friends_controller.rb","RailsFriends/app/controllers/home_controller.rb","RailsFriends/app/helpers/application_helper.rb","RailsFriends/app/helpers/friends_helper.rb","RailsFriends/app/helpers/home_helper.rb","RailsFriends/app/jobs/application_job.rb","RailsFriends/app/mailers/application_mailer.rb","RailsFriends/app/models/application_record.rb","RailsFriends/app/models/friend.rb","RailsFriends/app/models/user.rb","RailsFriends/config/application.rb","RailsFriends/config/boot.rb","RailsFriends/config/environment.rb","RailsFriends/config/environments/development.rb","RailsFriends/config/environments/production.rb","RailsFriends/config/environments/test.rb","RailsFriends/config/importmap.rb","RailsFriends/config/initializers/assets.rb","RailsFriends/config/initializers/content_security_policy.rb","RailsFriends/config/initializers/devise.rb","RailsFriends/config/initializers/filter_parameter_logging.rb","RailsFriends/config/initializers/inflections.rb","RailsFriends/config/initializers/permissions_policy.rb","RailsFriends/config/puma.rb","RailsFriends/config/routes.rb","RailsFriends/db/migrate/20220524032601_create_friends.rb","RailsFriends/db/migrate/20220524040121_devise_create_users.rb","RailsFriends/db/migrate/20220524134140_add_user_id_to_friends.rb","RailsFriends/db/schema.rb","RailsFriends/db/seeds.rb","RailsFriends/test/application_system_test_case.rb","RailsFriends/test/channels/application_cable/connection_test.rb","RailsFriends/test/controllers/friends_controller_test.rb","RailsFriends/test/controllers/home_controller_test.rb","RailsFriends/test/models/friend_test.rb","RailsFriends/test/models/user_test.rb","RailsFriends/test/system/friends_test.rb","RailsFriends/test/test_helper.rb"]'
+                         data-folder="Source Code/Day 23-30"
+                         onclick="openArchiveExplorer(29)">
                         <div class="card-header">
                             <div class="day-number">Day 29</div>
                             <div class="mastery-pulse"></div>
                         </div>
                         <div class="day-title">Rails: List Styling</div>
-                        <div class="day-footer"><span class="category-tag">RAILS</span>
-                            <div class="file-count"><i class="fas fa-file-code"></i> 1 Source</div>
+                        <div class="day-footer">
+                            <span class="category-tag">RAILS</span>
+                            <div class="file-count">
+                                <i class="fas fa-file-code"></i> 43 Sources
+                            </div>
                         </div>
                     </div>
-                    <div class="day-card glass-panel" data-category="rails" data-files='["README.md"]'
-                        data-folder="Source Code/Day 23-30" onclick="openArchiveExplorer(30)">
+                    
+                    <div class="day-card glass-panel" 
+                         data-category="rails"
+                         data-files='["README.md","RailsFriends/README.md","RailsFriends/app/channels/application_cable/channel.rb","RailsFriends/app/channels/application_cable/connection.rb","RailsFriends/app/controllers/application_controller.rb","RailsFriends/app/controllers/friends_controller.rb","RailsFriends/app/controllers/home_controller.rb","RailsFriends/app/helpers/application_helper.rb","RailsFriends/app/helpers/friends_helper.rb","RailsFriends/app/helpers/home_helper.rb","RailsFriends/app/jobs/application_job.rb","RailsFriends/app/mailers/application_mailer.rb","RailsFriends/app/models/application_record.rb","RailsFriends/app/models/friend.rb","RailsFriends/app/models/user.rb","RailsFriends/config/application.rb","RailsFriends/config/boot.rb","RailsFriends/config/environment.rb","RailsFriends/config/environments/development.rb","RailsFriends/config/environments/production.rb","RailsFriends/config/environments/test.rb","RailsFriends/config/importmap.rb","RailsFriends/config/initializers/assets.rb","RailsFriends/config/initializers/content_security_policy.rb","RailsFriends/config/initializers/devise.rb","RailsFriends/config/initializers/filter_parameter_logging.rb","RailsFriends/config/initializers/inflections.rb","RailsFriends/config/initializers/permissions_policy.rb","RailsFriends/config/puma.rb","RailsFriends/config/routes.rb","RailsFriends/db/migrate/20220524032601_create_friends.rb","RailsFriends/db/migrate/20220524040121_devise_create_users.rb","RailsFriends/db/migrate/20220524134140_add_user_id_to_friends.rb","RailsFriends/db/schema.rb","RailsFriends/db/seeds.rb","RailsFriends/test/application_system_test_case.rb","RailsFriends/test/channels/application_cable/connection_test.rb","RailsFriends/test/controllers/friends_controller_test.rb","RailsFriends/test/controllers/home_controller_test.rb","RailsFriends/test/models/friend_test.rb","RailsFriends/test/models/user_test.rb","RailsFriends/test/system/friends_test.rb","RailsFriends/test/test_helper.rb"]'
+                         data-folder="Source Code/Day 23-30"
+                         onclick="openArchiveExplorer(30)">
                         <div class="card-header">
                             <div class="day-number">Day 30</div>
                             <div class="mastery-pulse"></div>
                         </div>
                         <div class="day-title">Rails: Cloud Deployment</div>
-                        <div class="day-footer"><span class="category-tag">RAILS</span>
-                            <div class="file-count"><i class="fas fa-file-code"></i> 1 Source</div>
+                        <div class="day-footer">
+                            <span class="category-tag">RAILS</span>
+                            <div class="file-count">
+                                <i class="fas fa-file-code"></i> 43 Sources
+                            </div>
                         </div>
                     </div>
+                    
                 </div>
             </section>
         </main>
@@ -537,66 +732,65 @@
             </div>
         </footer>
 
+    </div>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-ruby.min.js"></script>
-        <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
-        <script src="js/app.js"></script>
-        <!-- High-Fidelity Archive Explorer Modal -->
-        <div id="archive-modal">
-            <div class="archive-explorer glass-panel">
-                <header class="archive-header">
-                    <div class="archive-info">
-                        <h3 id="archive-title">Day 0: Loading...</h3>
-                        <div class="breadcrumb">Ruby Challenge / <span id="archive-path">Source Code</span></div>
-                    </div>
-                    <div class="archive-controls">
-                        <button id="download-btn" class="icon-btn" title="Download Source"><i
-                                class="fas fa-download"></i></button>
-                        <button id="github-link-btn" class="icon-btn" title="View on GitHub"><i
-                                class="fab fa-github"></i></button>
-                        <button id="copy-code-btn" class="icon-btn" title="Copy Code"><i
-                                class="fas fa-copy"></i></button>
-                        <i class="fas fa-times close-archive"></i>
-                    </div>
-                </header>
-                <div class="archive-body">
-                    <aside class="file-sidebar">
-                        <div class="sidebar-header">
-                            <span>FILES</span>
-                            <span class="badge" id="file-count-badge">0</span>
-                        </div>
-                        <ul id="file-list" class="file-list">
-                            <!-- Injected via JS -->
-                        </ul>
-                    </aside>
-                    <main class="code-viewer">
-                        <div class="code-header">
-                            <span id="current-file-name">script.rb</span>
-                            <span class="language-tag">RUBY</span>
-                        </div>
-                        <pre><code id="archive-code-display" class="language-ruby line-numbers"># Select a file to view source code...</code></pre>
-                        <div class="execution-hint">
-                            <i class="fas fa-terminal"></i>
-                            <code>ruby <span id="archive-execution-script">script</span>.rb</code>
-                        </div>
-                    </main>
+    <!-- High-Fidelity Archive Explorer Modal -->
+    <div id="archive-modal">
+        <div class="archive-explorer glass-panel">
+            <header class="archive-header">
+                <div class="archive-info">
+                    <h3 id="archive-title">Day 0: Loading...</h3>
+                    <div class="breadcrumb">Ruby Challenge / <span id="archive-path">Source Code</span></div>
                 </div>
+                <div class="archive-controls">
+                    <button id="download-btn" class="icon-btn" title="Download Source"><i class="fas fa-download"></i></button>
+                    <button id="github-link-btn" class="icon-btn" title="View on GitHub"><i class="fab fa-github"></i></button>
+                    <button id="copy-code-btn" class="icon-btn" title="Copy Code"><i class="fas fa-copy"></i></button>
+                    <i class="fas fa-times close-archive"></i>
+                </div>
+            </header>
+            <div class="archive-body">
+                <aside class="file-sidebar">
+                    <div class="sidebar-header">
+                        <span>FILES</span>
+                        <span class="badge" id="file-count-badge">0</span>
+                    </div>
+                    <ul id="file-list" class="file-list">
+                        <!-- Injected via JS -->
+                    </ul>
+                </aside>
+                <main class="code-viewer">
+                    <div class="code-header">
+                        <span id="current-file-name">script.rb</span>
+                        <span class="language-tag">RUBY</span>
+                    </div>
+                    <pre id="archive-code-display" class="language-ruby"><code class="language-ruby"># Select a file to view source code...</code></pre>
+                    <div class="execution-hint">
+                        <i class="fas fa-terminal"></i>
+                        <code>ruby <span id="archive-execution-script">script</span>.rb</code>
+                    </div>
+                </main>
             </div>
         </div>
+    </div>
 
-        <!-- Cinematic Easter Egg Overlay -->
-        <button id="back-to-top" class="back-to-top"><i class="fas fa-arrow-up"></i></button>
+    <!-- Cinematic Easter Egg Overlay -->
+    <button id="back-to-top" class="back-to-top"><i class="fas fa-arrow-up"></i></button>
 
-        <div id="easter-egg-overlay">
-            <div class="ee-content">
-                <img src="assets/Ruby Logo.png" class="ee-ruby-glow" alt="Ruby Logo">
-                <h2 class="ee-title">The Sacred Ruby Discovered</h2>
-                <div id="ee-message-box" class="ee-message"></div>
-                <p class="ee-close-hint">Click anywhere or press ESC to exit</p>
-            </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-ruby.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+    <!-- Cinematic Easter Egg Overlay -->
+    <div id="easter-egg-overlay">
+        <div class="ee-content">
+            <img src="assets/Ruby Logo.png" class="ee-ruby-glow" alt="Ruby Logo">
+            <h2 class="ee-title">The Sacred Ruby Discovered</h2>
+            <div id="ee-message-box" class="ee-message"></div>
+            <p class="ee-close-hint">Click anywhere or press ESC to exit</p>
         </div>
+    </div>
 </body>
 
 </html>
