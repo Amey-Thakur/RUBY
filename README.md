@@ -266,7 +266,7 @@ ruby Hangman.rb
 >
 > Experience the complete **30-Day Ruby Programming Challenge** ecosystem. This repository serves as a scholarly gateway that orchestrates the month-long implementation of full-stack milestones, providing a visual demonstration of skill evolution, credential validation, and featured project integration across the modern web engineering landscape.
 >
-> [Launch Interactive Portfolio on GitHub Pages](https://Amey-Thakur.github.io/RUBY/)
+> [**Launch Interactive Portfolio on GitHub Pages**](https://Amey-Thakur.github.io/RUBY/)
 
 
 ---
