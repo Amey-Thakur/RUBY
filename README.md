@@ -261,6 +261,14 @@ cd "Source Code/Day 22"
 ruby Hangman.rb
 ```
 
+> [!TIP]
+> ### Ruby Railcraft Academy | Interactive Curriculum Explorer
+>
+> Experience the complete **30-Day Ruby Programming Challenge** ecosystem. This repository serves as a scholarly gateway that orchestrates the month-long implementation of full-stack milestones, providing a visual demonstration of skill evolution, credential validation, and featured project integration across the modern web engineering landscape.
+>
+> [Explore Ruby Technical Specifications](https://Amey-Thakur.github.io/RUBY/)
+
+
 ---
 
 <!-- USAGE GUIDELINES -->
