@@ -1,0 +1,35 @@
+# <a href="https://amey-thakur.github.io/RUBY/"><img src="docs/Ruby%20Logo.png" height="55" valign="middle"></a> <br> Ruby Programming Challenge
+
+> 30-Day Ruby Programming Challenge by Amey Thakur and Mega Satish, focused
+> on mastering Ruby fundamentals, object-oriented programming, Ruby on Rails
+> development, and full-stack web engineering with cloud deployment.
+
+Author: Amey Thakur, ORCID 0000-0001-5644-1575
+Co-author: Mega Satish, ORCID 0000-0002-1844-9557
+Institution: Terna Engineering College, University of Mumbai
+Programme: B.E. Computer Engineering
+Licence: CC BY 4.0, attribution required
+Repository created: 21 May 2022
+
+## What is in this repository
+
+- Mega, 6 files
+- Ruby web, 15 files
+- Source Code, 229 files
+- docs, 4 files
+- web, 241 files
+
+## Subject terms
+
+30-days-of-code, full-stack-development, oop, rails, rails-application,
+ruby, ruby-challenges, ruby-course, ruby-gem, ruby-library, ruby-on-rails,
+ruby-on-rails-tutorial, ruby-programming, ruby-programming-language,
+web-engineering
+
+## Where this sits
+
+- This repository: https://github.com/Amey-Thakur/RUBY
+- Degree index, every subject and project: https://github.com/Amey-Thakur/COMPUTER-ENGINEERING
+- Project page: https://amey-thakur.github.io/RUBY/
+- Author: https://github.com/Amey-Thakur
+- Research notes and reflections: https://amey-thakur.github.io/
